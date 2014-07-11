@@ -2,81 +2,146 @@
 /*
 Template Name: Homepage
 */
+
+add_theme_support('post-thumbnails');
+
+$programStories = get_pages(array(
+	'hierarchical' => 0,
+	'sort_column'  => 'menu_order',
+	'meta_key'     => 'pageType',
+	'meta_value'   => 'programStory',
+));
+
+$candidates = get_pages(array(
+	'hierarchical' => 0,
+	'sort_column'  => 'menu_order',
+	'meta_key'     => 'pageType',
+	'meta_value'   => 'candidate',
+));
+
+#var_dump($candidates);
+
 ?>
 
 <?php get_header(); ?>
-			
-			<div id="content" class="clearfix row">
-			
-				<div id="main" class="col-sm-12 clearfix" role="main">
 
-					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-					
-					<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article">
-					
-						<header>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-offset-3 col-lg-6 col-md-offset-2 col-md-8">
+				<p class="shout">
+					Jak pomoct městu, které si nechce nechat pomoct?
+				</p>
+				<p class="text-center">
+					Jde nám o život. O život v Brně.
+				</p>
+				<p class="text-center">
+					Tři roky kritizujeme brněnský magistrát. Tři roky si klepeme na čelo, protáčíme panenky, vyprskáváme smíchy a klademe hlavy do dlaní. Tři roky nám říkají, že posmívat se umí každý, ale vládnout můžou jen vyvolení. Jenže my dobře víme, že politikem se člověk nerodí, ale stává.  My na to máme právě teď.
+				</p>
+				<p>
+					<a href="">Číst duhový manifest</a>
+				</p>
+			</div>
+		</div>
+	</div>
 
-							<?php 
-								$post_thumbnail_id = get_post_thumbnail_id();
-								$featured_src = wp_get_attachment_image_src( $post_thumbnail_id, 'wpbs-featured-home' );
-							?>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12 sectionHeader">
+				<h2>
+					Chceš?
+				</h2>
+				<p>
+					Brno jde, když se chce.
+				</p>
+			</div>
+		</div>
+	</div>
 
-							<div class="jumbotron" style="background-image: url('<?php echo $featured_src[0]; ?>'); background-repeat: no-repeat; background-position: 0 0;">
-				
-								<div class="page-header">
-									<h1><?php bloginfo('title'); ?><small><?php echo get_post_meta($post->ID, 'custom_tagline' , true);?></small></h1>
-								</div>				
-								
-							</div>
-						
-						</header>
-						
-						<section class="row post_content">
-						
-							<div class="col-sm-8">
-						
-								<?php the_content(); ?>
-								
-							</div>
-							
-							<?php get_sidebar('sidebar2'); // sidebar 2 ?>
-													
-						</section> <!-- end article header -->
-						
-						<footer>
-			
-							<p class="clearfix"><?php the_tags('<span class="tags">' . __("Tags","wpbootstrap") . ': ', ', ', '</span>'); ?></p>
-							
-						</footer> <!-- end article footer -->
-					
-					</article> <!-- end article -->
-					
-					<?php 
-						// No comments on homepage
-						//comments_template();
-					?>
-					
-					<?php endwhile; ?>	
-					
-					<?php else : ?>
-					
-					<article id="post-not-found">
-					    <header>
-					    	<h1><?php _e("Not Found", "wpbootstrap"); ?></h1>
-					    </header>
-					    <section class="post_content">
-					    	<p><?php _e("Sorry, but the requested resource was not found on this site.", "wpbootstrap"); ?></p>
-					    </section>
-					    <footer>
-					    </footer>
-					</article>
-					
-					<?php endif; ?>
-			
-				</div> <!-- end #main -->
-    
-				<?php //get_sidebar(); // sidebar 1 ?>
-    
-			</div> <!-- end #content -->
+	<div class="container">
+		<div class="row">
+			<h3>
+				Chcu
+			</h3>
+			<ul>
+				<li><a href="">dopravu</a></li>
+				<li><a href="">školství</a></li>
+				<li><a href="">dýchání</a></li>
+				<li><a href="">podnikání</a></li>
+				<li><a href="">transparentnost</a></li>
+				<li><a href="">turismus</a></li>
+				<li><a href="">kulturu</a></li>
+			</ul>
+		</div>
+		<ul class="row programStories">
+			<?php foreach ($programStories as $programStory) { ?>
+				<?php
+				$meta = get_post_meta($programStory->ID);
+				?>
+				<li class="col-lg-3 col-md-4 col-sm-6 col-xs-12" data-topic="<?php echo $meta['topic'][0] ?>">
+					<p class="title">
+						<a href="<?php echo get_permalink($programStory) ?>"><?php echo $programStory->post_title ?></a>
+					</p>
+					<p class="perex">
+						<?php echo $meta['perex'][0] ?>
+					</p>
+				</li>
+			<?php } ?>
+		</ul>
+	</div>
+
+	<div>
+		Články
+	</div>
+	<div>
+		<a href="">Celý program</a>
+	</div>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12 sectionHeader">
+				<h2>
+					Propaganda
+				</h2>
+				<p>
+					Volby jde vyhrát i bez peněz a kmotrů. Jsme aktivisti, makáme.
+				</p>
+			</div>
+		</div>
+	</div>
+	<div>
+		<a href="">Starší zprávy</a>
+	</div>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12 sectionHeader">
+				<h2>
+					A vy jste kdo?
+				</h2>
+				<p>
+					Jsme populisti, slušní lidé, aktivisti, flákači a tvrdě pracující, důchodci, cikáni, architekti a matky, programátoři, gayové, intelektuálové a kritici, pragmatici, pacienti, trapáci, slušní občané a rebelové. Dělejte si z nás legraci, rýpejte do nás, pomlouvejte za zády a do novin. My to ustojíme. A budeme vás poslouchat.
+				</p>
+			</div>
+		</div>
+		<ul class="row candidates">
+			<?php foreach ($candidates as $candidate) { ?>
+				<?php
+				preg_match('#src="(.+)"#U', get_the_post_thumbnail($candidate->ID, 'candidate-thumb'), $match);
+				$meta = get_post_meta($candidate->ID);
+				?>
+				<li class="col-lg-2 col-md-3 col-sm-3 col-xs-6">
+					<p class="image">
+						<a href="<?php echo get_permalink($candidate) ?>"><img src="<?php echo $match[1] ?>" class="img-responsive img-circle" /></a>
+					</p>
+					<p class="name">
+						<a href="<?php echo get_permalink($candidate) ?>"><?php echo $candidate->post_title ?></a>
+					</p>
+					<p class="occupation">
+						<?php echo $meta['candidateOccupation'][0] ?>
+					</p>
+				</li>
+			<?php } ?>
+		</ul>
+	</div>
 
 <?php get_footer(); ?>

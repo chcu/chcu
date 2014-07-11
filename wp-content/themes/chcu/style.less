@@ -1,0 +1,107 @@
+@line-height: 150%;
+
+.roboto {
+	font-family: "Roboto", sans-serif;
+}
+.proxima {
+	font-family: "proxima-nova", sans-serif;
+}
+
+.page-template-page-homepage-php {
+	.roboto;
+	font-size: 10pt;
+	line-height: @line-height;
+	color: black;
+
+	p {
+		margin: 0;
+	}
+
+	header[role="banner"] {
+		display: none;
+	}
+
+	.shout {
+		.proxima;
+		font-size: 3em;
+		font-weight: 700;
+		line-height: @line-height * .65;
+		text-align: center;
+		margin: .5em 0;
+	}
+
+	.sectionHeader {
+		margin: 2em 0;
+		text-align: center;
+
+		h2 {
+			.proxima;
+			font-size: 5.5em;
+			font-weight: 900;
+			text-transform: uppercase;
+			line-height: @line-height * .6;
+			margin: 0;
+		}
+
+		p {
+			.proxima;
+			font-size: 1.25em;
+			font-weight: 500;
+			line-height: @line-height;
+		}
+
+	}
+
+	.programStories {
+		list-style-type: none;
+		padding: 0;
+
+		li {
+			text-align: center;
+			color: white;
+			padding: 1.5em;
+
+			&[data-topic="doprava"] { background-color: #ca220f; }
+			&[data-topic="turismus"] { background-color: #a82da4; }
+
+			.title {
+				.proxima;
+				font-size: 1.3em;
+				font-weight: 700;
+				line-height: @line-height * .8;
+
+				a {
+					color: white;
+				}
+
+			}
+
+			.perex {
+				margin: 1em 0 0 0;
+				font-size: .9em;
+				line-height: @line-height;
+			}
+
+		}
+
+	}
+
+	.candidates {
+		list-style-type: none;
+		padding: 0;
+
+		li {
+			text-align: center;
+
+			.name {
+				.proxima;
+				font-size: 1.3em;
+				font-weight: 700;
+				margin: 1em 0 .1em 0;
+			}
+
+		}
+
+	}
+
+}

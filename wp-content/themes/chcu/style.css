@@ -1,13 +1,86 @@
-/*
-Theme Name: wp-bootstrap
-Theme URI: http://320press.com/wpbs
-Description: A simple responsive theme based on the Bootstrap framework. Includes multiple page templates, two different sidebars and a theme options panel.
-Version: 3.0
-Author: 320press
-Author URI: http://320press.com
-Tags: black, white, one-column, two-columns, flexible-width, custom-background, custom-colors, custom-menu, full-width-template, theme-options
-License: GNU General Public License v2.0 & Apache License 2.0
-License URI: http://www.gnu.org/licenses/gpl-2.0.html http://www.apache.org/licenses/LICENSE-2.0
-*/
-
-/* HEADS UP: Everything that you will normally find here can be found in the library/less/wp.less */
+.roboto {
+  font-family: "Roboto", sans-serif;
+}
+.proxima {
+  font-family: "proxima-nova", sans-serif;
+}
+.page-template-page-homepage-php {
+  font-family: "Roboto", sans-serif;
+  font-size: 10pt;
+  line-height: 150%;
+  color: black;
+}
+.page-template-page-homepage-php p {
+  margin: 0;
+}
+.page-template-page-homepage-php header[role="banner"] {
+  display: none;
+}
+.page-template-page-homepage-php .shout {
+  font-family: "proxima-nova", sans-serif;
+  font-size: 3em;
+  font-weight: 700;
+  line-height: 97.5%;
+  text-align: center;
+  margin: .5em 0;
+}
+.page-template-page-homepage-php .sectionHeader {
+  margin: 2em 0;
+  text-align: center;
+}
+.page-template-page-homepage-php .sectionHeader h2 {
+  font-family: "proxima-nova", sans-serif;
+  font-size: 5.5em;
+  font-weight: 900;
+  text-transform: uppercase;
+  line-height: 90%;
+  margin: 0;
+}
+.page-template-page-homepage-php .sectionHeader p {
+  font-family: "proxima-nova", sans-serif;
+  font-size: 1.25em;
+  font-weight: 500;
+  line-height: 150%;
+}
+.page-template-page-homepage-php .programStories {
+  list-style-type: none;
+  padding: 0;
+}
+.page-template-page-homepage-php .programStories li {
+  text-align: center;
+  color: white;
+  padding: 1.5em;
+}
+.page-template-page-homepage-php .programStories li[data-topic="doprava"] {
+  background-color: #ca220f;
+}
+.page-template-page-homepage-php .programStories li[data-topic="turismus"] {
+  background-color: #a82da4;
+}
+.page-template-page-homepage-php .programStories li .title {
+  font-family: "proxima-nova", sans-serif;
+  font-size: 1.3em;
+  font-weight: 700;
+  line-height: 120%;
+}
+.page-template-page-homepage-php .programStories li .title a {
+  color: white;
+}
+.page-template-page-homepage-php .programStories li .perex {
+  margin: 1em 0 0 0;
+  font-size: .9em;
+  line-height: 150%;
+}
+.page-template-page-homepage-php .candidates {
+  list-style-type: none;
+  padding: 0;
+}
+.page-template-page-homepage-php .candidates li {
+  text-align: center;
+}
+.page-template-page-homepage-php .candidates li .name {
+  font-family: "proxima-nova", sans-serif;
+  font-size: 1.3em;
+  font-weight: 700;
+  margin: 1em 0 .1em 0;
+}

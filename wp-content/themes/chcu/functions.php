@@ -37,8 +37,8 @@ add_image_size( 'wpbs-featured-home', 970, 311, true);
 add_image_size( 'wpbs-featured-carousel', 970, 400, true);
 
 if ( function_exists( 'add_image_size' ) ) {
-  add_image_size( 'candidate-thumb', 800, 800, true );
-  add_image_size( 'post-thumb', 1200, 900, true );
+  add_image_size( 'candidate-thumb', 600, 600, true );
+  add_image_size( 'post-thumb', 800, 600, true );
 }
 
 /*

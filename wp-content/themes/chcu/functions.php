@@ -515,4 +515,20 @@ function wp_bootstrap_wp_title( $title, $sep ) {
 }
 add_filter( 'wp_title', 'wp_bootstrap_wp_title', 10, 2 );
 
+function getDaysLeftUntilElectionStart() {
+  $dateTimeNow = new DateTime('now', new DateTimeZone('Europe/Prague'));
+  $dateTimeElections = new DateTime('2014-10-10 14:00:00', new DateTimeZone('Europe/Prague'));
+
+  $diff = $dateTimeNow->diff($dateTimeElections);
+  return $diff->days;
+}
+
+function getDaysLeftUntilElectionEnd() {
+  $dateTimeNow = new DateTime('now', new DateTimeZone('Europe/Prague'));
+  $dateTimeElections = new DateTime('2014-10-11 14:00:00', new DateTimeZone('Europe/Prague'));
+
+  $diff = $dateTimeNow->diff($dateTimeElections);
+  return $diff->days;
+}
+
 ?>

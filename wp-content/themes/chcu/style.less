@@ -113,60 +113,6 @@
 
 	}
 
-	.shout {
-		.proxima;
-		font-size: 3em;
-		font-weight: 700;
-		line-height: @line-height * .65;
-		text-align: center;
-		margin: .5em 0;
-
-		@media screen and (max-width: @screen-sm) {
-			font-size: 2em;
-			line-height: @line-height * .75;
-		}
-
-	}
-
-	.sectionHeader {
-		margin: 3em auto 2em auto;
-		text-align: center;
-
-		h2 {
-			.proxima;
-			font-size: 5.75em;
-			font-weight: 900;
-			text-transform: uppercase;
-			line-height: @line-height * .6;
-			margin: 0;
-
-			@media screen and (max-width: @screen-sm) {
-				font-size: 3.5em;
-				line-height: @line-height * .7;
-			}
-
-			@media screen and (max-width: @screen-xs) {
-				font-size: 2.5em;
-				line-height: @line-height * .75;
-			}
-
-		}
-
-		.special {
-			.proxima;
-			font-size: 1.25em;
-			font-weight: 500;
-			line-height: @line-height;
-		}
-
-		.long {
-			font-size: 1.15em;
-			line-height: @line-height;
-			margin: .5em 0;
-		}
-
-	}
-
 	.programStories {
 		list-style-type: none;
 		padding: 0;
@@ -299,6 +245,69 @@ hr {
 	width: 100%;
 	border: none;
 	margin: 2.5em 0;
+}
+
+.shout {
+	.proxima;
+	font-size: 3em;
+	font-weight: 700;
+	line-height: @line-height * .75;
+	text-align: center;
+	margin: .5em 0;
+
+	@media screen and (max-width: @screen-sm) {
+		font-size: 2em;
+		line-height: @line-height * .75;
+	}
+
+	.line {
+		display: block;
+
+		@media screen and (max-width: @screen-xs) {
+			display: inline;
+		}
+
+	}
+
+}
+
+.sectionHeader {
+	margin: 3em auto 2em auto;
+	text-align: center;
+
+	h2 {
+		.proxima;
+		font-size: 5.75em;
+		font-weight: 900;
+		text-transform: uppercase;
+		line-height: @line-height * .6;
+		margin: 0;
+
+		@media screen and (max-width: @screen-sm) {
+			font-size: 3.5em;
+			line-height: @line-height * .7;
+		}
+
+		@media screen and (max-width: @screen-xs) {
+			font-size: 2.5em;
+			line-height: @line-height * .75;
+		}
+
+	}
+
+	.special {
+		.proxima;
+		font-size: 1.25em;
+		font-weight: 500;
+		line-height: @line-height;
+	}
+
+	.long {
+		font-size: 1.15em;
+		line-height: @line-height;
+		margin: .5em 0;
+	}
+
 }
 
 #fb-root {

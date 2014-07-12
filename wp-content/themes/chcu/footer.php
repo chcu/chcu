@@ -6,9 +6,14 @@
 						<div class="fb-like-box" data-href="https://www.facebook.com/ZitBrnoRIP" data-colorscheme="light" data-show-faces="true" data-header="false" data-stream="false" data-show-border="false" data-width="2000" data-height="255"></div>
 					</div>
 				</div>
-			</div>
-
-			<div class="container">
+				<div class="row">
+					<div class="col-sm-12">
+						<p class="shout">
+							<span class="line">Lajkem neurazíš. Ale hlavně přijď volit.</span>
+							<span class="line">Do vítězství zbývá už jen 282 dní.</span>
+						</p>
+					</div>
+				</div>
 				<div class="row">
 					<div class="col-sm-12">
 						<hr />

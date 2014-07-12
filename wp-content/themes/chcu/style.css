@@ -97,55 +97,6 @@
   color: white;
   background-color: #de1879;
 }
-.page-template-page-homepage-php .shout {
-  font-family: "proxima-nova", sans-serif;
-  font-size: 3em;
-  font-weight: 700;
-  line-height: 97.5%;
-  text-align: center;
-  margin: .5em 0;
-}
-@media screen and (max-width: 768px) {
-  .page-template-page-homepage-php .shout {
-    font-size: 2em;
-    line-height: 112.5%;
-  }
-}
-.page-template-page-homepage-php .sectionHeader {
-  margin: 3em auto 2em auto;
-  text-align: center;
-}
-.page-template-page-homepage-php .sectionHeader h2 {
-  font-family: "proxima-nova", sans-serif;
-  font-size: 5.75em;
-  font-weight: 900;
-  text-transform: uppercase;
-  line-height: 90%;
-  margin: 0;
-}
-@media screen and (max-width: 768px) {
-  .page-template-page-homepage-php .sectionHeader h2 {
-    font-size: 3.5em;
-    line-height: 105%;
-  }
-}
-@media screen and (max-width: 480px) {
-  .page-template-page-homepage-php .sectionHeader h2 {
-    font-size: 2.5em;
-    line-height: 112.5%;
-  }
-}
-.page-template-page-homepage-php .sectionHeader .special {
-  font-family: "proxima-nova", sans-serif;
-  font-size: 1.25em;
-  font-weight: 500;
-  line-height: 150%;
-}
-.page-template-page-homepage-php .sectionHeader .long {
-  font-size: 1.15em;
-  line-height: 150%;
-  margin: .5em 0;
-}
 .page-template-page-homepage-php .programStories {
   list-style-type: none;
   padding: 0;
@@ -251,6 +202,63 @@ hr {
   width: 100%;
   border: none;
   margin: 2.5em 0;
+}
+.shout {
+  font-family: "proxima-nova", sans-serif;
+  font-size: 3em;
+  font-weight: 700;
+  line-height: 112.5%;
+  text-align: center;
+  margin: .5em 0;
+}
+@media screen and (max-width: 768px) {
+  .shout {
+    font-size: 2em;
+    line-height: 112.5%;
+  }
+}
+.shout .line {
+  display: block;
+}
+@media screen and (max-width: 480px) {
+  .shout .line {
+    display: inline;
+  }
+}
+.sectionHeader {
+  margin: 3em auto 2em auto;
+  text-align: center;
+}
+.sectionHeader h2 {
+  font-family: "proxima-nova", sans-serif;
+  font-size: 5.75em;
+  font-weight: 900;
+  text-transform: uppercase;
+  line-height: 90%;
+  margin: 0;
+}
+@media screen and (max-width: 768px) {
+  .sectionHeader h2 {
+    font-size: 3.5em;
+    line-height: 105%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .sectionHeader h2 {
+    font-size: 2.5em;
+    line-height: 112.5%;
+  }
+}
+.sectionHeader .special {
+  font-family: "proxima-nova", sans-serif;
+  font-size: 1.25em;
+  font-weight: 500;
+  line-height: 150%;
+}
+.sectionHeader .long {
+  font-size: 1.15em;
+  line-height: 150%;
+  margin: .5em 0;
 }
 #fb-root {
   display: none;

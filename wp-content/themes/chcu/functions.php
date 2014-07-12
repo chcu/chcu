@@ -531,4 +531,6 @@ function getDaysLeftUntilElectionEnd() {
   return $diff->days;
 }
 
+//function getCandidateByDisplayName
+
 ?>

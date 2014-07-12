@@ -7,9 +7,9 @@
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-lg-5">
+					<div class="col-lg-5 col-md-5 col-sm-12">
 						<p class="logo">
-							<img src="<?php echo get_theme_root_uri() . '/' . get_template() ?>/logo.png" alt="Žít Brno" class="img-responsive" />
+							<a href="http://www.zitbrno.cz/"><img src="<?php echo get_theme_root_uri() . '/' . get_template() ?>/logo.png" alt="Žít Brno" class="img-responsive" /></a>
 						</p>
 						<p>
 							Žít Brno je nejdelší a nejsofistikovanější politická kampaň v dějinách ČR.
@@ -18,7 +18,7 @@
 							A teď přišel náš čas Žít Brno.
 						</p>
 					</div>
-					<div class="col-lg-4">
+					<div class="col-lg-4 col-md-4 col-sm-8">
 						<h2>
 							Naše projekty
 						</h2>
@@ -36,7 +36,7 @@
 							</li>
 						</ul>
 					</div>
-					<div class="col-lg-3">
+					<div class="col-lg-3 col-md-3 col-sm-4">
 						<h2>
 							Kontakt
 						</h2>
@@ -50,7 +50,9 @@
 				</div>
 				<div class="row">
 					<div class="col-lg-5">
-						&copy; <?php echo date('Y') ?> Žít Brno
+						<p>
+							&copy; <?php echo date('Y') ?> Žít Brno
+						</p>
 					</div>
 				</div>
 			</div>

@@ -27,12 +27,6 @@
 }
 
 .page-template-page-homepage-php {
-	.roboto;
-	font-size: 10pt;
-	line-height: @line-height;
-	color: @color-text;
-	padding: 0;
-	margin: 0;
 
 	h1 {
 		margin: 2em 0 0 0;
@@ -260,6 +254,16 @@
 
 }
 
+body {
+	.roboto;
+	overflow-x: hidden;
+	font-size: 10pt;
+	line-height: @line-height;
+	color: @color-text;
+	padding: 0 0 3em 0;
+	margin: 0;
+}
+
 p {
 	margin: .75em 0;
 }
@@ -290,7 +294,12 @@ hr {
 footer[role="general"] {
 
 	.logo {
-		width: 60%;
+		width: 65%;
+
+		@media screen and (max-width: @screen-xs) {
+			width: 100%;
+		}
+
 	}
 
 	h2 {
@@ -306,6 +315,11 @@ footer[role="general"] {
 		li {
 			display: inline-block;
 			width: 50%;
+
+			@media screen and (max-width: @screen-xs) {
+				width: 100%;
+			}
+
 		}
 
 	}

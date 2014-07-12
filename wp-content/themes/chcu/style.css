@@ -4,14 +4,6 @@
 .proxima {
   font-family: "proxima-nova", sans-serif;
 }
-.page-template-page-homepage-php {
-  font-family: "Roboto", sans-serif;
-  font-size: 10pt;
-  line-height: 150%;
-  color: #000000;
-  padding: 0;
-  margin: 0;
-}
 .page-template-page-homepage-php h1 {
   margin: 2em 0 0 0;
 }
@@ -222,6 +214,15 @@
   font-weight: 700;
   margin: 1em 0 .3em 0;
 }
+body {
+  font-family: "Roboto", sans-serif;
+  overflow-x: hidden;
+  font-size: 10pt;
+  line-height: 150%;
+  color: #000000;
+  padding: 0 0 3em 0;
+  margin: 0;
+}
 p {
   margin: .75em 0;
 }
@@ -245,7 +246,12 @@ hr {
   margin: 2.5em 0;
 }
 footer[role="general"] .logo {
-  width: 60%;
+  width: 65%;
+}
+@media screen and (max-width: 480px) {
+  footer[role="general"] .logo {
+    width: 100%;
+  }
 }
 footer[role="general"] h2 {
   font-family: "proxima-nova", sans-serif;
@@ -259,4 +265,9 @@ footer[role="general"] .links {
 footer[role="general"] .links li {
   display: inline-block;
   width: 50%;
+}
+@media screen and (max-width: 480px) {
+  footer[role="general"] .links li {
+    width: 100%;
+  }
 }

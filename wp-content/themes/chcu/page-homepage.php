@@ -43,32 +43,36 @@ $candidates = get_pages(array(
 
 	<div class="container">
 		<div class="row">
-			<div class="col-lg-offset-3 col-lg-6 col-md-offset-2 col-md-8">
-				<p class="shout">
-					Jak pomoct městu, které si nechce nechat pomoct?
-				</p>
-				<p class="text-center">
-					Jde nám o život. O život v Brně.
-				</p>
-				<p class="text-center">
-					Tři roky kritizujeme brněnský magistrát. Tři roky si klepeme na čelo, protáčíme panenky, vyprskáváme smíchy a klademe hlavy do dlaní. Tři roky nám říkají, že posmívat se umí každý, ale vládnout můžou jen vyvolení. Jenže my dobře víme, že politikem se člověk nerodí, ale stává.  My na to máme právě teď.
-				</p>
-				<p>
-					<a href="">Číst duhový manifest</a>
-				</p>
+			<div class="sectionHeader">
+				<div class="col-lg-offset-3 col-lg-6 col-md-offset-2 col-md-8">
+					<p class="shout">
+						Jak pomoct městu, které si nechce nechat pomoct?
+					</p>
+					<p class="long text-center">
+						Jde nám o život. O život v Brně.
+					</p>
+					<p class="long text-center">
+						Tři roky kritizujeme brněnský magistrát. Tři roky si klepeme na čelo, protáčíme panenky, vyprskáváme smíchy a klademe hlavy do dlaní. Tři roky nám říkají, že posmívat se umí každý, ale vládnout můžou jen vyvolení. Jenže my dobře víme, že politikem se člověk nerodí, ale stává.  My na to máme právě teď.
+					</p>
+					<p>
+						<a href="">Číst duhový manifest</a>
+					</p>
+				</div>
 			</div>
 		</div>
 	</div>
 
 	<div class="container">
 		<div class="row">
-			<div class="col-sm-12 sectionHeader">
-				<h2>
-					Chceš?
-				</h2>
-				<p class="special">
-					Brno jde, když se chce.
-				</p>
+			<div class="sectionHeader">
+				<div class="col-sm-12">
+					<h2>
+						Chceš?
+					</h2>
+					<p class="special">
+						Brno jde, když se chce.
+					</p>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -116,13 +120,15 @@ $candidates = get_pages(array(
 
 	<div class="container">
 		<div class="row">
-			<div class="col-sm-12 sectionHeader">
-				<h2>
-					Propaganda
-				</h2>
-				<p class="special">
-					Volby jde vyhrát i bez peněz a kmotrů. Jsme aktivisti, makáme.
-				</p>
+			<div class="sectionHeader">
+				<div class="col-sm-12">
+					<h2>
+						Propaganda
+					</h2>
+					<p class="special">
+						Volby jde vyhrát i bez peněz a kmotrů. Jsme aktivisti, makáme.
+					</p>
+				</div>
 			</div>
 		</div>
 		<ul class="row posts">

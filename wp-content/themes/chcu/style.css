@@ -22,10 +22,17 @@
   color: #ca220f;
   border-color: #ca220f;
 }
+.page-template-page-homepage-php hr {
+  background-image: url('rainbow.png');
+  height: 1px;
+  width: 100%;
+  border: none;
+  margin: 2em 0;
+}
 .page-template-page-homepage-php header[role="banner"] {
   display: none;
 }
-.page-template-page-homepage-php .blackButton {
+.page-template-page-homepage-php .button {
   font-family: "proxima-nova", sans-serif;
   display: inline-block;
   padding: .5em .75em;
@@ -34,6 +41,44 @@
   color: white;
   font-size: 1.5em;
   font-weight: 700;
+  text-transform: lowercase;
+}
+.page-template-page-homepage-php .button:hover {
+  color: white;
+  background-color: #ca220f;
+}
+.page-template-page-homepage-php .rainbowButton {
+  font-family: "proxima-nova", sans-serif;
+  display: inline-block;
+  padding: .5em .75em;
+  border: none;
+  background-color: black;
+  color: white;
+  font-size: 1.5em;
+  font-weight: 700;
+  text-transform: lowercase;
+  background-image: url('rainbow.png');
+  background-repeat: repeat-y;
+  background-size: contain;
+}
+.page-template-page-homepage-php .rainbowButton:hover {
+  color: white;
+  background-color: #ca220f;
+}
+.page-template-page-homepage-php .blackButton {
+  font-family: "proxima-nova", sans-serif;
+  display: inline-block;
+  padding: .5em .75em;
+  border: none;
+  font-size: 1.5em;
+  font-weight: 700;
+  text-transform: lowercase;
+  background-color: black;
+  color: white;
+}
+.page-template-page-homepage-php .blackButton:hover {
+  color: white;
+  background-color: #ca220f;
 }
 .page-template-page-homepage-php .blackButton:hover {
   color: white;

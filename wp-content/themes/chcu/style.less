@@ -35,11 +35,19 @@
 
 	}
 
+	hr {
+		background-image: url('rainbow.png');
+		height: 1px;
+		width: 100%;
+		border: none;
+		margin: 2em 0;
+	}
+
 	header[role="banner"] {
 		display: none;
 	}
 
-	.blackButton {
+	.button {
 		.proxima;
 		display: inline-block;
 		padding: .5em .75em;
@@ -48,6 +56,26 @@
 		color: white;
 		font-size: 1.5em;
 		font-weight: 700;
+		text-transform: lowercase;
+
+		&:hover {
+			color: white;
+			background-color: @color-doprava;
+		}
+
+	}
+
+	.rainbowButton {
+		.button;
+		background-image: url('rainbow.png');
+		background-repeat: repeat-y;
+		background-size: contain;
+	}
+
+	.blackButton {
+		.button;
+		background-color: black;
+		color: white;
 
 		&:hover {
 			color: white;

@@ -55,7 +55,7 @@ $candidates = get_pages(array(
 						Tři roky kritizujeme brněnský magistrát. Tři roky si klepeme na čelo, protáčíme panenky, vyprskáváme smíchy a klademe hlavy do dlaní. Tři roky nám říkají, že posmívat se umí každý, ale vládnout můžou jen vyvolení. Jenže my dobře víme, že politikem se člověk nerodí, ale stává.  My na to máme právě teď.
 					</p>
 					<p>
-						<a href="">Číst duhový manifest</a>
+						<a class="rainbowButton" href="">Číst duhový manifest <span class="fa fa-caret-right"></a>
 					</p>
 				</div>
 			</div>
@@ -72,6 +72,7 @@ $candidates = get_pages(array(
 					<p class="special">
 						Brno jde, když se chce.
 					</p>
+					<hr />
 				</div>
 			</div>
 		</div>
@@ -112,7 +113,7 @@ $candidates = get_pages(array(
 		<div class="row">
 			<div class="col-xs-12">
 				<p class="text-center">
-					<a class="blackButton" href="<?php echo get_permalink($programHome[0]->ID) ?>">celý program <span class="fa fa-caret-right"></a>
+					<a class="blackButton" href="<?php echo get_permalink($programHome[0]->ID) ?>">Celý program <span class="fa fa-caret-right"></a>
 				</p>
 			</div>
 		</div>
@@ -122,6 +123,7 @@ $candidates = get_pages(array(
 		<div class="row">
 			<div class="sectionHeader">
 				<div class="col-sm-12">
+					<hr />
 					<h2>
 						Propaganda
 					</h2>
@@ -158,7 +160,7 @@ $candidates = get_pages(array(
 		<div class="row">
 			<div class="col-xs-12">
 				<p class="text-center">
-					<a class="blackButton" href="">starší zprávy <span class="fa fa-caret-right"></a>
+					<a class="blackButton" href="">Starší zprávy <span class="fa fa-caret-right"></a>
 				</p>
 			</div>
 		</div>
@@ -168,6 +170,7 @@ $candidates = get_pages(array(
 		<div class="sectionHeader">
 			<div class="row">
 				<div class="col-sm-12">
+					<hr />
 					<h2>
 						A vy jste kdo?
 					</h2>
@@ -203,7 +206,7 @@ $candidates = get_pages(array(
 		<div class="row">
 			<div class="col-xs-12">
 				<p class="text-center">
-					<a class="blackButton" href="<?php echo get_permalink($candidatesHome[0]->ID) ?>">celá kandidátka <span class="fa fa-caret-right"></span></a>
+					<a class="blackButton" href="<?php echo get_permalink($candidatesHome[0]->ID) ?>">Celá kandidátka <span class="fa fa-caret-right"></span></a>
 				</p>
 			</div>
 		</div>

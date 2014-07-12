@@ -237,7 +237,7 @@ $candidates = get_pages(array(
 				preg_match('#src="(.+)"#U', get_the_post_thumbnail($candidate->ID, 'candidate-thumb'), $match);
 				$meta = get_post_meta($candidate->ID);
 				?>
-				<li class="col-lg-2 col-md-3 col-sm-3 col-xs-6">
+				<li class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
 					<p class="image">
 						<a href="<?php echo get_permalink($candidate) ?>"><img src="<?php echo $match[1] ?>" class="img-responsive img-circle" /></a>
 					</p>

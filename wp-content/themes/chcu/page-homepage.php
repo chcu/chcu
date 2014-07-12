@@ -242,7 +242,7 @@ $candidates = get_pages(array(
 						<a href="<?php echo get_permalink($candidate) ?>"><img src="<?php echo $match[1] ?>" class="img-responsive img-circle" /></a>
 					</p>
 					<h3 class="name">
-						<a href="<?php echo get_permalink($candidate) ?>"><?php echo $candidate->post_title ?></a>
+						<a href="<?php echo get_permalink($candidate) ?>"><span class="firstName"><?php echo $meta['firstName'][0] ?></span> <span class="lastName"><?php echo $meta['lastName'][0] ?></span></a>
 					</h3>
 					<p class="occupation">
 						<?php echo $meta['occupation'][0] ?>

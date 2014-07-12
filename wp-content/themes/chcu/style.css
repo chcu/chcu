@@ -212,7 +212,14 @@
   font-family: "proxima-nova", sans-serif;
   font-size: 1.3em;
   font-weight: 700;
+  line-height: 135%;
   margin: 1em 0 .3em 0;
+}
+@media screen and (max-width: 480px) {
+  .page-template-page-homepage-php .candidates li .name .firstName,
+  .page-template-page-homepage-php .candidates li .name .lastName {
+    display: block;
+  }
 }
 body {
   font-family: "Roboto", sans-serif;

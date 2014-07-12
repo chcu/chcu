@@ -169,6 +169,10 @@
 				line-height: @line-height * .9;
 				margin: 0 0 .25em 0;
 
+				@media screen and (max-width: @screen-md) {
+					font-size: 2em;
+				}
+
 				@media screen and (max-width: @screen-sm) {
 					font-size: 1.5em;
 				}
@@ -253,7 +257,7 @@ hr {
 
 .shout {
 	.proxima;
-	font-size: 3.8em;
+	font-size: 3em;
 	font-weight: 700;
 	line-height: @line-height * .75;
 	text-align: center;
@@ -304,6 +308,7 @@ hr {
 		font-size: 1.25em;
 		font-weight: 500;
 		line-height: @line-height;
+		margin-top: .25em;
 	}
 
 	.long {

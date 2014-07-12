@@ -146,6 +146,11 @@
   line-height: 135%;
   margin: 0 0 .25em 0;
 }
+@media screen and (max-width: 992px) {
+  .page-template-page-homepage-php .posts li .title {
+    font-size: 2em;
+  }
+}
 @media screen and (max-width: 768px) {
   .page-template-page-homepage-php .posts li .title {
     font-size: 1.5em;
@@ -208,7 +213,7 @@ hr {
 }
 .shout {
   font-family: "proxima-nova", sans-serif;
-  font-size: 3.8em;
+  font-size: 3em;
   font-weight: 700;
   line-height: 112.5%;
   text-align: center;
@@ -257,6 +262,7 @@ hr {
   font-size: 1.25em;
   font-weight: 500;
   line-height: 150%;
+  margin-top: .25em;
 }
 .sectionHeader .long {
   font-size: 1.15em;

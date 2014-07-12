@@ -1,5 +1,11 @@
 @line-height: 150%;
 
+@color-text: black;
+@color-link: #444;
+
+@color-doprava:  #ca220f;
+@color-turismus: #a82da4;
+
 .roboto {
 	font-family: "Roboto", sans-serif;
 }
@@ -11,14 +17,43 @@
 	.roboto;
 	font-size: 10pt;
 	line-height: @line-height;
-	color: black;
+	color: @color-text;
 
 	p {
 		margin: 0;
 	}
 
+	a {
+		color: @color-link;
+		text-decoration: none;
+		border-bottom: 1px solid @color-link;
+
+		&:hover {
+			color: @color-doprava;
+			border-color: @color-doprava;
+		}
+
+	}
+
 	header[role="banner"] {
 		display: none;
+	}
+
+	.blackButton {
+		.proxima;
+		display: inline-block;
+		padding: .5em .75em;
+		border: none;
+		background-color: black;
+		color: white;
+		font-size: 1.5em;
+		font-weight: 700;
+
+		&:hover {
+			color: white;
+			background-color: @color-doprava;
+		}
+
 	}
 
 	.shout {
@@ -31,7 +66,7 @@
 	}
 
 	.sectionHeader {
-		margin: 2em 0;
+		margin: 3em 0 2em 0;
 		text-align: center;
 
 		h2 {
@@ -43,11 +78,17 @@
 			margin: 0;
 		}
 
-		p {
+		.special {
 			.proxima;
 			font-size: 1.25em;
 			font-weight: 500;
 			line-height: @line-height;
+		}
+
+		.long {
+			font-size: 1.15em;
+			line-height: @line-height;
+			margin: .5em 0;
 		}
 
 	}
@@ -58,11 +99,18 @@
 
 		li {
 			text-align: center;
-			color: white;
-			padding: 1.5em;
 
-			&[data-topic="doprava"] { background-color: #ca220f; }
-			&[data-topic="turismus"] { background-color: #a82da4; }
+			[data-topic] {
+				padding: 1.5em;
+				color: white;
+			}
+
+			[data-topic=""] {
+				color: black;
+			}
+
+			[data-topic="doprava"] { background-color: #ca220f; }
+			[data-topic="turismus"] { background-color: #a82da4; }
 
 			.title {
 				.proxima;
@@ -72,6 +120,7 @@
 
 				a {
 					color: white;
+					border: none;
 				}
 
 			}
@@ -86,18 +135,38 @@
 
 	}
 
+	.posts {
+		list-style-type: none;
+		padding: 0;
+
+		li {
+			clear: both;
+			margin: 2em 0;
+
+			.title {
+				.proxima;
+				font-size: 2.75em;
+				line-height: @line-height * .9;
+				margin: 0 0 .25em 0;
+			}
+
+		}
+
+	}
+
 	.candidates {
 		list-style-type: none;
 		padding: 0;
 
 		li {
 			text-align: center;
+			margin: 1em 0;
 
 			.name {
 				.proxima;
 				font-size: 1.3em;
 				font-weight: 700;
-				margin: 1em 0 .1em 0;
+				margin: 1em 0 .3em 0;
 			}
 
 		}

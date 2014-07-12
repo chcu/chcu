@@ -48,7 +48,7 @@ $candidates = get_pages(array(
 
 	<div class="container">
 		<div class="row">
-			<div class="col-lg-offset-2 col-lg-8 col-md-offset-2 col-md-8">
+			<div class="col-lg-offset-3 col-lg-6 col-md-offset-2 col-md-8">
 				<h1>
 					<span class="chcu"><span class="text">Chcu</span></span> <span class="logo"><span class="text">žít Brno</span></span>
 				</h1>

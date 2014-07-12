@@ -110,6 +110,21 @@
 			fjs.parentNode.insertBefore(js, fjs);
 		}(document, 'script', 'facebook-jssdk'));</script>
 
+		<script type="text/javascript">
+			$(function(){
+				function onWindowResize() {
+					$('.squareImagePlaceholder').each(function(){
+						$(this).css('height', $(this).width() + 'px');
+					});
+				}
+
+				onWindowResize();
+				$(window).resize(function(){
+					onWindowResize();
+				});
+			});
+		</script>
+
 	</body>
 
 </html>

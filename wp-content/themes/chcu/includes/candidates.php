@@ -6,7 +6,13 @@
 		?>
 		<li class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
 			<p class="image">
-				<a href="<?php echo get_permalink($candidate) ?>"><img src="<?php echo $match[1] ?>" class="img-responsive img-circle" /></a>
+				<a class="img" href="<?php echo get_permalink($candidate) ?>"><?php
+				if ($match[1]) {
+					echo '<img src="' . $match[1] . '" class="img-responsive img-circle" />';
+				} else {
+					echo '<span class="squareImagePlaceholder img-responsive img-circle" />';
+				}
+				?></a>
 			</p>
 			<h3 class="name">
 				<a href="<?php echo get_permalink($candidate) ?>"><span class="firstName"><?php echo $meta['firstName'][0] ?></span> <span class="lastName"><?php echo $meta['lastName'][0] ?></span></a>

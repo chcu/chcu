@@ -5,6 +5,8 @@
 					<div class="col-sm-12">
 						<hr />
 					</div>
+				</div>
+				<div class="row">
 					<div class="col-lg-5">
 						<p class="logo">
 							<img src="<?php echo get_theme_root_uri() . '/' . get_template() ?>/logo.png" alt="Žít Brno" class="img-responsive" />

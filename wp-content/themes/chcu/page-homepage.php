@@ -5,6 +5,11 @@ Template Name: Homepage
 
 add_theme_support('post-thumbnails');
 
+$programHome = get_pages(array(
+	'meta_key'     => 'pageRole',
+	'meta_value'   => 'program',
+));
+
 $programStories = get_pages(array(
 	'hierarchical' => 0,
 	'sort_column'  => 'menu_order',
@@ -17,6 +22,11 @@ $posts = get_posts(array(
 ));
 
 #var_dump($posts);
+
+$candidatesHome = get_pages(array(
+	'meta_key'     => 'pageRole',
+	'meta_value'   => 'candidates',
+));
 
 $candidates = get_pages(array(
 	'hierarchical' => 0,
@@ -98,7 +108,7 @@ $candidates = get_pages(array(
 		<div class="row">
 			<div class="col-xs-12">
 				<p class="text-center">
-					<a class="blackButton" href="">celý program <span class="fa fa-caret-right"></a>
+					<a class="blackButton" href="<?php echo get_permalink($programHome[0]->ID) ?>">celý program <span class="fa fa-caret-right"></a>
 				</p>
 			</div>
 		</div>
@@ -187,7 +197,7 @@ $candidates = get_pages(array(
 		<div class="row">
 			<div class="col-xs-12">
 				<p class="text-center">
-					<a class="blackButton" href="">celá kandidátka <span class="fa fa-caret-right"></span></a>
+					<a class="blackButton" href="<?php echo get_permalink($candidatesHome[0]->ID) ?>">celá kandidátka <span class="fa fa-caret-right"></span></a>
 				</p>
 			</div>
 		</div>

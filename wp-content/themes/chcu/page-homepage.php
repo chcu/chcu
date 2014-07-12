@@ -189,7 +189,7 @@ $candidates = get_pages(array(
 						<a href="<?php echo get_permalink($candidate) ?>"><?php echo $candidate->post_title ?></a>
 					</h3>
 					<p class="occupation">
-						<?php echo $meta['candidateOccupation'][0] ?>
+						<?php echo $meta['occupation'][0] ?>
 					</p>
 				</li>
 			<?php } ?>

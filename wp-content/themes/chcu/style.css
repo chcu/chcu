@@ -10,6 +10,26 @@
   line-height: 150%;
   color: #000000;
 }
+.page-template-page-homepage-php h1 .chcu {
+  display: block;
+  background-image: url('chcu.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin: .5em 0;
+}
+.page-template-page-homepage-php h1 .chcu .text {
+  display: none;
+}
+.page-template-page-homepage-php h1 .logo {
+  display: block;
+  background-image: url('logo.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin: .5em 0;
+}
+.page-template-page-homepage-php h1 .logo .text {
+  display: none;
+}
 .page-template-page-homepage-php p {
   margin: 0;
 }
@@ -24,6 +44,7 @@
 }
 .page-template-page-homepage-php hr {
   background-image: url('rainbow.png');
+  background-size: cover;
   height: 1px;
   width: 100%;
   border: none;
@@ -64,6 +85,13 @@
 .page-template-page-homepage-php .rainbowButton:hover {
   color: white;
   background-color: #ca220f;
+}
+.page-template-page-homepage-php .biggerButton {
+  margin: 1em 0;
+  padding: .75em 1em;
+}
+.page-template-page-homepage-php .roundedButton {
+  border-radius: 3px;
 }
 .page-template-page-homepage-php .blackButton {
   font-family: "proxima-nova", sans-serif;

@@ -5,6 +5,11 @@ Template Name: Homepage
 
 add_theme_support('post-thumbnails');
 
+$manifest = get_pages(array(
+	'meta_key'     => 'pageRole',
+	'meta_value'   => 'manifest',
+));
+
 $programHome = get_pages(array(
 	'meta_key'     => 'pageRole',
 	'meta_value'   => 'program',
@@ -43,6 +48,48 @@ $candidates = get_pages(array(
 
 	<div class="container">
 		<div class="row">
+			<div class="col-lg-offset-3 col-lg-6 col-md-offset-2 col-md-8">
+				<h1>
+					<span class="chcu"><span class="text">Chcu</span></span> <span class="logo"><span class="text">žít Brno</span></span>
+				</h1>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		$(function(){
+			var pictureSizes = {
+				chcu: {
+					x: 2009,
+					y: 498,
+				},
+				logo: {
+					x: 3750,
+					y: 486,
+				},
+			};
+
+			function resizeLogo() {
+				var chcuWidth = $('h1 .chcu').width();
+				var chcuHeight = pictureSizes.chcu.y / pictureSizes.chcu.x * chcuWidth;
+
+				var logoWidth = $('h1 .logo').width();
+				var logoHeight = pictureSizes.logo.y / pictureSizes.logo.x * logoWidth;
+
+				$('h1 .chcu').css('height', (chcuHeight) + 'px');
+				$('h1 .logo').css('height', logoHeight + 'px');
+			}
+
+			resizeLogo();
+			$(window).resize(function(){
+				resizeLogo();
+			});
+
+		});
+	</script>
+
+	<div class="container">
+		<div class="row">
 			<div class="sectionHeader">
 				<div class="col-lg-offset-3 col-lg-6 col-md-offset-2 col-md-8">
 					<p class="shout">
@@ -55,7 +102,7 @@ $candidates = get_pages(array(
 						Tři roky kritizujeme brněnský magistrát. Tři roky si klepeme na čelo, protáčíme panenky, vyprskáváme smíchy a klademe hlavy do dlaní. Tři roky nám říkají, že posmívat se umí každý, ale vládnout můžou jen vyvolení. Jenže my dobře víme, že politikem se člověk nerodí, ale stává.  My na to máme právě teď.
 					</p>
 					<p>
-						<a class="rainbowButton" href="">Číst duhový manifest <span class="fa fa-caret-right"></a>
+						<a class="rainbowButton biggerButton roundedButton" href="<?php echo get_permalink($manifest[0]->ID) ?>">Číst duhový manifest <span class="fa fa-caret-right"></a>
 					</p>
 				</div>
 			</div>

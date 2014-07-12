@@ -19,6 +19,35 @@
 	line-height: @line-height;
 	color: @color-text;
 
+	h1 {
+
+		.chcu {
+			display: block;
+			background-image: url('chcu.png');
+			background-size: contain;
+			background-repeat: no-repeat;
+			margin: .5em 0;
+
+			.text {
+				display: none;
+			}
+		}
+
+		.logo {
+			display: block;
+			background-image: url('logo.png');
+			background-size: contain;
+			background-repeat: no-repeat;
+			margin: .5em 0;
+
+			.text {
+				display: none;
+			}
+
+		}
+
+	}
+
 	p {
 		margin: 0;
 	}
@@ -37,6 +66,7 @@
 
 	hr {
 		background-image: url('rainbow.png');
+		background-size: cover;
 		height: 1px;
 		width: 100%;
 		border: none;
@@ -70,6 +100,15 @@
 		background-image: url('rainbow.png');
 		background-repeat: repeat-y;
 		background-size: contain;
+	}
+
+	.biggerButton {
+		margin: 1em 0;
+		padding: .75em 1em;
+	}
+
+	.roundedButton {
+		border-radius: 3px;
 	}
 
 	.blackButton {

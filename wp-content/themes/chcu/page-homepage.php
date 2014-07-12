@@ -182,7 +182,7 @@ $candidates = get_pages(array(
 		</div>
 		<div class="row">
 			<?php include 'includes/posts.php' ?>
-		</ul>
+		</div>
 		<div class="row">
 			<div class="col-xs-12">
 				<p class="text-center">

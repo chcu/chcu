@@ -3,6 +3,14 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-sm-12">
+						<div class="fb-like-box" data-href="https://www.facebook.com/ZitBrnoRIP" data-colorscheme="light" data-show-faces="true" data-header="false" data-stream="false" data-show-border="false" data-width="2000" data-height="255"></div>
+					</div>
+				</div>
+			</div>
+
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-12">
 						<hr />
 					</div>
 				</div>
@@ -68,6 +76,15 @@
 
 		<script type="text/javascript" src="//use.typekit.net/jzb4lfm.js"></script>
 		<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+		<div id="fb-root"></div>
+		<script>(function(d, s, id) {
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) return;
+			js = d.createElement(s); js.id = id;
+			js.src = "//connect.facebook.net/cs_CZ/sdk.js#xfbml=1&appId=724923400862237&version=v2.0";
+			fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));</script>
 
 	</body>
 

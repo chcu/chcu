@@ -56,35 +56,31 @@ $candidates = get_pages(array(
 			</div>
 		</div>
 
-		<div class="row">
-			<div class="sectionHeader">
-				<div class="col-lg-offset-3 col-lg-6 col-md-offset-2 col-md-8">
-					<p class="shout">
-						Jak pomoct městu, které si nechce nechat pomoct?
-					</p>
-					<p class="long text-center">
-						Jde nám o život. O život v Brně.
-					</p>
-					<p class="long text-center">
-						Tři roky kritizujeme brněnský magistrát. Tři roky si klepeme na čelo, protáčíme panenky, vyprskáváme smíchy a klademe hlavy do dlaní. Tři roky nám říkají, že posmívat se umí každý, ale vládnout můžou jen vyvolení. Jenže my dobře víme, že politikem se člověk nerodí, ale stává.  My na to máme právě teď.
-					</p>
-					<p>
-						<a class="rainbowButton biggerButton roundedButton" href="<?php echo get_permalink($manifest[0]->ID) ?>">Číst duhový manifest <span class="fa fa-caret-right"></a>
-					</p>
-				</div>
+		<div class="row sectionHeader">
+			<div class="col-lg-offset-3 col-lg-6 col-md-offset-2 col-md-8">
+				<p class="shout">
+					Jak pomoct městu, které si nechce nechat pomoct?
+				</p>
+				<p class="long text-center">
+					Jde nám o život. O život v Brně.
+				</p>
+				<p class="long text-center">
+					Tři roky kritizujeme brněnský magistrát. Tři roky si klepeme na čelo, protáčíme panenky, vyprskáváme smíchy a klademe hlavy do dlaní. Tři roky nám říkají, že posmívat se umí každý, ale vládnout můžou jen vyvolení. Jenže my dobře víme, že politikem se člověk nerodí, ale stává.  My na to máme právě teď.
+				</p>
+				<p>
+					<a class="rainbowButton biggerButton roundedButton" href="<?php echo get_permalink($manifest[0]->ID) ?>">Číst duhový manifest <span class="fa fa-caret-right"></a>
+				</p>
 			</div>
 		</div>
 
-		<div class="row">
-			<div class="sectionHeader">
-				<div class="col-sm-12">
-					<h2>
-						Chceš?
-					</h2>
-					<p class="special">
-						Brno jde, když se chce.
-					</p>
-				</div>
+		<div class="row sectionHeader">
+			<div class="col-sm-12">
+				<h2>
+					Chceš?
+				</h2>
+				<p class="special">
+					Brno jde, když se chce.
+				</p>
 			</div>
 		</div>
 
@@ -94,19 +90,21 @@ $candidates = get_pages(array(
 			</div>
 		</div>
 
-		<div class="row">
-			<h3>
-				Chcu
-			</h3>
-			<ul>
-				<li><a href="">dopravu</a></li>
-				<li><a href="">školství</a></li>
-				<li><a href="">dýchání</a></li>
-				<li><a href="">podnikání</a></li>
-				<li><a href="">transparentnost</a></li>
-				<li><a href="">turismus</a></li>
-				<li><a href="">kulturu</a></li>
-			</ul>
+		<div class="row topics">
+			<div class="col-sm-12">
+				<h3>
+					Chcu
+				</h3>
+				<ul>
+					<li><a data-topic="doprava" href="">dopravu</a></li>
+					<li><a data-topic="skolstvi" href="">školství</a></li>
+					<li><a data-topic="dychani" href="">dýchání</a></li>
+					<li><a data-topic="doprava" href="">podnikání</a></li>
+					<li><a data-topic="doprava" href="">transparentnost</a></li>
+					<li><a data-topic="doprava" href="">turismus</a></li>
+					<li><a data-topic="doprava" href="">kulturu</a></li>
+				</ul>
+			</div>
 		</div>
 
 		<div class="row">
@@ -143,16 +141,14 @@ $candidates = get_pages(array(
 			</div>
 		</div>
 
-		<div class="row">
-			<div class="sectionHeader">
-				<div class="col-sm-12">
-					<h2>
-						Propaganda
-					</h2>
-					<p class="special">
-						Volby jde vyhrát i bez peněz a kmotrů. Jsme aktivisti, makáme.
-					</p>
-				</div>
+		<div class="row sectionHeader">
+			<div class="col-sm-12">
+				<h2>
+					Propaganda
+				</h2>
+				<p class="special">
+					Volby jde vyhrát i bez peněz a kmotrů. Jsme aktivisti, makáme.
+				</p>
 			</div>
 		</div>
 

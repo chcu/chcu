@@ -97,6 +97,27 @@
   color: white;
   background-color: #de1879;
 }
+.page-template-page-homepage-php .topics {
+  text-align: center;
+  margin: 0 0 1.5em 0;
+}
+.page-template-page-homepage-php .topics h3 {
+  font-family: "proxima-nova", sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+  display: inline-block;
+  font-size: 1em;
+  margin: 0 1em;
+}
+.page-template-page-homepage-php .topics ul {
+  display: inline;
+  padding: 0;
+  margin: 0;
+}
+.page-template-page-homepage-php .topics ul li {
+  display: inline-block;
+  margin: 0 1em;
+}
 .page-template-page-homepage-php .programStories {
   list-style-type: none;
   padding: 0;
@@ -216,7 +237,7 @@ hr {
   height: 2px;
   width: 100%;
   border: none;
-  margin: 2.5em 0;
+  margin: 1.5em 0;
 }
 .shout {
   font-family: "proxima-nova", sans-serif;
@@ -241,7 +262,7 @@ hr {
   }
 }
 .sectionHeader {
-  margin: 2em auto;
+  margin: 1em auto;
   text-align: center;
 }
 .sectionHeader h2 {

@@ -180,29 +180,8 @@ $candidates = get_pages(array(
 				</div>
 			</div>
 		</div>
-		<ul class="row posts">
-			<?php foreach ($posts as $post) { ?>
-				<?php
-				preg_match('#src="(.+)"#U', get_the_post_thumbnail($post->ID, 'post-thumb'), $match);
-				$meta = get_post_meta($post->ID);
-				?>
-				<li class="clearfix">
-					<div class="image col-lg-3 col-md-3 col-sm-5 col-xs-12">
-						<p>
-							<a href="<?php echo get_permalink($post) ?>"><img src="<?php echo $match[1] ?>" class="img-responsive" /></a>
-						</p>
-					</div>
-					<div class="content col-lg-9 col-md-9 col-sm-7 col-xs-12">
-						<h3 class="title">
-							<a href="<?php echo get_permalink($post) ?>"><?php echo $post->post_title ?></a>
-						</h3>
-						<p class="perex">
-							<?php echo $meta['perex'][0] ?>
-						</p>
-					</div>
-					<div class="clearfix"></div>
-				</li>
-			<?php } ?>
+		<div class="row">
+			<?php include 'includes/posts.php' ?>
 		</ul>
 		<div class="row">
 			<div class="col-xs-12">
@@ -231,25 +210,9 @@ $candidates = get_pages(array(
 				</div>
 			</div>
 		</div>
-		<ul class="row candidates">
-			<?php foreach ($candidates as $candidate) { ?>
-				<?php
-				preg_match('#src="(.+)"#U', get_the_post_thumbnail($candidate->ID, 'candidate-thumb'), $match);
-				$meta = get_post_meta($candidate->ID);
-				?>
-				<li class="col-lg-2 col-md-3 col-sm-4 col-xs-6">
-					<p class="image">
-						<a href="<?php echo get_permalink($candidate) ?>"><img src="<?php echo $match[1] ?>" class="img-responsive img-circle" /></a>
-					</p>
-					<h3 class="name">
-						<a href="<?php echo get_permalink($candidate) ?>"><span class="firstName"><?php echo $meta['firstName'][0] ?></span> <span class="lastName"><?php echo $meta['lastName'][0] ?></span></a>
-					</h3>
-					<p class="occupation">
-						<?php echo $meta['occupation'][0] ?>
-					</p>
-				</li>
-			<?php } ?>
-		</ul>
+		<div class="row">
+			<?php include 'includes/candidates.php' ?>
+		</div>
 		<div class="row">
 			<div class="col-xs-12">
 				<p class="text-center">

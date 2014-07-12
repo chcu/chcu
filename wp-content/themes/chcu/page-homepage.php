@@ -5,9 +5,9 @@ Template Name: Homepage
 
 add_theme_support('post-thumbnails');
 
-$manifest = get_pages(array(
+$manifesto = get_pages(array(
 	'meta_key'     => 'pageRole',
-	'meta_value'   => 'manifest',
+	'meta_value'   => 'manifesto',
 ));
 
 $programHome = get_pages(array(
@@ -68,7 +68,7 @@ $candidates = get_pages(array(
 					Tři roky kritizujeme brněnský magistrát. Tři roky si klepeme na čelo, protáčíme panenky, vyprskáváme smíchy a klademe hlavy do dlaní. Tři roky nám říkají, že posmívat se umí každý, ale vládnout můžou jen vyvolení. Jenže my dobře víme, že politikem se člověk nerodí, ale stává.  My na to máme právě teď.
 				</p>
 				<p>
-					<a class="rainbowButton biggerButton roundedButton" href="<?php echo get_permalink($manifest[0]->ID) ?>">Číst duhový manifest <span class="fa fa-caret-right"></a>
+					<a class="rainbowButton biggerButton roundedButton" href="<?php echo get_permalink($manifesto[0]->ID) ?>">Číst duhový manifest <span class="fa fa-caret-right"></a>
 				</p>
 			</div>
 		</div>

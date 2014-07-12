@@ -10,6 +10,9 @@
   line-height: 150%;
   color: #000000;
 }
+.page-template-page-homepage-php h1 {
+  margin: 0;
+}
 .page-template-page-homepage-php h1 .chcu {
   display: block;
   background-image: url('chcu.png');
@@ -119,6 +122,16 @@
   line-height: 97.5%;
   text-align: center;
   margin: .5em 0;
+}
+@media screen and (max-width: 768px) {
+  .page-template-page-homepage-php .shout {
+    font-size: 2em;
+  }
+}
+@media screen and (max-width: 480px) {
+  .page-template-page-homepage-php .shout {
+    font-size: 1.5em;
+  }
 }
 .page-template-page-homepage-php .sectionHeader {
   margin: 3em auto 2em auto;

@@ -1,3 +1,15 @@
+@screen-xs:                  480px;
+@screen-xs-min:              @screen-xs;
+@screen-sm:                  768px;
+@screen-sm-min:              @screen-sm;
+@screen-md:                  992px;
+@screen-md-min:              @screen-md;
+@screen-lg:                  1200px;
+@screen-lg-min:              @screen-lg;
+@screen-xs-max:              (@screen-sm-min - 1);
+@screen-sm-max:              (@screen-md-min - 1);
+@screen-md-max:              (@screen-lg-min - 1);
+
 @line-height: 150%;
 
 @color-text: black;
@@ -20,6 +32,7 @@
 	color: @color-text;
 
 	h1 {
+		margin: 0;
 
 		.chcu {
 			display: block;
@@ -130,6 +143,15 @@
 		line-height: @line-height * .65;
 		text-align: center;
 		margin: .5em 0;
+
+		@media screen and (max-width: @screen-sm) {
+			font-size: 2em;
+		}
+
+		@media screen and (max-width: @screen-xs) {
+			font-size: 1.5em;
+		}
+
 	}
 
 	.sectionHeader {

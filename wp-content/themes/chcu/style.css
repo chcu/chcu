@@ -164,13 +164,16 @@
   font-size: 1.3em;
   font-weight: 700;
   line-height: 135%;
-  margin: 1em 0 .3em 0;
+  margin: 1em 0 .2em 0;
 }
 @media screen and (max-width: 480px) {
   .page-template-page-homepage-php .candidates li .name .firstName,
   .page-template-page-homepage-php .candidates li .name .lastName {
     display: block;
   }
+}
+.page-template-page-homepage-php .candidates li .occupation {
+  margin: 0;
 }
 body {
   font-family: "Roboto", sans-serif;

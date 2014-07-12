@@ -40,26 +40,6 @@
 .page-template-page-homepage-php h1 .logo .text {
   display: none;
 }
-.page-template-page-homepage-php p {
-  margin: 0;
-}
-.page-template-page-homepage-php a {
-  color: #444444;
-  text-decoration: none;
-  border-bottom: 1px solid #444444;
-}
-.page-template-page-homepage-php a:hover {
-  color: #ca220f;
-  border-color: #ca220f;
-}
-.page-template-page-homepage-php hr {
-  background-image: url('rainbow.png');
-  background-size: cover;
-  height: 1px;
-  width: 100%;
-  border: none;
-  margin: 2em 0;
-}
 .page-template-page-homepage-php header[role="banner"] {
   display: none;
 }
@@ -76,7 +56,8 @@
 }
 .page-template-page-homepage-php .button:hover {
   color: white;
-  background-color: #ca220f;
+  background-color: #de1879;
+  text-decoration: none;
 }
 .page-template-page-homepage-php .rainbowButton {
   font-family: "proxima-nova", sans-serif;
@@ -94,7 +75,8 @@
 }
 .page-template-page-homepage-php .rainbowButton:hover {
   color: white;
-  background-color: #ca220f;
+  background-color: #de1879;
+  text-decoration: none;
 }
 .page-template-page-homepage-php .biggerButton {
   margin: 1em 0;
@@ -116,11 +98,12 @@
 }
 .page-template-page-homepage-php .blackButton:hover {
   color: white;
-  background-color: #ca220f;
+  background-color: #de1879;
+  text-decoration: none;
 }
 .page-template-page-homepage-php .blackButton:hover {
   color: white;
-  background-color: #ca220f;
+  background-color: #de1879;
 }
 .page-template-page-homepage-php .shout {
   font-family: "proxima-nova", sans-serif;
@@ -142,7 +125,7 @@
 }
 .page-template-page-homepage-php .sectionHeader h2 {
   font-family: "proxima-nova", sans-serif;
-  font-size: 5.5em;
+  font-size: 5.75em;
   font-weight: 900;
   text-transform: uppercase;
   line-height: 90%;
@@ -220,6 +203,11 @@
   line-height: 135%;
   margin: 0 0 .25em 0;
 }
+@media screen and (max-width: 768px) {
+  .page-template-page-homepage-php .posts li .title {
+    font-size: 1.5em;
+  }
+}
 .page-template-page-homepage-php .candidates {
   list-style-type: none;
   padding: 0;
@@ -233,4 +221,42 @@
   font-size: 1.3em;
   font-weight: 700;
   margin: 1em 0 .3em 0;
+}
+p {
+  margin: .75em 0;
+}
+a {
+  color: #de1879;
+  text-decoration: none;
+  border-bottom: 1px solid #de1879;
+}
+a:hover {
+  color: #666666;
+  border-color: #666666;
+  text-decoration: none;
+}
+hr {
+  clear: both;
+  background-image: url('rainbow.png');
+  background-size: cover;
+  height: 1px;
+  width: 100%;
+  border: none;
+  margin: 2.5em 0;
+}
+footer[role="general"] .logo {
+  width: 60%;
+}
+footer[role="general"] h2 {
+  font-family: "proxima-nova", sans-serif;
+  font-weight: 700;
+  font-size: 1.5em;
+}
+footer[role="general"] .links {
+  list-style-type: none;
+  padding: 0;
+}
+footer[role="general"] .links li {
+  display: inline-block;
+  width: 50%;
 }

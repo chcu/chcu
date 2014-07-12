@@ -1,16 +1,57 @@
-		<footer role="contentinfo">
+		<footer role="general">
 
-			<div id="inner-footer" class="clearfix">
-
-				<nav class="clearfix">
-					<?php wp_bootstrap_footer_links(); // Adjust using Menus in Wordpress Admin ?>
-				</nav>
-
-				<p class="pull-right"><a href="http://320press.com" id="credit320" title="By the dudes of 320press">320press</a></p>
-
-				<p class="attribution">&copy; <?php bloginfo('name'); ?></p>
-
-			</div> <!-- end #inner-footer -->
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-12">
+						<hr />
+					</div>
+					<div class="col-lg-5">
+						<p class="logo">
+							<img src="<?php echo get_theme_root_uri() . '/' . get_template() ?>/logo.png" alt="Žít Brno" class="img-responsive" />
+						</p>
+						<p>
+							Žít Brno je nejdelší a nejsofistikovanější politická kampaň v dějinách ČR.
+							Už od roku 2011 tvoříme na základě magistrátem zadané a občany zaplacené studie kvalitní a čtený obsah.
+							Tři roky jsme na magistrátní politice parazitovali a připravovali si půdu pro vstup do politiky.
+							A teď přišel náš čas Žít Brno.
+						</p>
+					</div>
+					<div class="col-lg-4">
+						<h2>
+							Naše projekty
+						</h2>
+						<ul class="links">
+							<li><a href="http://www.zitbrno.cz/">www.zitbrno.cz</a>
+							</li><li><a href="http://www.kartakrnana.cz/">www.kartakrnana.cz</a>
+							</li><li><a href="http://www.dejchejbrno.cz/">www.dejchejbrno.cz</a>
+							</li><li><a href="http://www.zitcesko.cz/">www.zitcesko.cz</a>
+							</li><li><a href="http://www.machoparking.cz/">www.machoparking.cz</a>
+							</li><li><a href="http://www.vyzva2013.cz/">www.vyzva2013.cz</a>
+							</li><li><a href="http://www.zahoddecko.cz/">www.zahoddecko.cz</a>
+							</li><li><a href="http://www.osbrneni.cz/">www.osbrneni.cz</a>
+							</li><li><a href="http://www.cisteturany.cz/">www.cisteturany.cz</a>
+							</li><li><a href="http://www.klidnalesna.cz/">www.klidnalesna.cz</a>
+							</li>
+						</ul>
+					</div>
+					<div class="col-lg-3">
+						<h2>
+							Kontakt
+						</h2>
+						<address>
+							Zemědělská&nbsp;72<br />
+							613&nbsp;00 Brno<br />
+							Voliči: <a href="mailto:chcu@zitbrno.cz">chcu@zitbrno.cz</a><br />
+							Média: <a href="mailto:plesl@zitbrno.cz">plesl@zitbrno.cz</a>
+						</address>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-5">
+						&copy; <?php echo date('Y') ?> Žít Brno
+					</div>
+				</div>
+			</div>
 
 		</footer> <!-- end footer -->
 

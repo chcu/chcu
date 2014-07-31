@@ -301,6 +301,10 @@ footer[role="general"] .links li {
   background: white;
   border: none;
   text-transform: uppercase;
+  margin: 0;
+}
+#chcuNav .navbar {
+  margin: 0;
 }
 #chcuNav .navbar-brand {
   border: none;
@@ -465,4 +469,26 @@ footer[role="general"] .links li {
   .posts li .title {
     font-size: 1.5em;
   }
+}
+.candidateHeader {
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.candidateHeader .candidateInfoWrapper {
+  background: black;
+  color: white;
+  margin-top: 57%;
+}
+.candidateHeader .candidateInfoWrapper .candidateInfo {
+  padding: 4em;
+}
+.candidateHeader .candidateInfoWrapper h1 {
+  font-family: "proxima-nova", sans-serif;
+  text-align: center;
+  font-weight: 900;
+  font-size: 6em;
+  margin: 0;
+}
+.candidateHeader .candidateInfoWrapper .lead {
+  text-align: center;
 }

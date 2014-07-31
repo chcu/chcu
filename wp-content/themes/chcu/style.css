@@ -383,7 +383,7 @@ footer[role="general"] .links li {
     background: none;
     color: black;
     border: none;
-    pointer-actions: none;
+    pointer-events: none;
   }
 }
 .candidates {

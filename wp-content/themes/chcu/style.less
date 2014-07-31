@@ -17,7 +17,7 @@
 @color-link-active: #666;
 
 @color-pohyb:    #ca220f;
-@color-domov:    #a82da4;
+@color-domov:    #e29c05;
 @color-kultura:  #8ebf28;
 @color-ferhra:   #19aabf;
 @color-vzdelani: #222081;
@@ -254,6 +254,14 @@ a {
 		height: 100%;
 		display: inline-block;
 	}
+
+	&[data-topic="pohyb"]    { color: @color-pohyb; border-color: @color-pohyb; }
+	&[data-topic="domov"]    { color: @color-domov; border-color: @color-domov; }
+	&[data-topic="kultura"]  { color: @color-kultura; border-color: @color-kultura; }
+	&[data-topic="ferhra"]   { color: @color-ferhra; border-color: @color-ferhra; }
+	&[data-topic="vzdelani"] { color: @color-vzdelani; border-color: @color-vzdelani; }
+	&[data-topic="bydleni"]  { color: @color-bydleni; border-color: @color-bydleni; }
+	&[data-topic="zdravi"]   { color: @color-zdravi; border-color: @color-zdravi; }
 
 }
 

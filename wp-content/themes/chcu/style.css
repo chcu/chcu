@@ -132,11 +132,26 @@
 .page-template-page-homepage-php .programStories li [data-topic=""] {
   color: black;
 }
-.page-template-page-homepage-php .programStories li [data-topic="doprava"] {
+.page-template-page-homepage-php .programStories li [data-topic="pohyb"] {
   background-color: #ca220f;
 }
-.page-template-page-homepage-php .programStories li [data-topic="turismus"] {
+.page-template-page-homepage-php .programStories li [data-topic="domov"] {
   background-color: #a82da4;
+}
+.page-template-page-homepage-php .programStories li [data-topic="kultura"] {
+  background-color: #8ebf28;
+}
+.page-template-page-homepage-php .programStories li [data-topic="ferhra"] {
+  background-color: #19aabf;
+}
+.page-template-page-homepage-php .programStories li [data-topic="vzdelani"] {
+  background-color: #222081;
+}
+.page-template-page-homepage-php .programStories li [data-topic="bydleni"] {
+  background-color: #a82da4;
+}
+.page-template-page-homepage-php .programStories li [data-topic="zdravi"] {
+  background-color: #de1879;
 }
 .page-template-page-homepage-php .programStories li .title {
   font-family: "proxima-nova", sans-serif;

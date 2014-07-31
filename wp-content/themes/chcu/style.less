@@ -16,8 +16,13 @@
 @color-link:        #de1879;
 @color-link-active: #666;
 
-@color-doprava:  #ca220f;
-@color-turismus: #a82da4;
+@color-pohyb:    #ca220f;
+@color-domov:    #a82da4;
+@color-kultura:  #8ebf28;
+@color-ferhra:   #19aabf;
+@color-vzdelani: #222081;
+@color-bydleni:  #a82da4;
+@color-zdravi:   #de1879;
 
 .roboto {
 	font-family: "Roboto", sans-serif;
@@ -156,8 +161,13 @@
 				color: black;
 			}
 
-			[data-topic="doprava"] { background-color: #ca220f; }
-			[data-topic="turismus"] { background-color: #a82da4; }
+			[data-topic="pohyb"]    { background-color: @color-pohyb; }
+			[data-topic="domov"]    { background-color: @color-domov; }
+			[data-topic="kultura"]  { background-color: @color-kultura; }
+			[data-topic="ferhra"]   { background-color: @color-ferhra; }
+			[data-topic="vzdelani"] { background-color: @color-vzdelani; }
+			[data-topic="bydleni"]  { background-color: @color-bydleni; }
+			[data-topic="zdravi"]   { background-color: @color-zdravi; }
 
 			.title {
 				.proxima;

@@ -96,13 +96,13 @@ $candidates = get_pages(array(
 					Chcu
 				</h3>
 				<ul>
-					<li><a data-topic="doprava" href="">dopravu</a></li>
-					<li><a data-topic="skolstvi" href="">školství</a></li>
-					<li><a data-topic="dychani" href="">dýchání</a></li>
-					<li><a data-topic="doprava" href="">podnikání</a></li>
-					<li><a data-topic="doprava" href="">transparentnost</a></li>
-					<li><a data-topic="doprava" href="">turismus</a></li>
-					<li><a data-topic="doprava" href="">kulturu</a></li>
+					<li><a data-topic="pohyb" href="">pohyb</a></li>
+					<li><a data-topic="domov" href="">domov</a></li>
+					<li><a data-topic="kultura" href="">kulturu</a></li>
+					<li><a data-topic="ferhra" href="">fér hru</a></li>
+					<li><a data-topic="vzdelani" href="">vzdělání</a></li>
+					<li><a data-topic="bydleni" href="">bydlení</a></li>
+					<li><a data-topic="zdravi" href="">zdraví</a></li>
 				</ul>
 			</div>
 		</div>

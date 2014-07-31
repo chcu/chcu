@@ -380,4 +380,10 @@ footer[role="general"] .links li {
     padding: 0;
     margin: 0;
   }
+  #chcuNav .current-menu-item a {
+    background: none;
+    color: black;
+    border: none;
+    pointer-actions: none;
+  }
 }

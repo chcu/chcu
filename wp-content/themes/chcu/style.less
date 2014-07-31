@@ -210,39 +210,6 @@
 
 	}
 
-	.candidates {
-		list-style-type: none;
-		padding: 0;
-
-		li {
-			text-align: center;
-			margin: 1em 0;
-
-			.name {
-				.proxima;
-				font-size: 1.3em;
-				font-weight: 700;
-				line-height: @line-height * .9;
-				margin: 1em 0 .2em 0;
-
-				.firstName, .lastName {
-
-					@media screen and (max-width: @screen-xs) {
-						display: block;
-					}
-
-				}
-
-			}
-
-			.occupation {
-				margin: 0;
-			}
-
-		}
-
-	}
-
 }
 
 body {
@@ -502,6 +469,37 @@ footer[role="general"] {
 
 	}
 
+}
 
+.candidates {
+	list-style-type: none;
+	padding: 0;
+
+	li {
+		text-align: center;
+		margin: 1em 0;
+
+		.name {
+			.proxima;
+			font-size: 1.3em;
+			font-weight: 700;
+			line-height: @line-height * .9;
+			margin: 1em 0 .2em 0;
+
+			.firstName, .lastName {
+
+				@media screen and (max-width: @screen-xs) {
+					display: block;
+				}
+
+			}
+
+		}
+
+		.occupation {
+			margin: 0;
+		}
+
+	}
 
 }

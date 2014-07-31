@@ -5,6 +5,13 @@ Template Name: Kandidatka
 
 add_theme_support('post-thumbnails');
 
+$candidates = get_pages(array(
+	'hierarchical' => 0,
+	'sort_column'  => 'menu_order',
+	'meta_key'     => 'pageRole',
+	'meta_value'   => 'candidate',
+));
+
 ?>
 
 <?php get_header(); ?>
@@ -22,6 +29,10 @@ add_theme_support('post-thumbnails');
 					Jsme populisti, slušní lidé, aktivisti, flákači a tvrdě pracující, důchodci, cikáni, architekti a matky, programátoři, gayové, intelektuálové a kritici, pragmatici, pacienti, trapáci, slušní občané a rebelové. Dělejte si z nás legraci, rýpejte do nás, pomlouvejte za zády a do novin. My to ustojíme. A budeme vás poslouchat.
 				</p>
 			</div>
+		</div>
+
+		<div class="row">
+			<?php include 'includes/candidates.php' ?>
 		</div>
 
 	</div>

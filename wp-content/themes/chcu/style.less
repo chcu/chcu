@@ -169,11 +169,16 @@
 			[data-topic="bydleni"]  { background-color: @color-bydleni; }
 			[data-topic="zdravi"]   { background-color: @color-zdravi; }
 
+			[data-topic] {
+				cursor: pointer;
+			}
+
 			.title {
 				.proxima;
 				font-size: 1.3em;
 				font-weight: 700;
 				line-height: @line-height * .8;
+				margin: 0;
 
 				a {
 					color: white;

@@ -153,11 +153,15 @@
 .page-template-page-homepage-php .programStories li [data-topic="zdravi"] {
   background-color: #de1879;
 }
+.page-template-page-homepage-php .programStories li [data-topic] {
+  cursor: pointer;
+}
 .page-template-page-homepage-php .programStories li .title {
   font-family: "proxima-nova", sans-serif;
   font-size: 1.3em;
   font-weight: 700;
   line-height: 120%;
+  margin: 0;
 }
 .page-template-page-homepage-php .programStories li .title a {
   color: white;

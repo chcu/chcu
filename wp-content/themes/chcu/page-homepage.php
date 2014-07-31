@@ -108,23 +108,7 @@ $candidates = get_pages(array(
 		</div>
 
 		<div class="row">
-			<ul class="programStories">
-				<?php foreach ($programStories as $programStory) { ?>
-					<?php
-					$meta = get_post_meta($programStory->ID);
-					?>
-					<li class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-						<div data-topic="<?php echo $meta['topic'][0] ?>">
-							<p class="title">
-								<a href="<?php echo get_permalink($programStory) ?>"><?php echo $programStory->post_title ?></a>
-							</p>
-							<p class="perex">
-								<?php echo $meta['perex'][0] ?>
-							</p>
-						</div>
-					</li>
-				<?php } ?>
-			</ul>
+			<?php include 'includes/programStories.php' ?>
 		</div>
 
 		<div class="row">

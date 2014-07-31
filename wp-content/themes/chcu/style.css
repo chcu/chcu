@@ -118,61 +118,6 @@
   display: inline-block;
   margin: 0 1em;
 }
-.page-template-page-homepage-php .programStories {
-  list-style-type: none;
-  padding: 0;
-}
-.page-template-page-homepage-php .programStories li {
-  text-align: center;
-  margin-bottom: 1em;
-}
-.page-template-page-homepage-php .programStories li [data-topic] {
-  padding: 1.5em;
-  color: white;
-}
-.page-template-page-homepage-php .programStories li [data-topic=""] {
-  color: black;
-}
-.page-template-page-homepage-php .programStories li [data-topic="pohyb"] {
-  background-color: #ca220f;
-}
-.page-template-page-homepage-php .programStories li [data-topic="domov"] {
-  background-color: #e29c05;
-}
-.page-template-page-homepage-php .programStories li [data-topic="kultura"] {
-  background-color: #8ebf28;
-}
-.page-template-page-homepage-php .programStories li [data-topic="ferhra"] {
-  background-color: #19aabf;
-}
-.page-template-page-homepage-php .programStories li [data-topic="vzdelani"] {
-  background-color: #222081;
-}
-.page-template-page-homepage-php .programStories li [data-topic="bydleni"] {
-  background-color: #a82da4;
-}
-.page-template-page-homepage-php .programStories li [data-topic="zdravi"] {
-  background-color: #de1879;
-}
-.page-template-page-homepage-php .programStories li [data-topic] {
-  cursor: pointer;
-}
-.page-template-page-homepage-php .programStories li .title {
-  font-family: "proxima-nova", sans-serif;
-  font-size: 1.3em;
-  font-weight: 700;
-  line-height: 120%;
-  margin: 0;
-}
-.page-template-page-homepage-php .programStories li .title a {
-  color: white;
-  border: none;
-}
-.page-template-page-homepage-php .programStories li .perex {
-  margin: 1em 0 0 0;
-  font-size: .9em;
-  line-height: 150%;
-}
 .page-template-page-homepage-php .posts {
   list-style-type: none;
   padding: 0;
@@ -462,4 +407,59 @@ footer[role="general"] .links li {
 }
 .candidates li .occupation {
   margin: 0;
+}
+.programStories {
+  list-style-type: none;
+  padding: 0;
+}
+.programStories li {
+  text-align: center;
+  margin-bottom: 1em;
+}
+.programStories li [data-topic] {
+  padding: 1.5em;
+  color: white;
+}
+.programStories li [data-topic=""] {
+  color: black;
+}
+.programStories li [data-topic="pohyb"] {
+  background-color: #ca220f;
+}
+.programStories li [data-topic="domov"] {
+  background-color: #e29c05;
+}
+.programStories li [data-topic="kultura"] {
+  background-color: #8ebf28;
+}
+.programStories li [data-topic="ferhra"] {
+  background-color: #19aabf;
+}
+.programStories li [data-topic="vzdelani"] {
+  background-color: #222081;
+}
+.programStories li [data-topic="bydleni"] {
+  background-color: #a82da4;
+}
+.programStories li [data-topic="zdravi"] {
+  background-color: #de1879;
+}
+.programStories li [data-topic] {
+  cursor: pointer;
+}
+.programStories li .title {
+  font-family: "proxima-nova", sans-serif;
+  font-size: 1.3em;
+  font-weight: 700;
+  line-height: 120%;
+  margin: 0;
+}
+.programStories li .title a {
+  color: white;
+  border: none;
+}
+.programStories li .perex {
+  margin: 1em 0 0 0;
+  font-size: .9em;
+  line-height: 150%;
 }

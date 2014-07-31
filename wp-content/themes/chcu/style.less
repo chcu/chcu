@@ -145,59 +145,6 @@
 
 	}
 
-	.programStories {
-		list-style-type: none;
-		padding: 0;
-
-		li {
-			text-align: center;
-			margin-bottom: 1em;
-
-			[data-topic] {
-				padding: 1.5em;
-				color: white;
-			}
-
-			[data-topic=""] {
-				color: black;
-			}
-
-			[data-topic="pohyb"]    { background-color: @color-pohyb; }
-			[data-topic="domov"]    { background-color: @color-domov; }
-			[data-topic="kultura"]  { background-color: @color-kultura; }
-			[data-topic="ferhra"]   { background-color: @color-ferhra; }
-			[data-topic="vzdelani"] { background-color: @color-vzdelani; }
-			[data-topic="bydleni"]  { background-color: @color-bydleni; }
-			[data-topic="zdravi"]   { background-color: @color-zdravi; }
-
-			[data-topic] {
-				cursor: pointer;
-			}
-
-			.title {
-				.proxima;
-				font-size: 1.3em;
-				font-weight: 700;
-				line-height: @line-height * .8;
-				margin: 0;
-
-				a {
-					color: white;
-					border: none;
-				}
-
-			}
-
-			.perex {
-				margin: 1em 0 0 0;
-				font-size: .9em;
-				line-height: @line-height;
-			}
-
-		}
-
-	}
-
 	.posts {
 		list-style-type: none;
 		padding: 0;
@@ -521,6 +468,59 @@ footer[role="general"] {
 
 		.occupation {
 			margin: 0;
+		}
+
+	}
+
+}
+
+.programStories {
+	list-style-type: none;
+	padding: 0;
+
+	li {
+		text-align: center;
+		margin-bottom: 1em;
+
+		[data-topic] {
+			padding: 1.5em;
+			color: white;
+		}
+
+		[data-topic=""] {
+			color: black;
+		}
+
+		[data-topic="pohyb"]    { background-color: @color-pohyb; }
+		[data-topic="domov"]    { background-color: @color-domov; }
+		[data-topic="kultura"]  { background-color: @color-kultura; }
+		[data-topic="ferhra"]   { background-color: @color-ferhra; }
+		[data-topic="vzdelani"] { background-color: @color-vzdelani; }
+		[data-topic="bydleni"]  { background-color: @color-bydleni; }
+		[data-topic="zdravi"]   { background-color: @color-zdravi; }
+
+		[data-topic] {
+			cursor: pointer;
+		}
+
+		.title {
+			.proxima;
+			font-size: 1.3em;
+			font-weight: 700;
+			line-height: @line-height * .8;
+			margin: 0;
+
+			a {
+				color: white;
+				border: none;
+			}
+
+		}
+
+		.perex {
+			margin: 1em 0 0 0;
+			font-size: .9em;
+			line-height: @line-height;
 		}
 
 	}

@@ -5,6 +5,13 @@ Template Name: Program
 
 add_theme_support('post-thumbnails');
 
+$programStories = get_pages(array(
+	'hierarchical' => 0,
+	'sort_column'  => 'menu_order',
+	'meta_key'     => 'pageRole',
+	'meta_value'   => 'programStory',
+));
+
 ?>
 
 <?php get_header(); ?>
@@ -23,12 +30,7 @@ add_theme_support('post-thumbnails');
 		</div>
 
 		<div class="row">
-			<div class="col-xs-12">
-				<?php while (have_posts()) {
-					the_post();
-					the_content();
-				} ?>
-			</div>
+			<?php include 'includes/programStories.php' ?>
 		</div>
 
 	</div>

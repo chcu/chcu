@@ -8,9 +8,11 @@
 				<p class="title">
 					<a href="<?php echo get_permalink($programStory) ?>"><?php echo $programStory->post_title ?></a>
 				</p>
-				<p class="perex">
-					<?php echo $meta['perex'][0] ?>
-				</p>
+				<?php if ($meta['perex'][0]) { ?>
+					<p class="perex">
+						<?php echo $meta['perex'][0] ?>
+					</p>
+				<?php } ?>
 			</div>
 		</li>
 	<?php } ?>

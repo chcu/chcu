@@ -124,6 +124,7 @@
 }
 .page-template-page-homepage-php .programStories li {
   text-align: center;
+  margin-bottom: 1em;
 }
 .page-template-page-homepage-php .programStories li [data-topic] {
   padding: 1.5em;

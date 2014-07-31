@@ -406,3 +406,52 @@ footer[role="general"] {
 	}
 
 }
+
+#chcuNav {
+	.proxima;
+	background: white;
+	border: none;
+	text-transform: uppercase;
+
+	a {
+		font-size: 1.25em;
+		font-weight: 700;
+		border: none;
+	}
+
+	@media screen and (min-width: @screen-sm) {
+		text-align: center;
+
+		*, *:before, *:after {
+			display: inline;
+			float: none;
+			clear: none;
+			padding: 0;
+			margin: 0;
+		}
+
+		.navbar-collapse.collapse {
+			display: inline !important;
+		}
+
+		.navbar-toggle {
+			display: none;
+		}
+
+		.navbar-brand-container, .navbar-collapse li {
+			display: inline-block;
+			padding: 1em .75em;
+		}
+
+		a {
+			display: inline-block;
+			border-bottom: 1px solid #999;
+			padding: 0;
+			margin: 0;
+		}
+
+	}
+
+
+
+}

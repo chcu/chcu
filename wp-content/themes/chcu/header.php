@@ -39,7 +39,7 @@
 	<body <?php body_class(); ?>>
 		<header role="banner">
 
-			<div class="navbar navbar-default navbar-fixed-top">
+			<div id="chcuNav" class="navbar navbar-default navbar-fixed-top">
 				<div class="container">
 
 					<div class="navbar-header">
@@ -49,19 +49,13 @@
 							<span class="icon-bar"></span>
 						</button>
 
-						<a class="navbar-brand" title="<?php echo get_bloginfo('description'); ?>" href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a>
+						<span class="navbar-brand-container">
+							<a class="navbar-brand" title="Chcu Žít Brno" href="<?php echo home_url(); ?>">CHCU</a>
+						</span>
 					</div>
 
 					<div class="collapse navbar-collapse navbar-responsive-collapse">
 						<?php wp_bootstrap_main_nav(); // Adjust using Menus in Wordpress Admin ?>
-
-						<?php //if(of_get_option('search_bar', '1')) {?>
-						<form class="navbar-form navbar-right" role="search" method="get" id="searchform" action="<?php echo home_url( '/' ); ?>">
-							<div class="form-group">
-								<input name="s" id="s" type="text" class="search-query form-control" autocomplete="off" placeholder="<?php _e('Search','wpbootstrap'); ?>" data-provide="typeahead" data-items="4" data-source='<?php echo $typeahead_data; ?>'>
-							</div>
-						</form>
-						<?php //} ?>
 					</div>
 
 				</div> <!-- end .container -->

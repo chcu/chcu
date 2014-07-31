@@ -339,3 +339,45 @@ footer[role="general"] .links li {
     width: 100%;
   }
 }
+#chcuNav {
+  font-family: "proxima-nova", sans-serif;
+  background: white;
+  border: none;
+  text-transform: uppercase;
+}
+#chcuNav a {
+  font-size: 1.25em;
+  font-weight: 700;
+  border: none;
+}
+@media screen and (min-width: 768px) {
+  #chcuNav {
+    text-align: center;
+  }
+  #chcuNav *,
+  #chcuNav *:before,
+  #chcuNav *:after {
+    display: inline;
+    float: none;
+    clear: none;
+    padding: 0;
+    margin: 0;
+  }
+  #chcuNav .navbar-collapse.collapse {
+    display: inline !important;
+  }
+  #chcuNav .navbar-toggle {
+    display: none;
+  }
+  #chcuNav .navbar-brand-container,
+  #chcuNav .navbar-collapse li {
+    display: inline-block;
+    padding: 1em .75em;
+  }
+  #chcuNav a {
+    display: inline-block;
+    border-bottom: 1px solid #999;
+    padding: 0;
+    margin: 0;
+  }
+}

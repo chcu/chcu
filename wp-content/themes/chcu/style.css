@@ -352,7 +352,7 @@ footer[role="general"] .links li {
     clear: none;
     padding: 0;
     margin: 0;
-    line-height: 16px;
+    line-height: 17px;
   }
   #chcuNav .navbar-collapse.collapse {
     display: inline !important;
@@ -375,9 +375,14 @@ footer[role="general"] .links li {
     font-size: 18px;
     font-weight: 900;
     display: inline-block;
-    border-bottom: 1px solid #999;
+    color: #B5B5B5;
+    border-bottom: 1px solid #EEE;
     padding: 0;
     margin: 0;
+  }
+  #chcuNav a:hover {
+    color: #de1879;
+    border: none;
   }
   #chcuNav .current-menu-item a {
     background: none;

@@ -50,7 +50,7 @@
 						</button>
 
 						<span class="navbar-brand-container">
-							<a class="navbar-brand" title="Chcu Žít Brno" href="<?php echo home_url(); ?>">CHCU</a>
+							<a class="navbar-brand" title="Chcu Žít Brno" href="<?php echo home_url(); ?>"><img src="<?php echo get_theme_root_uri() . '/' . get_template() ?>/chcu.png" /></a>
 						</span>
 					</div>
 

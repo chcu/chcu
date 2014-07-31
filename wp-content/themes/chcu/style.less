@@ -413,14 +413,18 @@ footer[role="general"] {
 	border: none;
 	text-transform: uppercase;
 
-	a {
-		font-size: 1.25em;
-		font-weight: 700;
+	.navbar-brand {
 		border: none;
+
+		img {
+			height: 13px;
+		}
+
 	}
 
 	@media screen and (min-width: @screen-sm) {
 		text-align: center;
+		vertical-align: baseline;
 
 		*, *:before, *:after {
 			display: inline;
@@ -428,6 +432,7 @@ footer[role="general"] {
 			clear: none;
 			padding: 0;
 			margin: 0;
+			line-height: 16px;
 		}
 
 		.navbar-collapse.collapse {
@@ -443,11 +448,29 @@ footer[role="general"] {
 			padding: 1em .75em;
 		}
 
+		.navbar-brand-container {
+			vertical-align: 12%;
+		}
+
+		.navbar-collapse li {
+			vertical-align: 0%;
+		}
+
 		a {
+			font-size: 18px;
+			font-weight: 900;
 			display: inline-block;
 			border-bottom: 1px solid #999;
 			padding: 0;
 			margin: 0;
+		}
+
+		.navbar-collapse {
+
+			a {
+
+			}
+
 		}
 
 		.current-menu-item {

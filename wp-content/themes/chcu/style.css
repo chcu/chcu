@@ -345,14 +345,16 @@ footer[role="general"] .links li {
   border: none;
   text-transform: uppercase;
 }
-#chcuNav a {
-  font-size: 1.25em;
-  font-weight: 700;
+#chcuNav .navbar-brand {
   border: none;
+}
+#chcuNav .navbar-brand img {
+  height: 13px;
 }
 @media screen and (min-width: 768px) {
   #chcuNav {
     text-align: center;
+    vertical-align: baseline;
   }
   #chcuNav *,
   #chcuNav *:before,
@@ -362,6 +364,7 @@ footer[role="general"] .links li {
     clear: none;
     padding: 0;
     margin: 0;
+    line-height: 16px;
   }
   #chcuNav .navbar-collapse.collapse {
     display: inline !important;
@@ -374,7 +377,15 @@ footer[role="general"] .links li {
     display: inline-block;
     padding: 1em .75em;
   }
+  #chcuNav .navbar-brand-container {
+    vertical-align: 12%;
+  }
+  #chcuNav .navbar-collapse li {
+    vertical-align: 0%;
+  }
   #chcuNav a {
+    font-size: 18px;
+    font-weight: 900;
     display: inline-block;
     border-bottom: 1px solid #999;
     padding: 0;

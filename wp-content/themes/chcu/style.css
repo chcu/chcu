@@ -118,30 +118,6 @@
   display: inline-block;
   margin: 0 1em;
 }
-.page-template-page-homepage-php .posts {
-  list-style-type: none;
-  padding: 0;
-}
-.page-template-page-homepage-php .posts li {
-  clear: both;
-  margin: 0 0 2em 0;
-}
-.page-template-page-homepage-php .posts li .title {
-  font-family: "proxima-nova", sans-serif;
-  font-size: 2.75em;
-  line-height: 135%;
-  margin: 0 0 .25em 0;
-}
-@media screen and (max-width: 992px) {
-  .page-template-page-homepage-php .posts li .title {
-    font-size: 2em;
-  }
-}
-@media screen and (max-width: 768px) {
-  .page-template-page-homepage-php .posts li .title {
-    font-size: 1.5em;
-  }
-}
 body {
   font-family: "Roboto", sans-serif;
   overflow-x: hidden;
@@ -387,6 +363,7 @@ footer[role="general"] .links li {
 .candidates {
   list-style-type: none;
   padding: 0;
+  margin: 1em 0;
 }
 .candidates li {
   text-align: center;
@@ -463,4 +440,29 @@ footer[role="general"] .links li {
   margin: 1em 0 0 0;
   font-size: .9em;
   line-height: 150%;
+}
+.posts {
+  list-style-type: none;
+  padding: 0;
+  margin: 1em 0;
+}
+.posts li {
+  clear: both;
+  margin: 0 0 2em 0;
+}
+.posts li .title {
+  font-family: "proxima-nova", sans-serif;
+  font-size: 2.75em;
+  line-height: 135%;
+  margin: 0 0 .25em 0;
+}
+@media screen and (max-width: 992px) {
+  .posts li .title {
+    font-size: 2em;
+  }
+}
+@media screen and (max-width: 768px) {
+  .posts li .title {
+    font-size: 1.5em;
+  }
 }

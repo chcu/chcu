@@ -145,34 +145,6 @@
 
 	}
 
-	.posts {
-		list-style-type: none;
-		padding: 0;
-
-		li {
-			clear: both;
-			margin: 0 0 2em 0;
-
-			.title {
-				.proxima;
-				font-size: 2.75em;
-				line-height: @line-height * .9;
-				margin: 0 0 .25em 0;
-
-				@media screen and (max-width: @screen-md) {
-					font-size: 2em;
-				}
-
-				@media screen and (max-width: @screen-sm) {
-					font-size: 1.5em;
-				}
-
-			}
-
-		}
-
-	}
-
 }
 
 body {
@@ -444,6 +416,7 @@ footer[role="general"] {
 .candidates {
 	list-style-type: none;
 	padding: 0;
+	margin: 1em 0;
 
 	li {
 		text-align: center;
@@ -522,6 +495,35 @@ footer[role="general"] {
 			margin: 1em 0 0 0;
 			font-size: .9em;
 			line-height: @line-height;
+		}
+
+	}
+
+}
+
+.posts {
+	list-style-type: none;
+	padding: 0;
+	margin: 1em 0;
+
+	li {
+		clear: both;
+		margin: 0 0 2em 0;
+
+		.title {
+			.proxima;
+			font-size: 2.75em;
+			line-height: @line-height * .9;
+			margin: 0 0 .25em 0;
+
+			@media screen and (max-width: @screen-md) {
+				font-size: 2em;
+			}
+
+			@media screen and (max-width: @screen-sm) {
+				font-size: 1.5em;
+			}
+
 		}
 
 	}

@@ -5,6 +5,10 @@ Template Name: Zpravy
 
 add_theme_support('post-thumbnails');
 
+$posts = get_posts(array(
+
+));
+
 ?>
 
 <?php get_header(); ?>
@@ -19,9 +23,13 @@ add_theme_support('post-thumbnails');
 			</div>
 			<div class="col-lg-offset-3 col-lg-6 col-md-offset-2 col-md-8">
 				<p class="lead">
-					bla bla bla
+					Volby jde vyhrát i bez peněz a kmotrů. Jsme aktivisti, makáme.
 				</p>
 			</div>
+		</div>
+
+		<div class="row">
+			<?php include 'includes/posts.php' ?>
 		</div>
 
 	</div>

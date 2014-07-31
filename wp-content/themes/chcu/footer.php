@@ -122,6 +122,10 @@
 				$(window).resize(function(){
 					onWindowResize();
 				});
+
+				if (!$('body').hasClass('home')) {
+					$('body').css('padding-top', $('#chcuNav').outerHeight() + 'px');
+				}
 			});
 		</script>
 

@@ -297,6 +297,18 @@ hr {
   line-height: 150%;
   margin: .5em 0;
 }
+.pageHeader {
+  text-align: center;
+}
+.pageHeader h1 {
+  font-family: "proxima-nova", sans-serif;
+  font-weight: 900;
+  font-size: 8em;
+  text-transform: uppercase;
+}
+.pageHeader .lead {
+  font-size: 1.4em;
+}
 #fb-root {
   display: none;
 }
@@ -375,7 +387,7 @@ footer[role="general"] .links li {
   #chcuNav .navbar-brand-container,
   #chcuNav .navbar-collapse li {
     display: inline-block;
-    padding: 1em .75em;
+    padding: 2em .75em;
   }
   #chcuNav .navbar-brand-container {
     vertical-align: 12%;

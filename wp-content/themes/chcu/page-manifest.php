@@ -25,7 +25,7 @@ add_theme_support('post-thumbnails');
 		</div>
 
 		<div class="row">
-			<div class="col-lg-offset-4 col-lg-4 col-xs-12">
+			<div class="col-lg-offset-3 col-lg-6 col-xs-12">
 				<?php while (have_posts()) {
 					the_post();
 					the_content();

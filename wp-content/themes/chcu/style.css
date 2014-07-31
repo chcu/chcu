@@ -411,6 +411,7 @@ footer[role="general"] .links li {
 .programStories {
   list-style-type: none;
   padding: 0;
+  margin: 1em 0;
 }
 .programStories li {
   text-align: center;

@@ -31,7 +31,9 @@ while (have_posts()) {
 
 	$phone         = $meta['phone'][0];
 	$emailAddress  = $meta['emailAddress'][0];
+	$urlHomepage   = $meta['urlHomepage'][0];
 	$urlFacebook   = $meta['urlFacebook'][0];
+	$urlTwitter    = $meta['urlTwitter'][0];
 	$urlGooglePlus = $meta['urlGooglePlus'][0];
 	$urlLinkedIn   = $meta['urlLinkedIn'][0];
 	$hasContacts   = $phone || $emailAddress || $urlFacebook || $urlGooglePlus || $urlLinkedIn;
@@ -65,8 +67,14 @@ while (have_posts()) {
 								<?php if ($emailAddress) { ?>
 									<li><i class="fa fa-envelope"></i> <a href="mailto:<?php echo $emailAddress ?>"><?php echo $emailAddress ?></a></li>
 								<?php } ?>
+								<?php if ($urlHomepage) { ?>
+									<li class="socialNetwork"><a target="_blank" class="icon" href="<?php echo $urlHomepage ?>"><i class="fa fa-home"></i></a></li>
+								<?php } ?>
 								<?php if ($urlFacebook) { ?>
 									<li class="socialNetwork"><a target="_blank" class="icon" href="<?php echo $urlFacebook ?>"><i class="fa fa-facebook"></i></a></li>
+								<?php } ?>
+								<?php if ($urlTwitter) { ?>
+									<li class="socialNetwork"><a target="_blank" class="icon" href="<?php echo $urlTwitter ?>"><i class="fa fa-twitter"></i></a></li>
 								<?php } ?>
 								<?php if ($urlGooglePlus) { ?>
 									<li class="socialNetwork"><a target="_blank" class="icon" href="<?php echo $urlGooglePlus ?>"><i class="fa fa-google-plus"></i></a></li>

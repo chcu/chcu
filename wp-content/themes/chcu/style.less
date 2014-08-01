@@ -555,12 +555,21 @@ footer[role="general"] {
 	list-style-type: none;
 	text-align: center;
 	margin: 2em 0 0 0;
+	font-size: 1.2em;
 
 	li {
 		display: inline-block;
+		margin: 0 1em;
 	}
 
 	a {
+		color: white;
+		border-color: white;
+
+		&:hover {
+			color: @color-link;
+			border-color: @color-link;
+		}
 
 		&.icon {
 			border: none;
@@ -583,6 +592,9 @@ footer[role="general"] {
 		padding: .4em;
 		background: white;
 		border-radius: 50%;
+		display: inline-block;
+		margin: 0 .25em;
+		vertical-align: middle;
 	}
 
 }

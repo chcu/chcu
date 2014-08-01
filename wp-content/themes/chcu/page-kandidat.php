@@ -29,8 +29,10 @@ while (have_posts()) {
 	$doNotWant = array_filter(explode("\n", $meta['doNotWant'][0]));
 	$hasWants  = $doWant && $doNotWant;
 
-	$urlFacebook = $meta['urlFacebook'][0];
-	$hasUrls     = $urlFacebook;
+	$phone        = $meta['phone'][0];
+	$emailAddress = $meta['emailAddress'][0];
+	$urlFacebook  = $meta['urlFacebook'][0];
+	$hasUrls      = $phone || $emailAddress || $urlFacebook;
 }
 
 ?>
@@ -53,6 +55,12 @@ while (have_posts()) {
 						<?php } ?>
 						<?php if ($hasUrls) { ?>
 							<ul class="candidateUrls">
+								<?php if ($phone) { ?>
+									<li><i class="fa fa-phone"></i> <?php echo $phone ?></li>
+								<?php } ?>
+								<?php if ($emailAddress) { ?>
+									<li><i class="fa fa-envelope"></i> <a href="mailto:<?php echo $emailAddress ?>"><?php echo $emailAddress ?></a></li>
+								<?php } ?>
 								<?php if ($urlFacebook) { ?>
 									<li><a target="_blank" class="icon" href="<?php echo $urlFacebook ?>"><i class="fa fa-facebook"></i></a></li>
 								<?php } ?>

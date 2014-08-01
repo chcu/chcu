@@ -474,7 +474,7 @@ footer[role="general"] .links li {
 }
 .candidateContacts li {
   display: inline-block;
-  margin: 0 1em;
+  margin: 0 1.5em;
 }
 .candidateContacts li.socialNetwork {
   margin: 0 .1em;

@@ -523,9 +523,12 @@ footer[role="general"] .links li {
 .candidateWants ul {
   list-style-type: none;
   padding: 0 2em;
-  margin: 1em 0 0 0;
+  margin: .75em 0 0 0;
   font-size: 1.4em;
   line-height: 150%;
+}
+.candidateWants ul li {
+  margin: .25em 0;
 }
 .candidateDoWant {
   border-right: 1px solid black;

@@ -496,7 +496,7 @@ footer[role="general"] .links li {
 }
 .candidateContacts i {
   color: black;
-  padding: .4em;
+  padding: .5em .4em .4em .4em;
   background: white;
   border-radius: 50%;
   display: inline-block;

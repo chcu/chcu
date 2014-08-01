@@ -29,10 +29,12 @@ while (have_posts()) {
 	$doNotWant = array_filter(explode("\n", $meta['doNotWant'][0]));
 	$hasWants  = $doWant && $doNotWant;
 
-	$phone        = $meta['phone'][0];
-	$emailAddress = $meta['emailAddress'][0];
-	$urlFacebook  = $meta['urlFacebook'][0];
-	$hasContacts  = $phone || $emailAddress || $urlFacebook;
+	$phone         = $meta['phone'][0];
+	$emailAddress  = $meta['emailAddress'][0];
+	$urlFacebook   = $meta['urlFacebook'][0];
+	$urlGooglePlus = $meta['urlGooglePlus'][0];
+	$urlLinkedIn   = $meta['urlLinkedIn'][0];
+	$hasContacts   = $phone || $emailAddress || $urlFacebook || $urlGooglePlus || $urlLinkedIn;
 
 	$urls = $meta['url'];
 }
@@ -65,6 +67,12 @@ while (have_posts()) {
 								<?php } ?>
 								<?php if ($urlFacebook) { ?>
 									<li><a target="_blank" class="icon" href="<?php echo $urlFacebook ?>"><i class="fa fa-facebook"></i></a></li>
+								<?php } ?>
+								<?php if ($urlGooglePlus) { ?>
+									<li><a target="_blank" class="icon" href="<?php echo $urlGooglePlus ?>"><i class="fa fa-google-plus"></i></a></li>
+								<?php } ?>
+								<?php if ($urlLinkedIn) { ?>
+									<li><a target="_blank" class="icon" href="<?php echo $urlLinkedIn ?>"><i class="fa fa-linkedin"></i></a></li>
 								<?php } ?>
 							</ul>
 							<script type="text/javascript">

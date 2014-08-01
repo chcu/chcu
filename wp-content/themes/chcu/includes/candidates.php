@@ -34,6 +34,9 @@
 		$('.candidates li').each(function(){
 			$(this).css('height', 'auto');
 			heights.push($(this).innerHeight());
+
+			var width = $(this).find('h3').innerWidth();
+			$(this).find('img, .squareImagePlaceholder').css('height', width + 'px');
 		});
 
 		$('.candidates li').css('height', heights.max() + 'px');

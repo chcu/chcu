@@ -35,22 +35,6 @@
 .page-template-page-homepage-php header[role="banner"] {
   display: none;
 }
-.page-template-page-homepage-php .button {
-  font-family: "proxima-nova", sans-serif;
-  display: inline-block;
-  padding: .5em .75em;
-  border: none;
-  background-color: black;
-  color: white;
-  font-size: 1.5em;
-  font-weight: 700;
-  text-transform: lowercase;
-}
-.page-template-page-homepage-php .button:hover {
-  color: white;
-  background-color: #de1879;
-  text-decoration: none;
-}
 .page-template-page-homepage-php .rainbowButton {
   font-family: "proxima-nova", sans-serif;
   display: inline-block;
@@ -76,26 +60,6 @@
 }
 .page-template-page-homepage-php .roundedButton {
   border-radius: 3px;
-}
-.page-template-page-homepage-php .blackButton {
-  font-family: "proxima-nova", sans-serif;
-  display: inline-block;
-  padding: .5em .75em;
-  border: none;
-  font-size: 1.5em;
-  font-weight: 700;
-  text-transform: lowercase;
-  background-color: black;
-  color: white;
-}
-.page-template-page-homepage-php .blackButton:hover {
-  color: white;
-  background-color: #de1879;
-  text-decoration: none;
-}
-.page-template-page-homepage-php .blackButton:hover {
-  color: white;
-  background-color: #de1879;
 }
 .page-template-page-homepage-php .topics {
   text-align: center;
@@ -473,6 +437,7 @@ footer[role="general"] .links li {
 .candidateHeader {
   background-repeat: no-repeat;
   background-size: contain;
+  margin-bottom: 0;
 }
 .candidateHeader .candidateInfoWrapper {
   background: black;
@@ -487,8 +452,84 @@ footer[role="general"] .links li {
   text-align: center;
   font-weight: 900;
   font-size: 6em;
-  margin: 0;
+  margin: 0 0 .25em 0;
 }
 .candidateHeader .candidateInfoWrapper .lead {
   text-align: center;
+  font-size: 1.25em;
+  margin: 0;
+}
+.candidateWants {
+  display: inline-block;
+  width: 50%;
+  margin: 0;
+  text-align: center;
+}
+.candidateWants h2 {
+  font-family: "proxima-nova", sans-serif;
+  text-transform: uppercase;
+  font-size: 2.5em;
+  font-weight: 900;
+}
+.candidateWants ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 1em 0 0 0;
+}
+.candidateDoWant {
+  border-right: 1px solid black;
+}
+.candidateDoNotWant {
+  border-left: 1px solid black;
+}
+.candidateBioHeaderWrapper {
+  text-align: center;
+}
+.candidateBioHeader {
+  font-family: "proxima-nova", sans-serif;
+  font-size: 2.5em;
+  font-weight: 900;
+  text-transform: uppercase;
+  display: inline-block;
+  background: black;
+  color: white;
+  padding: .75em 0;
+  margin: 0 0 1em 0;
+  border-radius: 50%;
+}
+.button {
+  font-family: "proxima-nova", sans-serif;
+  display: inline-block;
+  padding: .5em .75em;
+  border: none;
+  background-color: black;
+  color: white;
+  font-size: 1.5em;
+  font-weight: 700;
+  text-transform: lowercase;
+}
+.button:hover {
+  color: white;
+  background-color: #de1879;
+  text-decoration: none;
+}
+.blackButton {
+  font-family: "proxima-nova", sans-serif;
+  display: inline-block;
+  padding: .5em .75em;
+  border: none;
+  font-size: 1.5em;
+  font-weight: 700;
+  text-transform: lowercase;
+  background-color: black;
+  color: white;
+}
+.blackButton:hover {
+  color: white;
+  background-color: #de1879;
+  text-decoration: none;
+}
+.blackButton:hover {
+  color: white;
+  background-color: #de1879;
 }

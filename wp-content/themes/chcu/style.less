@@ -71,24 +71,7 @@
 		display: none;
 	}
 
-	.button {
-		.proxima;
-		display: inline-block;
-		padding: .5em .75em;
-		border: none;
-		background-color: black;
-		color: white;
-		font-size: 1.5em;
-		font-weight: 700;
-		text-transform: lowercase;
 
-		&:hover {
-			color: white;
-			background-color: @color-link;
-			text-decoration: none;
-		}
-
-	}
 
 	.rainbowButton {
 		.button;
@@ -104,18 +87,6 @@
 
 	.roundedButton {
 		border-radius: 3px;
-	}
-
-	.blackButton {
-		.button;
-		background-color: black;
-		color: white;
-
-		&:hover {
-			color: white;
-			background-color: @color-link;
-		}
-
 	}
 
 	.topics {
@@ -538,6 +509,7 @@ footer[role="general"] {
 .candidateHeader {
 	background-repeat: no-repeat;
 	background-size: contain;
+	margin-bottom: 0;
 
 	.candidateInfoWrapper {
 		background: black;
@@ -553,13 +525,92 @@ footer[role="general"] {
 			text-align: center;
 			font-weight: 900;
 			font-size: 6em;
-			margin: 0;
+			margin: 0 0 .25em 0;
 		}
 
 		.lead {
 			text-align: center;
+			font-size: 1.25em;
+			margin: 0;
 		}
 
+	}
+
+}
+
+.candidateWants {
+	display: inline-block;
+	width: 50%;
+	margin: 0;
+	text-align: center;
+
+	h2 {
+		.proxima;
+		text-transform: uppercase;
+		font-size: 2.5em;
+		font-weight: 900;
+	}
+
+	ul {
+		list-style-type: none;
+		padding: 0;
+		margin: 1em 0 0 0;
+	}
+
+}
+
+.candidateDoWant {
+	border-right: 1px solid black;
+}
+
+.candidateDoNotWant {
+	border-left: 1px solid black;
+}
+
+.candidateBioHeaderWrapper {
+	text-align: center;
+}
+
+.candidateBioHeader {
+	.proxima;
+	font-size: 2.5em;
+	font-weight: 900;
+	text-transform: uppercase;
+	display: inline-block;
+	background: black;
+	color: white;
+	padding: .75em 0;
+	margin: 0 0 1em 0;
+	border-radius: 50%;
+}
+
+.button {
+	.proxima;
+	display: inline-block;
+	padding: .5em .75em;
+	border: none;
+	background-color: black;
+	color: white;
+	font-size: 1.5em;
+	font-weight: 700;
+	text-transform: lowercase;
+
+	&:hover {
+		color: white;
+		background-color: @color-link;
+		text-decoration: none;
+	}
+
+}
+
+.blackButton {
+	.button;
+	background-color: black;
+	color: white;
+
+	&:hover {
+		color: white;
+		background-color: @color-link;
 	}
 
 }

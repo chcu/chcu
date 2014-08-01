@@ -78,6 +78,26 @@ while (have_posts()) {
 				</div>
 			</div>
 		</div>
+		<script type="text/javascript">
+			var resizeWants = function() {
+				Array.prototype.max = function() {
+					return Math.max.apply(null, this);
+				};
+
+				var heights = [];
+				$('.candidateWants').each(function(){
+					$(this).css('height', 'auto');
+					heights.push($(this).innerHeight());
+				});
+
+				$('.candidateWants').css('height', heights.max() + 'px');
+			}
+
+			resizeWants();
+			$(window).resize(function(){
+				resizeWants();
+			});
+		</script>
 
 		<div class="row">
 			<div class="col-xs-12 candidateBioHeaderWrapper">

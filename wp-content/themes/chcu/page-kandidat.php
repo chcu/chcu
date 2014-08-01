@@ -32,7 +32,9 @@ while (have_posts()) {
 	$phone        = $meta['phone'][0];
 	$emailAddress = $meta['emailAddress'][0];
 	$urlFacebook  = $meta['urlFacebook'][0];
-	$hasUrls      = $phone || $emailAddress || $urlFacebook;
+	$hasContacts  = $phone || $emailAddress || $urlFacebook;
+
+	$urls = $meta['url'];
 }
 
 ?>
@@ -53,8 +55,8 @@ while (have_posts()) {
 								<?php echo $meta['perex'][0] ?>
 							</p>
 						<?php } ?>
-						<?php if ($hasUrls) { ?>
-							<ul class="candidateUrls">
+						<?php if ($hasContacts) { ?>
+							<ul class="candidateContacts">
 								<?php if ($phone) { ?>
 									<li><i class="fa fa-phone"></i> <?php echo $phone ?></li>
 								<?php } ?>
@@ -67,7 +69,7 @@ while (have_posts()) {
 							</ul>
 							<script type="text/javascript">
 								$(function(){
-									$('.candidateUrls i').css('width', $('.candidateUrls i').innerHeight() + 'px');
+									$('.candidateContacts i').css('width', $('.candidateContacts i').innerHeight() + 'px');
 								})
 							</script>
 						<?php } ?>
@@ -151,6 +153,21 @@ while (have_posts()) {
 				} ?>
 			</div>
 		</div>
+
+		<?php if ($urls) { ?>
+			<div class="row">
+				<div class="col-xs-12">
+					<ul class="candidateUrls">
+						<?php foreach ($urls as $url) { ?>
+							<?php list($title, $href) = explode("\n", $url) ?>
+							<li>
+								<a target="_blank" href="<?php echo $href ?>"><?php echo $title ?></a>
+							</li>
+						<?php } ?>
+					</ul>
+				</div>
+			</div>
+		<?php } ?>
 
 		<div class="row">
 			<div class="col-sm-12">

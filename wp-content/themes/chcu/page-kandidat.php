@@ -28,6 +28,9 @@ while (have_posts()) {
 	$doWant    = array_filter(explode("\n", $meta['doWant'][0]));
 	$doNotWant = array_filter(explode("\n", $meta['doNotWant'][0]));
 	$hasWants  = $doWant && $doNotWant;
+
+	$urlFacebook = $meta['urlFacebook'][0];
+	$hasUrls     = $urlFacebook;
 }
 
 ?>
@@ -47,6 +50,18 @@ while (have_posts()) {
 							<p class="lead">
 								<?php echo $meta['perex'][0] ?>
 							</p>
+						<?php } ?>
+						<?php if ($hasUrls) { ?>
+							<ul class="candidateUrls">
+								<?php if ($urlFacebook) { ?>
+									<li><a target="_blank" class="icon" href="<?php echo $urlFacebook ?>"><i class="fa fa-facebook"></i></a></li>
+								<?php } ?>
+							</ul>
+							<script type="text/javascript">
+								$(function(){
+									$('.candidateUrls i').css('width', $('.candidateUrls i').innerHeight() + 'px');
+								})
+							</script>
 						<?php } ?>
 					</div>
 				</div>

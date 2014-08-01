@@ -549,6 +549,44 @@ footer[role="general"] {
 
 }
 
+.candidateUrls {
+	color: white;
+	padding: 0;
+	list-style-type: none;
+	text-align: center;
+	margin: 1.5em 0 0 0;
+
+	li {
+		display: inline-block;
+	}
+
+	a {
+
+		&.icon {
+			border: none;
+
+			&:hover {
+
+				i {
+					color: white;
+					background: @color-link;
+				}
+
+			}
+
+		}
+
+	}
+
+	i {
+		color: black;
+		padding: .4em;
+		background: white;
+		border-radius: 50%;
+	}
+
+}
+
 .candidateWants {
 	display: inline-block;
 	width: 50%;

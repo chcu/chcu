@@ -464,6 +464,29 @@ footer[role="general"] .links li {
   font-size: 1.25em;
   margin: 1em 0 0 0;
 }
+.candidateUrls {
+  color: white;
+  padding: 0;
+  list-style-type: none;
+  text-align: center;
+  margin: 1.5em 0 0 0;
+}
+.candidateUrls li {
+  display: inline-block;
+}
+.candidateUrls a.icon {
+  border: none;
+}
+.candidateUrls a.icon:hover i {
+  color: white;
+  background: #de1879;
+}
+.candidateUrls i {
+  color: black;
+  padding: .4em;
+  background: white;
+  border-radius: 50%;
+}
 .candidateWants {
   display: inline-block;
   width: 50%;

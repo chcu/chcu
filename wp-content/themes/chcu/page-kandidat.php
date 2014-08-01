@@ -52,6 +52,7 @@ while (have_posts()) {
 				<div class="col-md-offset-1 col-md-10">
 					<div class="candidateDoWant candidateWants">
 						<h2>
+							<i class="fa fa-check-circle-o"></i>
 							Chcu
 						</h2>
 						<ul>
@@ -63,6 +64,7 @@ while (have_posts()) {
 						</ul>
 					</div><div class="candidateDoNotWant candidateWants">
 						<h2>
+							<i class="fa fa-times-circle-o"></i>
 							Nechcu
 						</h2>
 						<ul>
@@ -91,7 +93,7 @@ while (have_posts()) {
 		</script>
 
 		<div class="row">
-			<div class="col-xs-12">
+			<div class="candidateBio col-lg-offset-2 col-lg-8 col-md-offset-1 col-md-10">
 				<?php while (have_posts()) {
 					the_post();
 					the_content();

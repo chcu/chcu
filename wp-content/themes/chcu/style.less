@@ -324,6 +324,10 @@ footer[role="general"] {
 
 	}
 
+	a {
+		border: none;
+	}
+
 	@media screen and (min-width: @screen-sm) {
 		text-align: center;
 		vertical-align: baseline;
@@ -543,28 +547,47 @@ footer[role="general"] {
 	width: 50%;
 	margin: 0;
 	text-align: center;
+	vertical-align: top;
 
 	h2 {
 		.proxima;
 		text-transform: uppercase;
 		font-size: 2.5em;
 		font-weight: 900;
+		margin: 1em 0 0 0;
+
+		i {
+			display: block;
+		}
+
 	}
 
 	ul {
 		list-style-type: none;
-		padding: 0;
+		padding: 0 2em;
 		margin: 1em 0 0 0;
+		font-size: 1.4em;
+		line-height: 150%;
 	}
 
 }
 
 .candidateDoWant {
 	border-right: 1px solid black;
+
+	h2 {
+		color: @color-kultura;
+	}
+
 }
 
 .candidateDoNotWant {
 	border-left: 1px solid black;
+
+	h2 {
+		color: @color-pohyb;
+	}
+
 }
 
 .candidateBioHeaderWrapper {
@@ -580,8 +603,12 @@ footer[role="general"] {
 	background: black;
 	color: white;
 	padding: .75em 0;
-	margin: 0 0 1em 0;
+	margin: 0 0 .5em 0;
 	border-radius: 50%;
+}
+
+.candidateBio * {
+	font-size: 1.2em;
 }
 
 .button {

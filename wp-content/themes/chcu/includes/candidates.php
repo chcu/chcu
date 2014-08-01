@@ -23,3 +23,24 @@
 		</li>
 	<?php } ?>
 </ul>
+
+<script type="text/javascript">
+	var resizeCandidates = function() {
+		Array.prototype.max = function() {
+			return Math.max.apply(null, this);
+		};
+
+		var heights = [];
+		$('.candidates li').each(function(){
+			$(this).css('height', 'auto');
+			heights.push($(this).innerHeight());
+		});
+
+		$('.candidates li').css('height', heights.max() + 'px');
+	}
+
+	resizeCandidates();
+	$(window).resize(function(){
+		resizeCandidates();
+	});
+</script>

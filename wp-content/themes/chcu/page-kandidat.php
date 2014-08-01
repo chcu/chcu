@@ -66,13 +66,13 @@ while (have_posts()) {
 									<li><i class="fa fa-envelope"></i> <a href="mailto:<?php echo $emailAddress ?>"><?php echo $emailAddress ?></a></li>
 								<?php } ?>
 								<?php if ($urlFacebook) { ?>
-									<li><a target="_blank" class="icon" href="<?php echo $urlFacebook ?>"><i class="fa fa-facebook"></i></a></li>
+									<li class="socialNetwork"><a target="_blank" class="icon" href="<?php echo $urlFacebook ?>"><i class="fa fa-facebook"></i></a></li>
 								<?php } ?>
 								<?php if ($urlGooglePlus) { ?>
-									<li><a target="_blank" class="icon" href="<?php echo $urlGooglePlus ?>"><i class="fa fa-google-plus"></i></a></li>
+									<li class="socialNetwork"><a target="_blank" class="icon" href="<?php echo $urlGooglePlus ?>"><i class="fa fa-google-plus"></i></a></li>
 								<?php } ?>
 								<?php if ($urlLinkedIn) { ?>
-									<li><a target="_blank" class="icon" href="<?php echo $urlLinkedIn ?>"><i class="fa fa-linkedin"></i></a></li>
+									<li class="socialNetwork"><a target="_blank" class="icon" href="<?php echo $urlLinkedIn ?>"><i class="fa fa-linkedin"></i></a></li>
 								<?php } ?>
 							</ul>
 							<script type="text/javascript">

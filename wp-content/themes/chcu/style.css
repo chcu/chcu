@@ -515,6 +515,7 @@ footer[role="general"] .links li {
 }
 .candidateBio * {
   font-size: 1.2em;
+  line-height: 150%;
 }
 .button {
   font-family: "proxima-nova", sans-serif;

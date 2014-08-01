@@ -442,10 +442,12 @@ footer[role="general"] .links li {
   background-size: contain;
   margin-bottom: 0;
 }
+.candidateHeader.hasPortrait .candidateInfoWrapper {
+  margin-top: 57%;
+}
 .candidateHeader .candidateInfoWrapper {
   background: black;
   color: white;
-  margin-top: 57%;
 }
 .candidateHeader .candidateInfoWrapper .candidateInfo {
   padding: 4em;
@@ -455,12 +457,12 @@ footer[role="general"] .links li {
   text-align: center;
   font-weight: 900;
   font-size: 6em;
-  margin: 0 0 .25em 0;
+  margin: 0;
 }
 .candidateHeader .candidateInfoWrapper .lead {
   text-align: center;
   font-size: 1.25em;
-  margin: 0;
+  margin: 1em 0 0 0;
 }
 .candidateWants {
   display: inline-block;
@@ -500,6 +502,9 @@ footer[role="general"] .links li {
 }
 .candidateBioHeaderWrapper {
   text-align: center;
+}
+.candidateBioHeaderWrapper.hasNotWants {
+  margin: 2em 0 0 0;
 }
 .candidateBioHeader {
   font-family: "proxima-nova", sans-serif;

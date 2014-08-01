@@ -24,6 +24,10 @@ while (have_posts()) {
 	$meta = get_post_meta($postId);
 
 	$portraitUrl = $meta['portraitUrl'][0];
+
+	$doWant    = array_filter(explode("\n", $meta['doWant'][0]));
+	$doNotWant = array_filter(explode("\n", $meta['doNotWant'][0]));
+	$hasWants  = $doWant && $doNotWant;
 }
 
 ?>
@@ -33,74 +37,78 @@ while (have_posts()) {
 	<div class="container">
 
 		<div class="row">
-			<div class="candidateHeader col-md-offset-1 col-md-10 col-sm-12" style="background-image: url('<?php echo $portraitUrl ?>');">
+			<div class="candidateHeader col-md-offset-1 col-md-10 col-sm-12"<?php if ($portraitUrl) { ?> class="hasPortrait" style="background-image: url('<?php echo $portraitUrl ?>');"<?php } else { ?> class="hasNotPortrait"<?php } ?>>
 				<div class="candidateInfoWrapper col-md-offset-1 col-md-10">
 					<div class="candidateInfo">
 						<h1>
 							<?php echo $meta['firstName'][0] ?> <?php echo $meta['lastName'][0] ?>
 						</h1>
-						<p class="lead">
-							<?php echo $meta['perex'][0] ?>
-						</p>
+						<?php if ($meta['perex'][0]) { ?>
+							<p class="lead">
+								<?php echo $meta['perex'][0] ?>
+							</p>
+						<?php } ?>
 					</div>
 				</div>
 			</div>
 		</div>
 
-		<div class="row">
-			<div class="col-md-offset-1 col-md-10 col-sm-12">
-				<div class="col-md-offset-1 col-md-10">
-					<div class="candidateDoWant candidateWants">
-						<h2>
-							<i class="fa fa-check-circle-o"></i>
-							Chcu
-						</h2>
-						<ul>
-							<?php foreach (explode("\n", $meta['doWant'][0]) as $item) { ?>
-								<li>
-									<?php echo $item ?>
-								</li>
-							<?php } ?>
-						</ul>
-					</div><div class="candidateDoNotWant candidateWants">
-						<h2>
-							<i class="fa fa-times-circle-o"></i>
-							Nechcu
-						</h2>
-						<ul>
-							<?php foreach (explode("\n", $meta['doNotWant'][0]) as $item) { ?>
-								<li>
-									<?php echo $item ?>
-								</li>
-							<?php } ?>
-						</ul>
+		<?php if ($hasWants) { ?>
+			<div class="row">
+				<div class="col-md-offset-1 col-md-10 col-sm-12">
+					<div class="col-md-offset-1 col-md-10">
+						<div class="candidateDoWant candidateWants">
+							<h2>
+								<i class="fa fa-check-circle-o"></i>
+								Chcu
+							</h2>
+							<ul>
+								<?php foreach ($doWant as $item) { ?>
+									<li>
+										<?php echo $item ?>
+									</li>
+								<?php } ?>
+							</ul>
+						</div><div class="candidateDoNotWant candidateWants">
+							<h2>
+								<i class="fa fa-times-circle-o"></i>
+								Nechcu
+							</h2>
+							<ul>
+								<?php foreach ($doNotWant as $item) { ?>
+									<li>
+										<?php echo $item ?>
+									</li>
+								<?php } ?>
+							</ul>
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-		<script type="text/javascript">
-			var resizeWants = function() {
-				Array.prototype.max = function() {
-					return Math.max.apply(null, this);
-				};
+			<script type="text/javascript">
+				var resizeWants = function() {
+					Array.prototype.max = function() {
+						return Math.max.apply(null, this);
+					};
 
-				var heights = [];
-				$('.candidateWants').each(function(){
-					$(this).css('height', 'auto');
-					heights.push($(this).innerHeight());
-				});
+					var heights = [];
+					$('.candidateWants').each(function(){
+						$(this).css('height', 'auto');
+						heights.push($(this).innerHeight());
+					});
 
-				$('.candidateWants').css('height', heights.max() + 'px');
-			}
+					$('.candidateWants').css('height', heights.max() + 'px');
+				}
 
-			resizeWants();
-			$(window).resize(function(){
 				resizeWants();
-			});
-		</script>
+				$(window).resize(function(){
+					resizeWants();
+				});
+			</script>
+		<?php } ?>
 
 		<div class="row">
-			<div class="col-xs-12 candidateBioHeaderWrapper">
+			<div class="col-xs-12 candidateBioHeaderWrapper<?php if ($hasWants) { ?> hasWants<?php } else { ?> hasNotWants<?php } ?>">
 				<h2 class="candidateBioHeader">
 					Bio
 				</h2>

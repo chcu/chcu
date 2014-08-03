@@ -480,12 +480,12 @@ footer[role="general"] .links li {
 .candidateHeader .candidateInfoWrapper .candidateInfo {
   padding: 4em;
 }
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 768px) {
   .candidateHeader .candidateInfoWrapper .candidateInfo {
     padding: 3em;
   }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 480px) {
   .candidateHeader .candidateInfoWrapper .candidateInfo {
     padding: 2.5em 1.5em;
   }
@@ -497,12 +497,12 @@ footer[role="general"] .links li {
   font-size: 6em;
   margin: 0;
 }
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 768px) {
   .candidateHeader .candidateInfoWrapper h1 {
     font-size: 4em;
   }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 480px) {
   .candidateHeader .candidateInfoWrapper h1 {
     font-size: 2em;
   }
@@ -525,16 +525,16 @@ footer[role="general"] .links li {
   display: inline-block;
   margin: 0 1.5em;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 480px) {
   .candidateContacts li {
     display: block;
-    margin: 0;
+    margin: .5em 0;
   }
 }
 .candidateContacts li.socialNetwork {
   margin: 0 .1em;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 480px) {
   .candidateContacts li.socialNetwork {
     display: inline-block;
   }
@@ -570,7 +570,7 @@ footer[role="general"] .links li {
   text-align: center;
   vertical-align: top;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 480px) {
   .candidateWants {
     display: block;
     width: 100%;
@@ -600,7 +600,7 @@ footer[role="general"] .links li {
 .candidateDoWant {
   border-right: 1px solid black;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 480px) {
   .candidateDoWant {
     border: none;
   }
@@ -611,7 +611,7 @@ footer[role="general"] .links li {
 .candidateDoNotWant {
   border-left: 1px solid black;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 480px) {
   .candidateDoNotWant {
     border: none;
   }
@@ -641,7 +641,7 @@ footer[role="general"] .links li {
   font-size: 1.2em;
   line-height: 150%;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 480px) {
   .candidateBio * {
     font-size: 1em;
   }

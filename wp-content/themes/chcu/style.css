@@ -594,6 +594,11 @@ footer[role="general"] .links li {
   font-size: 1.25em;
   line-height: 150%;
 }
+@media screen and (max-width: 480px) {
+  .candidateWants ul {
+    padding: 0;
+  }
+}
 .candidateWants ul li {
   margin: .25em 0;
 }

@@ -156,6 +156,11 @@ hr {
   text-align: center;
   margin: .5em 0;
 }
+@media screen and (max-width: 480px) {
+  .shout {
+    font-size: 2em;
+  }
+}
 @media screen and (max-width: 768px) {
   .shout {
     font-size: 2em;
@@ -215,8 +220,30 @@ hr {
   font-size: 8em;
   text-transform: uppercase;
 }
+@media screen and (max-width: 768px) {
+  .pageHeader h1 {
+    font-size: 5em;
+    line-height: 105%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .pageHeader h1 {
+    font-size: 3em;
+    line-height: 105%;
+  }
+}
 .pageHeader .lead {
   font-size: 1.4em;
+}
+@media screen and (max-width: 768px) {
+  .pageHeader .lead {
+    font-size: 1.2em;
+  }
+}
+@media screen and (max-width: 480px) {
+  .pageHeader .lead {
+    font-size: 1em;
+  }
 }
 #fb-root {
   display: none;

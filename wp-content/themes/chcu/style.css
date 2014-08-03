@@ -504,7 +504,7 @@ footer[role="general"] .links li {
 }
 @media screen and (max-width: 480px) {
   .candidateHeader .candidateInfoWrapper h1 {
-    font-size: 2em;
+    font-size: 3em;
   }
 }
 .candidateHeader .candidateInfoWrapper .lead {

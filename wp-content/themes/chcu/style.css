@@ -63,7 +63,8 @@
 }
 .page-template-page-homepage-php .topics {
   text-align: center;
-  margin: 0 0 1.5em 0;
+  margin: 0 0 1em 0;
+  line-height: 200%;
 }
 .page-template-page-homepage-php .topics h3 {
   font-family: "proxima-nova", sans-serif;
@@ -479,12 +480,32 @@ footer[role="general"] .links li {
 .candidateHeader .candidateInfoWrapper .candidateInfo {
   padding: 4em;
 }
+@media screen and (max-width: 480px) {
+  .candidateHeader .candidateInfoWrapper .candidateInfo {
+    padding: 3em;
+  }
+}
+@media screen and (max-width: 768px) {
+  .candidateHeader .candidateInfoWrapper .candidateInfo {
+    padding: 2em;
+  }
+}
 .candidateHeader .candidateInfoWrapper h1 {
   font-family: "proxima-nova", sans-serif;
   text-align: center;
   font-weight: 900;
   font-size: 6em;
   margin: 0;
+}
+@media screen and (max-width: 480px) {
+  .candidateHeader .candidateInfoWrapper h1 {
+    font-size: 4em;
+  }
+}
+@media screen and (max-width: 768px) {
+  .candidateHeader .candidateInfoWrapper h1 {
+    font-size: 2em;
+  }
 }
 .candidateHeader .candidateInfoWrapper .lead {
   text-align: center;
@@ -498,13 +519,25 @@ footer[role="general"] .links li {
   text-align: center;
   margin: 2em 0 0 0;
   font-size: 1.2em;
+  line-height: 200%;
 }
 .candidateContacts li {
   display: inline-block;
   margin: 0 1.5em;
 }
+@media screen and (max-width: 768px) {
+  .candidateContacts li {
+    display: block;
+    margin: 0;
+  }
+}
 .candidateContacts li.socialNetwork {
   margin: 0 .1em;
+}
+@media screen and (max-width: 768px) {
+  .candidateContacts li.socialNetwork {
+    display: inline-block;
+  }
 }
 .candidateContacts a {
   color: white;
@@ -537,6 +570,13 @@ footer[role="general"] .links li {
   text-align: center;
   vertical-align: top;
 }
+@media screen and (max-width: 768px) {
+  .candidateWants {
+    display: block;
+    width: 100%;
+    margin: 0 0 2em 0;
+  }
+}
 .candidateWants h2 {
   font-family: "proxima-nova", sans-serif;
   text-transform: uppercase;
@@ -560,11 +600,21 @@ footer[role="general"] .links li {
 .candidateDoWant {
   border-right: 1px solid black;
 }
+@media screen and (max-width: 768px) {
+  .candidateDoWant {
+    border: none;
+  }
+}
 .candidateDoWant h2 {
   color: #8ebf28;
 }
 .candidateDoNotWant {
   border-left: 1px solid black;
+}
+@media screen and (max-width: 768px) {
+  .candidateDoNotWant {
+    border: none;
+  }
 }
 .candidateDoNotWant h2 {
   color: #ca220f;
@@ -590,6 +640,11 @@ footer[role="general"] .links li {
 .candidateBio * {
   font-size: 1.2em;
   line-height: 150%;
+}
+@media screen and (max-width: 768px) {
+  .candidateBio * {
+    font-size: 1em;
+  }
 }
 .candidateUrls {
   margin: 1em 0;

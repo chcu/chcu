@@ -91,7 +91,8 @@
 
 	.topics {
 		text-align: center;
-		margin: 0 0 1.5em 0;
+		margin: 0 0 1em 0;
+		line-height: 200%;
 
 		h3 {
 			.proxima;
@@ -553,6 +554,15 @@ footer[role="general"] {
 
 		.candidateInfo {
 			padding: 4em;
+
+			@media screen and (max-width: @screen-xs) {
+				padding: 3em;
+			}
+
+			@media screen and (max-width: @screen-sm) {
+				padding: 2em;
+			}
+
 		}
 
 		h1 {
@@ -561,6 +571,15 @@ footer[role="general"] {
 			font-weight: 900;
 			font-size: 6em;
 			margin: 0;
+
+			@media screen and (max-width: @screen-xs) {
+				font-size: 4em;
+			}
+
+			@media screen and (max-width: @screen-sm) {
+				font-size: 2em;
+			}
+
 		}
 
 		.lead {
@@ -580,13 +599,24 @@ footer[role="general"] {
 	text-align: center;
 	margin: 2em 0 0 0;
 	font-size: 1.2em;
+	line-height: 200%;
 
 	li {
 		display: inline-block;
 		margin: 0 1.5em;
 
+		@media screen and (max-width: @screen-sm) {
+			display: block;
+			margin: 0;
+		}
+
 		&.socialNetwork {
 			margin: 0 .1em;
+
+			@media screen and (max-width: @screen-sm) {
+				display: inline-block;
+			}
+
 		}
 
 	}
@@ -635,6 +665,12 @@ footer[role="general"] {
 	text-align: center;
 	vertical-align: top;
 
+	@media screen and (max-width: @screen-sm) {
+		display: block;
+		width: 100%;
+		margin: 0 0 2em 0;
+	}
+
 	h2 {
 		.proxima;
 		text-transform: uppercase;
@@ -666,6 +702,10 @@ footer[role="general"] {
 .candidateDoWant {
 	border-right: 1px solid black;
 
+	@media screen and (max-width: @screen-sm) {
+		border: none;
+	}
+
 	h2 {
 		color: @color-kultura;
 	}
@@ -674,6 +714,10 @@ footer[role="general"] {
 
 .candidateDoNotWant {
 	border-left: 1px solid black;
+
+	@media screen and (max-width: @screen-sm) {
+		border: none;
+	}
 
 	h2 {
 		color: @color-pohyb;
@@ -706,6 +750,11 @@ footer[role="general"] {
 .candidateBio * {
 	font-size: 1.2em;
 	line-height: 150%;
+
+	@media screen and (max-width: @screen-sm) {
+		font-size: 1em;
+	}
+
 }
 
 .candidateUrls {

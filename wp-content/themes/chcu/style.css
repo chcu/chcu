@@ -731,3 +731,30 @@ footer[role="general"] .links li {
 .programStoryHeader .lead {
   font-size: 1.5em;
 }
+.programStoryWrapper {
+  margin-top: 2em;
+}
+.programStoryText {
+  font-size: 1em;
+}
+.programStoryText p {
+  font-size: 1.1em;
+  line-height: 150%;
+}
+.programBrowse.prev {
+  text-align: left;
+}
+.programBrowse.next {
+  text-align: right;
+}
+.programBrowse a {
+  font-family: "proxima-nova", sans-serif;
+  font-weight: 900;
+  font-size: 1.2em;
+  color: #B5B5B5;
+  border-color: #B5B5B5;
+  text-transform: uppercase;
+}
+.programBrowse .line {
+  display: block;
+}

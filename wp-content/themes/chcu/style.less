@@ -804,3 +804,28 @@ footer[role="general"] {
 	}
 
 }
+
+.programStoryHeader {
+	color: white;
+	text-align: center;
+	padding: 2em;
+
+	&[data-topic="pohyb"]    { background-color: @color-pohyb; }
+	&[data-topic="domov"]    { background-color: @color-domov; }
+	&[data-topic="kultura"]  { background-color: @color-kultura; }
+	&[data-topic="ferhra"]   { background-color: @color-ferhra; }
+	&[data-topic="vzdelani"] { background-color: @color-vzdelani; }
+	&[data-topic="bydleni"]  { background-color: @color-bydleni; }
+	&[data-topic="zdravi"]   { background-color: @color-zdravi; }
+
+	h1 {
+		.proxima;
+		font-weight: 900;
+		font-size: 5em;
+	}
+
+	.lead {
+		font-size: 1.5em;
+	}
+
+}

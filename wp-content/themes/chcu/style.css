@@ -697,3 +697,37 @@ footer[role="general"] .links li {
   color: white;
   background-color: #de1879;
 }
+.programStoryHeader {
+  color: white;
+  text-align: center;
+  padding: 2em;
+}
+.programStoryHeader[data-topic="pohyb"] {
+  background-color: #ca220f;
+}
+.programStoryHeader[data-topic="domov"] {
+  background-color: #e29c05;
+}
+.programStoryHeader[data-topic="kultura"] {
+  background-color: #8ebf28;
+}
+.programStoryHeader[data-topic="ferhra"] {
+  background-color: #19aabf;
+}
+.programStoryHeader[data-topic="vzdelani"] {
+  background-color: #222081;
+}
+.programStoryHeader[data-topic="bydleni"] {
+  background-color: #a82da4;
+}
+.programStoryHeader[data-topic="zdravi"] {
+  background-color: #de1879;
+}
+.programStoryHeader h1 {
+  font-family: "proxima-nova", sans-serif;
+  font-weight: 900;
+  font-size: 5em;
+}
+.programStoryHeader .lead {
+  font-size: 1.5em;
+}

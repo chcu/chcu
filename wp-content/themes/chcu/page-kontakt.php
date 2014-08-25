@@ -10,7 +10,7 @@ $hollanPage = get_pages(array(
 	'meta_value'=> 'matej.hollan',
 ));
 
-var_dump($hollanPage); die;
+#var_dump($hollanPage); die;
 
 ?>
 

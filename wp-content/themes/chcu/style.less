@@ -864,3 +864,22 @@ footer[role="general"] {
 .manifestoButtonContainer {
 	margin: 1.5em 0 5em 0;
 }
+
+.contactSegment {
+	text-align: center;
+
+	&.meetings {
+		border-right: 1px dotted @color-text;
+
+		@media screen and (max-width: @screen-xs) {
+			border: none;
+		}
+
+	}
+
+	.image {
+		max-width: 75px;
+		margin: 1em auto;
+	}
+
+}

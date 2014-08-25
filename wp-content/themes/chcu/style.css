@@ -751,3 +751,18 @@ footer[role="general"] .links li {
 .manifestoButtonContainer {
   margin: 1.5em 0 5em 0;
 }
+.contactSegment {
+  text-align: center;
+}
+.contactSegment.meetings {
+  border-right: 1px dotted #000000;
+}
+@media screen and (max-width: 480px) {
+  .contactSegment.meetings {
+    border: none;
+  }
+}
+.contactSegment .image {
+  max-width: 75px;
+  margin: 1em auto;
+}

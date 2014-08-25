@@ -95,26 +95,9 @@ $candidates = array_slice(get_pages(array(
 			</div>
 		</div>
 
-		<div class="row topics">
-			<div class="col-sm-12">
-				<h3>
-					Chcu
-				</h3>
-				<ul>
-					<li><a data-topic="pohyb" href="">pohyb</a></li>
-					<li><a data-topic="domov" href="">domov</a></li>
-					<li><a data-topic="kultura" href="">kulturu</a></li>
-					<li><a data-topic="ferhra" href="">fér hru</a></li>
-					<li><a data-topic="vzdelani" href="">vzdělání</a></li>
-					<li><a data-topic="bydleni" href="">bydlení</a></li>
-					<li><a data-topic="zdravi" href="">zdraví</a></li>
-				</ul>
-			</div>
-		</div>
+		<?php include 'includes/programTopics.php' ?>
 
-		<div class="row">
-			<?php include 'includes/programStories.php' ?>
-		</div>
+		<?php include 'includes/programStories.php' ?>
 
 		<div class="row">
 			<div class="col-xs-12">

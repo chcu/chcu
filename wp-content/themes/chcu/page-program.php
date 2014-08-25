@@ -29,9 +29,7 @@ $programStories = get_pages(array(
 			</div>
 		</div>
 
-		<div class="row">
-			<?php include 'includes/programStories.php' ?>
-		</div>
+		<?php include 'includes/programStories.php' ?>
 
 		<?php include 'includes/programLink.php' ?>
 

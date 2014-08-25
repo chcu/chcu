@@ -57,7 +57,14 @@ if ($storyKey + 1 < count($programStories)) {
 		<div class="row programStoryWrapper">
 			<div class="col-md-offset-1 col-md-2 programBrowse prev">
 				<p>
-					<a href="<?php echo get_permalink($previousStory) ?>"><span class="line">Chcu</span> <span class="line">předchozí</span></a>
+					<a href="<?php echo get_permalink($previousStory) ?>">
+						<span class="icon">
+							<i class="fa fa-caret-left"></i>
+						</span>
+						<span class="text">
+							<span class="line">Chcu</span> <span class="line">předchozí</span>
+						</span>
+					</a>
 				</p>
 			</div>
 			<div class="col-md-6 programStoryText">
@@ -65,7 +72,14 @@ if ($storyKey + 1 < count($programStories)) {
 			</div>
 			<div class="col-md-2 programBrowse next">
 				<p>
-					<a href="<?php echo get_permalink($nextStory) ?>"><span class="line">Chcu</span> <span class="line">další</span></a>
+					<a href="<?php echo get_permalink($nextStory) ?>">
+						<span class="text">
+							<span class="line">Chcu</span> <span class="line">další</span>
+						</span>
+						<span class="icon">
+							<i class="fa fa-caret-right"></i>
+						</span>
+					</a>
 				</p>
 			</div>
 		</div>

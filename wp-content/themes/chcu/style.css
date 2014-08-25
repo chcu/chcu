@@ -743,18 +743,34 @@ footer[role="general"] .links li {
 .programBrowse.prev {
   text-align: left;
 }
+.programBrowse.prev .icon {
+  margin: 0 .25em 0 0;
+}
 .programBrowse.next {
   text-align: right;
+}
+.programBrowse.next .icon {
+  margin: 0 0 0 .25em;
 }
 .programBrowse a {
   font-family: "proxima-nova", sans-serif;
   font-weight: 900;
   font-size: 1.2em;
   color: #B5B5B5;
-  border-color: #B5B5B5;
+  border: none;
   text-transform: uppercase;
+  display: inline-block;
+  vertical-align: middle;
 }
-.programBrowse .line {
+.programBrowse a:hover {
+  color: #de1879;
+}
+.programBrowse a .text,
+.programBrowse a .icon {
+  display: inline-block;
+  vertical-align: middle;
+}
+.programBrowse a .text .line {
   display: block;
 }
 .manifestoButtonContainer {

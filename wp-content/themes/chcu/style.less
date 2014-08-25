@@ -853,10 +853,20 @@ footer[role="general"] {
 
 	&.prev {
 		text-align: left;
+
+		.icon {
+			margin: 0 .25em 0 0;
+		}
+
 	}
 
 	&.next {
 		text-align: right;
+
+		.icon {
+			margin: 0 0 0 .25em;
+		}
+
 	}
 
 	a {
@@ -864,12 +874,28 @@ footer[role="general"] {
 		font-weight: 900;
 		font-size: 1.2em;
 		color: #B5B5B5;
-		border-color: #B5B5B5;
+		border: none;
 		text-transform: uppercase;
-	}
+		display: inline-block;
+		vertical-align: middle;
 
-	.line {
-		display: block;
+		&:hover {
+			color: @color-accent;
+		}
+
+		.text, .icon {
+			display: inline-block;
+			vertical-align: middle;
+		}
+
+		.text {
+
+			.line {
+				display: block;
+			}
+
+		}
+
 	}
 
 }

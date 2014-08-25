@@ -31,7 +31,7 @@
 						<?php } else { ?>
 							<?php echo $user->display_name ?>
 						<?php } ?>
-						&middot; <time datetime="<?php echo the_time('Y-m-j'); ?>" pubdate><?php the_time('j.n. H:i'); ?></time>
+						&middot; <time datetime="<?php echo the_time('Y-m-j'); ?>" pubdate><?php the_time('j.n.'); ?></time>
 					</p>
 				</div>
 			</div>

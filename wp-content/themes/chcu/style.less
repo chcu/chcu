@@ -25,6 +25,10 @@
 @color-bydleni:  #a82da4;
 @color-zdravi:   #de1879;
 
+.font-size-normal  { font-size: 1em; }
+.font-size-larger  { font-size: 1.2em; }
+.font-size-smaller { font-size: .9em; }
+
 .roboto {
 	font-family: "Roboto", sans-serif;
 }
@@ -89,10 +93,10 @@
 
 		h3 {
 			.proxima;
+			.font-size-normal;
 			font-weight: 900;
 			text-transform: uppercase;
 			display: inline-block;
-			font-size: 1em;
 			margin: 0 1em;
 		}
 
@@ -231,14 +235,14 @@ hr {
 
 	.special {
 		.proxima;
-		font-size: 1.25em;
+		.font-size-larger;
 		font-weight: 500;
 		line-height: @line-height;
 		margin-top: .25em;
 	}
 
 	.long {
-		font-size: 1.15em;
+		.font-size-larger;
 		line-height: @line-height;
 		margin: .5em 0;
 	}
@@ -502,8 +506,8 @@ footer[role="general"] {
 		}
 
 		.perex {
+			.font-size-smaller;
 			margin: 1em 0 0 0;
-			font-size: .9em;
 			line-height: @line-height;
 		}
 
@@ -588,8 +592,8 @@ footer[role="general"] {
 		}
 
 		.lead {
+			.font-size-larger;
 			text-align: center;
-			font-size: 1.25em;
 			margin: 1em 0 0 0;
 		}
 
@@ -598,12 +602,12 @@ footer[role="general"] {
 }
 
 .candidateContacts {
+	.font-size-larger;
 	color: white;
 	padding: 0;
 	list-style-type: none;
 	text-align: center;
 	margin: 2em 0 0 0;
-	font-size: 1.2em;
 	line-height: 200%;
 
 	li {
@@ -690,10 +694,10 @@ footer[role="general"] {
 	}
 
 	ul {
+		.font-size-larger;
 		list-style-type: none;
 		padding: 0 2em;
 		margin: .75em 0 0 0;
-		font-size: 1.25em;
 		line-height: 150%;
 
 		@media screen and (max-width: @screen-xs) {
@@ -757,11 +761,11 @@ footer[role="general"] {
 }
 
 .candidateBio * {
-	font-size: 1.2em;
+	.font-size-larger;
 	line-height: 150%;
 
 	@media screen and (max-width: @screen-xs) {
-		font-size: 1em;
+		.font-size-normal;
 	}
 
 }
@@ -840,10 +844,10 @@ footer[role="general"] {
 }
 
 .programStoryText {
-	font-size: 1em;
+	.font-size-normal;
 
 	p {
-		font-size: 1.1em;
+		.font-size-larger;
 		line-height: 150%;
 	}
 
@@ -871,8 +875,8 @@ footer[role="general"] {
 
 	a {
 		.proxima;
+		.font-size-larger;
 		font-weight: 900;
-		font-size: 1.2em;
 		color: #B5B5B5;
 		border: none;
 		text-transform: uppercase;
@@ -953,7 +957,7 @@ footer[role="general"] {
 .postContent {
 
 	p, p.lead {
-		font-size: 1.2em;
+		.font-size-larger;
 		line-height: @line-height;
 	}
 

@@ -1,3 +1,12 @@
+.font-size-normal {
+  font-size: 1em;
+}
+.font-size-larger {
+  font-size: 1.2em;
+}
+.font-size-smaller {
+  font-size: .9em;
+}
 .roboto {
   font-family: "Roboto", sans-serif;
 }
@@ -58,10 +67,10 @@
 }
 .page-template-page-homepage-php .topics h3 {
   font-family: "proxima-nova", sans-serif;
+  font-size: 1em;
   font-weight: 900;
   text-transform: uppercase;
   display: inline-block;
-  font-size: 1em;
   margin: 0 1em;
 }
 .page-template-page-homepage-php .topics ul {
@@ -201,13 +210,13 @@ hr {
 }
 .sectionHeader .special {
   font-family: "proxima-nova", sans-serif;
-  font-size: 1.25em;
+  font-size: 1.2em;
   font-weight: 500;
   line-height: 150%;
   margin-top: .25em;
 }
 .sectionHeader .long {
-  font-size: 1.15em;
+  font-size: 1.2em;
   line-height: 150%;
   margin: .5em 0;
 }
@@ -435,8 +444,8 @@ footer[role="general"] .links li {
   border: none;
 }
 .programStories li .perex {
-  margin: 1em 0 0 0;
   font-size: .9em;
+  margin: 1em 0 0 0;
   line-height: 150%;
 }
 .posts {
@@ -507,17 +516,17 @@ footer[role="general"] .links li {
   }
 }
 .candidateHeader .candidateInfoWrapper .lead {
+  font-size: 1.2em;
   text-align: center;
-  font-size: 1.25em;
   margin: 1em 0 0 0;
 }
 .candidateContacts {
+  font-size: 1.2em;
   color: white;
   padding: 0;
   list-style-type: none;
   text-align: center;
   margin: 2em 0 0 0;
-  font-size: 1.2em;
   line-height: 200%;
 }
 .candidateContacts li {
@@ -587,10 +596,10 @@ footer[role="general"] .links li {
   display: block;
 }
 .candidateWants ul {
+  font-size: 1.2em;
   list-style-type: none;
   padding: 0 2em;
   margin: .75em 0 0 0;
-  font-size: 1.25em;
   line-height: 150%;
 }
 @media screen and (max-width: 480px) {
@@ -737,7 +746,7 @@ footer[role="general"] .links li {
   font-size: 1em;
 }
 .programStoryText p {
-  font-size: 1.1em;
+  font-size: 1.2em;
   line-height: 150%;
 }
 .programBrowse.prev {
@@ -754,8 +763,8 @@ footer[role="general"] .links li {
 }
 .programBrowse a {
   font-family: "proxima-nova", sans-serif;
-  font-weight: 900;
   font-size: 1.2em;
+  font-weight: 900;
   color: #B5B5B5;
   border: none;
   text-transform: uppercase;

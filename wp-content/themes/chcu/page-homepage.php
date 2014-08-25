@@ -89,11 +89,13 @@ $candidates = array_slice(get_pages(array(
 			</div>
 		</div>
 
+		<!--
 		<div class="row">
 			<div class="col-sm-12">
 				<hr />
 			</div>
 		</div>
+		-->
 
 		<!--
 		<?php include 'includes/programTopics.php' ?>

@@ -70,6 +70,8 @@ if ($storyKey + 1 < count($programStories)) {
 			</div>
 		</div>
 
+		<?php include 'includes/programLink.php' ?>
+
 	</div>
 
 <?php get_footer(); ?>

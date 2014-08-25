@@ -48,7 +48,6 @@ add_theme_support('post-thumbnails');
 			</div>
 		</div>
 
-
 		<div class="row callToAction">
 			<div class="col-sm-12">
 				<p class="shout">

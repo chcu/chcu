@@ -19,7 +19,7 @@
 					</p>
 				</div>
 			<?php } ?>
-			<div class="content <?php if ($imageUrl) { ?>col-lg-7 col-md-9 col-sm-7 <?php } ?>col-xs-12">
+			<div class="content <?php if ($imageUrl) { ?> col-lg-7 col-md-9 col-sm-7 <?php } else { ?> col-lg-offset-1 <?php } ?> col-xs-12">
 				<h3 class="title">
 					<a href="<?php echo get_permalink($post) ?>"><?php echo $post->post_title ?></a>
 				</h3>

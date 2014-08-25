@@ -7,6 +7,11 @@
 			$postId = get_the_ID();
 			$post = get_post($postId);
 			$user = get_user_by('id', $post->post_author);
+			$candidatePage = get_pages(array(
+				'hierarchical' => 0,
+				'meta_key'     => 'userLogin',
+				'meta_value'   => $user->user_login,
+			));
 			$meta = get_post_meta($postId);
 			?>
 

@@ -41,7 +41,7 @@
 }
 .page-template-page-homepage-php .rainbowButton:hover {
   color: white;
-  background-color: #de1879;
+  background-color: #000000;
   text-decoration: none;
 }
 .page-template-page-homepage-php .biggerButton {
@@ -86,9 +86,9 @@ p {
   margin: .75em 0;
 }
 a {
-  color: #de1879;
+  color: #000000;
+  border-bottom: 1px solid #000000;
   text-decoration: none;
-  border-bottom: 1px solid #de1879;
 }
 a:hover {
   color: #666666;
@@ -339,7 +339,7 @@ footer[role="general"] .links li {
     margin: 0;
   }
   #chcuNav a:hover {
-    color: #de1879;
+    color: #000000;
     border: none;
   }
   #chcuNav .current-menu-item a {
@@ -534,15 +534,15 @@ footer[role="general"] .links li {
   border-color: white;
 }
 .candidateContacts a:hover {
-  color: #de1879;
-  border-color: #de1879;
+  color: #000000;
+  border-color: #000000;
 }
 .candidateContacts a.icon {
   border: none;
 }
 .candidateContacts a.icon:hover i {
   color: white;
-  background: #de1879;
+  background: #000000;
 }
 .candidateContacts i {
   color: black;
@@ -664,7 +664,7 @@ footer[role="general"] .links li {
 }
 .button:hover {
   color: white;
-  background-color: #de1879;
+  background-color: #000000;
   text-decoration: none;
 }
 .blackButton {
@@ -680,12 +680,12 @@ footer[role="general"] .links li {
 }
 .blackButton:hover {
   color: white;
-  background-color: #de1879;
+  background-color: #000000;
   text-decoration: none;
 }
 .blackButton:hover {
   color: white;
-  background-color: #de1879;
+  background-color: #000000;
 }
 .programStoryHeader {
   color: white;

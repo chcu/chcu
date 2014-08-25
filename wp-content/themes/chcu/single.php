@@ -7,6 +7,7 @@
 			$postId = get_the_ID();
 			$post = get_post($postId);
 			$user = get_user_by('id', $post->post_author);
+			$meta = get_post_meta($postId);
 			?>
 
 			<div class="row">
@@ -32,6 +33,9 @@
 
 			<div class="row">
 				<div class="col-lg-offset-2 col-lg-8 col-md-offset-1 col-md-10 col-sm-12 postContent">
+					<p>
+						<?php echo $meta['perex'][0] ?>
+					</p>
 					<?php the_content(); ?>
 				</div>
 			</div>

@@ -804,3 +804,14 @@ footer[role="general"] .links li {
   background-size: contain;
   height: 1000px;
 }
+.postTitle {
+  font-family: "proxima-nova", sans-serif;
+  font-weight: 900;
+  font-size: 4em;
+  line-height: 97.5%;
+}
+.postContent p,
+.postContent p.lead {
+  font-size: 1.2em;
+  line-height: 150%;
+}

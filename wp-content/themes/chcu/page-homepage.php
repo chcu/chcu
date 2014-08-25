@@ -95,7 +95,9 @@ $candidates = array_slice(get_pages(array(
 			</div>
 		</div>
 
+		<!--
 		<?php include 'includes/programTopics.php' ?>
+		-->
 
 		<?php include 'includes/programStories.php' ?>
 

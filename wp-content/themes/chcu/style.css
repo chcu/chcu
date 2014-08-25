@@ -95,6 +95,15 @@ a:hover {
   border-color: #666666;
   text-decoration: none;
 }
+a.accent {
+  color: #de1879;
+  border-color: #de1879;
+}
+a.accent:hover {
+  color: #666666;
+  border-color: #666666;
+  text-decoration: none;
+}
 a.img {
   border: none;
   line-height: 0;
@@ -768,4 +777,7 @@ footer[role="general"] .links li {
 .contactSegment .image {
   max-width: 75px;
   margin: 1em auto;
+}
+.donateButton {
+  margin: 2em 0;
 }

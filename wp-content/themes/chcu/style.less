@@ -15,6 +15,7 @@
 @color-text:        #000;
 @color-link:        #000;
 @color-link-active: #666;
+@color-accent:      #de1879;
 
 @color-pohyb:    #ca220f;
 @color-domov:    #e29c05;
@@ -134,6 +135,18 @@ a {
 		color: @color-link-active;
 		border-color: @color-link-active;
 		text-decoration: none;
+	}
+
+	&.accent {
+		color: @color-accent;
+		border-color: @color-accent;
+
+		&:hover {
+			color: @color-link-active;
+			border-color: @color-link-active;
+			text-decoration: none;
+		}
+
 	}
 
 	&.img {
@@ -886,4 +899,8 @@ footer[role="general"] {
 		margin: 1em auto;
 	}
 
+}
+
+.donateButton {
+	margin: 2em 0;
 }

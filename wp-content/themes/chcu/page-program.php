@@ -12,6 +12,14 @@ $programStories = get_pages(array(
 	'meta_value'   => 'programStory',
 ));
 
+if ($_GET['tema']) {
+	$topic = $_GET['tema'];
+	$programStories = array_filter($programStories, function($i) use($topic) {
+		$meta = get_post_meta($i->ID);
+		return $meta['topic'][0] == $topic;
+	});
+}
+
 ?>
 
 <?php get_header(); ?>

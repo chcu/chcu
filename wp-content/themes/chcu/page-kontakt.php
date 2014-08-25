@@ -6,11 +6,12 @@ Template Name: Kontakt
 add_theme_support('post-thumbnails');
 
 $hollanPage = get_pages(array(
-	'meta_key'  => 'candidateId',
-	'meta_value'=> 'matej.hollan',
+	'hierarchical' => 0,
+	'meta_key'     => 'candidateId',
+	'meta_value   '=> 'matej.hollan',
 ));
 
-#var_dump($hollanPage); die;
+var_dump($hollanPage); die;
 
 ?>
 

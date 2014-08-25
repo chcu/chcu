@@ -38,12 +38,12 @@ $candidatesHome = get_pages(array(
 	'meta_value'   => 'candidates',
 ));
 
-$candidates = get_pages(array(
+$candidates = array_slice(get_pages(array(
 	'hierarchical' => 0,
 	'sort_column'  => 'menu_order',
 	'meta_key'     => 'pageRole',
 	'meta_value'   => 'candidate',
-));
+)), 0, 12);
 
 #var_dump($candidates);
 

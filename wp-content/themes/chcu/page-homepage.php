@@ -188,6 +188,7 @@ $candidates = array_slice(get_pages(array(
 			</div>
 		</div>
 
+		<!--
 		<div class="row">
 			<div class="col-sm-12">
 				<div class="kolo">
@@ -195,6 +196,7 @@ $candidates = array_slice(get_pages(array(
 				</div>
 			</div>
 		</div>
+		-->
 
 	</div>
 

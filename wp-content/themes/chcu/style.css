@@ -839,3 +839,7 @@ footer[role="general"] .links li {
   font-family: "proxima-nova", sans-serif;
   font-weight: 700;
 }
+.manifest p em,
+.manifest p.lead em {
+  font-family: "proxima-nova", sans-serif;
+}

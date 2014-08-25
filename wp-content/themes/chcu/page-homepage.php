@@ -72,8 +72,8 @@ $candidates = get_pages(array(
 				<p class="long text-center">
 					Tři roky kritizujeme brněnský magistrát. Tři roky si klepeme na čelo, protáčíme panenky, vyprskáváme smíchy a klademe hlavy do dlaní. Tři roky nám říkají, že posmívat se umí každý, ale vládnout můžou jen vyvolení. Jenže my dobře víme, že politikem se člověk nerodí, ale stává.  My na to máme právě teď.
 				</p>
-				<p>
-					<a class="rainbowButton biggerButton roundedButton" href="<?php echo get_permalink($manifesto[0]->ID) ?>">Číst duhový manifest <span class="fa fa-caret-right"></a>
+				<p class="manifestoButtonContainer">
+					<a href="<?php echo get_permalink($manifesto[0]->ID) ?>"><img src="<?php echo get_theme_root_uri() . '/' . get_template() ?>/manifesto_link.png" /></a>
 				</p>
 			</div>
 		</div>
@@ -193,25 +193,17 @@ $candidates = get_pages(array(
 	<script type="text/javascript">
 		$(function(){
 			var pictureSizes = {
-				chcu: {
-					x: 2009,
-					y: 498,
-				},
 				logo: {
-					x: 3750,
-					y: 486,
+					x: 575,
+					y: 224,
 				},
 			};
 
 			function resizeLogo() {
-				var chcuWidth = $('h1 .chcu').width();
-				var chcuHeight = pictureSizes.chcu.y / pictureSizes.chcu.x * chcuWidth;
-
-				var logoWidth = $('h1 .logo').width();
+				var logoWidth = $('h1').width();
 				var logoHeight = pictureSizes.logo.y / pictureSizes.logo.x * logoWidth;
 
-				$('h1 .chcu').css('height', (chcuHeight) + 'px');
-				$('h1 .logo').css('height', logoHeight + 'px');
+				$('h1').css('height', logoHeight + 'px');
 			}
 
 			resizeLogo();

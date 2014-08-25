@@ -5,29 +5,19 @@
   font-family: "proxima-nova", sans-serif;
 }
 .page-template-page-homepage-php h1 {
-  margin: 2em 0 0 0;
+  margin: 2em 0 1em 0;
+  display: block;
+  background-image: url('logo_both.png');
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 @media screen and (max-width: 768px) {
   .page-template-page-homepage-php h1 {
     margin: 1em 0 0 0;
   }
 }
-.page-template-page-homepage-php h1 .chcu {
-  display: block;
-  background-image: url('chcu.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-  margin: .75em 0;
-}
 .page-template-page-homepage-php h1 .chcu .text {
   display: none;
-}
-.page-template-page-homepage-php h1 .logo {
-  display: block;
-  background-image: url('logo.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-  margin: .75em 0;
 }
 .page-template-page-homepage-php h1 .logo .text {
   display: none;
@@ -757,4 +747,7 @@ footer[role="general"] .links li {
 }
 .programBrowse .line {
   display: block;
+}
+.manifestoButtonContainer {
+  margin: 1.5em 0 5em 0;
 }

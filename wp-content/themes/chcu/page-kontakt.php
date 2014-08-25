@@ -11,8 +11,6 @@ $hollanPage = get_pages(array(
 	'meta_value   '=> 'matej.hollan',
 ));
 
-var_dump($hollanPage); die;
-
 ?>
 
 <?php get_header(); ?>
@@ -51,7 +49,7 @@ var_dump($hollanPage); die;
 					<img class="img-responsive" src="<?php echo get_theme_root_uri() . '/' . get_template() ?>/icon_phone.png" />
 				</p>
 				<p>
-					Matěj Hollan<br />jednička<br />774 956 148
+					<a href="<?php echo get_permalink($hollanPage[0]) ?>">Matěj Hollan</a><br />jednička<br />774 956 148
 				</p>
 			</div>
 		</div>

@@ -827,10 +827,15 @@ footer[role="general"] .links li {
 .manifest h2 {
   font-family: "proxima-nova", sans-serif;
   font-weight: 900;
-  margin: 1em 0 .5em 0;
+  margin: 1.5em 0 .5em 0;
 }
 .manifest p,
 .manifest p.lead {
   font-size: 1.2em;
   line-height: 150%;
+}
+.manifest p strong,
+.manifest p.lead strong {
+  font-family: "proxima-nova", sans-serif;
+  font-weight: 700;
 }

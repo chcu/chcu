@@ -894,6 +894,7 @@ footer[role="general"] .links li {
 .kolo form input[type="submit"],
 .kolo form button[type="submit"] {
   text-transform: uppercase;
+  margin-left: -1px;
 }
 .kolo form input:focus,
 .kolo form button:focus {

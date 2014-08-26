@@ -31,9 +31,7 @@ $candidates = get_pages(array(
 			</div>
 		</div>
 
-		<div class="row">
-			<?php include 'includes/candidates.php' ?>
-		</div>
+		<?php include 'includes/candidates.php' ?>
 
 	</div>
 

@@ -163,9 +163,7 @@ $candidates = array_slice(get_pages(array(
 			</div>
 		</div>
 
-		<div class="row">
-			<?php include 'includes/candidates.php' ?>
-		</div>
+		<?php include 'includes/candidates.php' ?>
 
 		<div class="row">
 			<div class="col-xs-12">
@@ -175,15 +173,7 @@ $candidates = array_slice(get_pages(array(
 			</div>
 		</div>
 
-		<!--
-		<div class="row">
-			<div class="col-sm-12">
-				<div class="kolo">
-
-				</div>
-			</div>
-		</div>
-		-->
+		<?php include 'includes/kolo.php' ?>
 
 	</div>
 

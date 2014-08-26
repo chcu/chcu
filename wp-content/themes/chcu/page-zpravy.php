@@ -28,9 +28,9 @@ $posts = get_posts(array(
 			</div>
 		</div>
 
-		<div class="row">
-			<?php include 'includes/posts.php' ?>
-		</div>
+		<?php include 'includes/posts.php' ?>
+
+		<?php include 'includes/kolo.php' ?>
 
 	</div>
 

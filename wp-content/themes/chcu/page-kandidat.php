@@ -208,9 +208,7 @@ while (have_posts()) {
 			</div>
 		</div>
 
-		<div class="row">
-			<?php include 'includes/candidates.php' ?>
-		</div>
+		<?php include 'includes/candidates.php' ?>
 
 		<div class="row">
 			<div class="col-xs-12">

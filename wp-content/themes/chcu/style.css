@@ -552,8 +552,8 @@ footer[role="general"] .links li {
   border-color: white;
 }
 .candidateContacts a:hover {
-  color: #000000;
-  border-color: #000000;
+  color: #de1879;
+  border-color: #de1879;
 }
 .candidateContacts a.icon {
   border: none;

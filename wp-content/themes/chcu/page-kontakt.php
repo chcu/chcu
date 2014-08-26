@@ -56,6 +56,8 @@ $hollanPage = get_pages(array(
 
 		<?php include 'includes/donate.php' ?>
 
+		<?php include 'includes/kolo.php' ?>
+
 	</div>
 
 <?php get_footer(); ?>

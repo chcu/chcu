@@ -218,6 +218,8 @@ while (have_posts()) {
 			</div>
 		</div>
 
+		<?php include 'includes/kolo.php' ?>
+
 	</div>
 
 <?php get_footer(); ?>

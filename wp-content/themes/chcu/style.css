@@ -794,7 +794,7 @@ footer[role="general"] .links li {
 .contactSegment.meetings {
   border-right: 1px dotted #000000;
 }
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 768px) {
   .contactSegment.meetings {
     border-right: none;
   }

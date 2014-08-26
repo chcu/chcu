@@ -940,7 +940,91 @@ footer[role="general"] {
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: contain;
-	height: 1000px;
+	margin: 2em 0;
+
+	.background {
+		margin: 2em 0;
+	}
+
+	table.container {
+		width: 100%;
+		height: 100%;
+
+		td {
+			vertical-align: middle;
+		}
+
+	}
+
+	form {
+		color: white;
+		text-align: center;
+
+		h2 {
+			.proxima;
+			font-weight: 900;
+			font-size: 11em;
+
+			@media screen and (max-width: @screen-md) {
+				font-size: 10em;
+			}
+
+			@media screen and (max-width: 860px) {
+				font-size: 8.5em;
+			}
+
+			@media screen and (max-width: 640px) {
+				font-size: 7.5em;
+			}
+
+			@media screen and (max-width: 480px) {
+				font-size: 4em;
+			}
+
+		}
+
+		.inputs {
+			border-collapse: collapse;
+			line-height: 0;
+			margin: 1em auto;
+
+			td {
+				padding: 0;
+				margin: 0;
+			}
+
+		}
+
+		input, button {
+			display: inline-block;
+			float: none;
+			font-size: 2.5em;
+			line-height: @line-height;
+			box-sizing: border-box;
+			padding: .4em;
+			margin: 0;
+			border: 2px solid black;
+
+			@media screen and (max-width: 860px) {
+				font-size: 2em;
+			}
+
+			@media screen and (max-width: 640px) {
+				font-size: 1.5em;
+			}
+
+			@media screen and (max-width: 480px) {
+				font-size: 1em;
+			}
+
+			&[type="submit"] {
+				text-transform: uppercase;
+			}
+
+		}
+
+	}
+
 }
 
 .postTitle {

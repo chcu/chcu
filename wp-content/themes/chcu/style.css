@@ -811,7 +811,88 @@ footer[role="general"] .links li {
   background-position: center center;
   background-repeat: no-repeat;
   background-size: contain;
-  height: 1000px;
+  margin: 2em 0;
+}
+.kolo .background {
+  margin: 2em 0;
+}
+.kolo table.container {
+  width: 100%;
+  height: 100%;
+}
+.kolo table.container td {
+  vertical-align: middle;
+}
+.kolo form {
+  color: white;
+  text-align: center;
+}
+.kolo form h2 {
+  font-family: "proxima-nova", sans-serif;
+  font-weight: 900;
+  font-size: 11em;
+}
+@media screen and (max-width: 992px) {
+  .kolo form h2 {
+    font-size: 10em;
+  }
+}
+@media screen and (max-width: 860px) {
+  .kolo form h2 {
+    font-size: 8.5em;
+  }
+}
+@media screen and (max-width: 640px) {
+  .kolo form h2 {
+    font-size: 7.5em;
+  }
+}
+@media screen and (max-width: 480px) {
+  .kolo form h2 {
+    font-size: 4em;
+  }
+}
+.kolo form .inputs {
+  border-collapse: collapse;
+  line-height: 0;
+  margin: 1em auto;
+}
+.kolo form .inputs td {
+  padding: 0;
+  margin: 0;
+}
+.kolo form input,
+.kolo form button {
+  display: inline-block;
+  float: none;
+  font-size: 2.5em;
+  line-height: 150%;
+  box-sizing: border-box;
+  padding: .4em;
+  margin: 0;
+  border: 2px solid black;
+}
+@media screen and (max-width: 860px) {
+  .kolo form input,
+  .kolo form button {
+    font-size: 2em;
+  }
+}
+@media screen and (max-width: 640px) {
+  .kolo form input,
+  .kolo form button {
+    font-size: 1.5em;
+  }
+}
+@media screen and (max-width: 480px) {
+  .kolo form input,
+  .kolo form button {
+    font-size: 1em;
+  }
+}
+.kolo form input[type="submit"],
+.kolo form button[type="submit"] {
+  text-transform: uppercase;
 }
 .postTitle {
   font-family: "proxima-nova", sans-serif;

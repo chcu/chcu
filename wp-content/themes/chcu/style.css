@@ -796,7 +796,7 @@ footer[role="general"] .links li {
 }
 @media screen and (max-width: 480px) {
   .contactSegment.meetings {
-    border: none;
+    border-right: none;
   }
 }
 .contactSegment .image {

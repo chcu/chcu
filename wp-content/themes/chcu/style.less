@@ -1004,6 +1004,7 @@ footer[role="general"] {
 			padding: .4em;
 			margin: 0;
 			border: 2px solid black;
+			outline: 0;
 
 			@media screen and (max-width: 860px) {
 				font-size: 2em;
@@ -1019,6 +1020,10 @@ footer[role="general"] {
 
 			&[type="submit"] {
 				text-transform: uppercase;
+			}
+
+			&:focus {
+				outline: 0;
 			}
 
 		}

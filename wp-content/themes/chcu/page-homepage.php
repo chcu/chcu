@@ -179,7 +179,7 @@ $candidates = array_slice(get_pages(array(
 		$(function(){
 			var pictureSizes = {
 				logo: {
-					x: 575,
+					x: 709,
 					y: 224,
 				},
 			};

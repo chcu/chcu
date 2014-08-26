@@ -128,9 +128,7 @@ $candidates = array_slice(get_pages(array(
 			</div>
 		</div>
 
-		<div class="row">
-			<?php include 'includes/posts.php' ?>
-		</div>
+		<?php include 'includes/posts.php' ?>
 
 		<div class="row">
 			<div class="col-xs-12">

@@ -157,7 +157,7 @@ while (have_posts()) {
 		</div>
 		<script type="text/javascript">
 			$(function(){
-				$('.candidateBioHeader').css('height', ($('.candidateBioHeader').width() + 23) + 'px');
+				$('.candidateBioHeader').css('height', ($('.candidateBioHeader').innerWidth() - 10) + 'px');
 			})
 		</script>
 

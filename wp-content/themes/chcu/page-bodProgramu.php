@@ -86,6 +86,8 @@ if ($storyKey + 1 < count($programStories)) {
 
 		<?php include 'includes/programLink.php' ?>
 
+		<?php include 'includes/donate.php' ?>
+
 		<?php include 'includes/kolo.php' ?>
 
 	</div>

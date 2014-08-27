@@ -41,6 +41,8 @@ if ($_GET['tema']) {
 
 		<?php include 'includes/programLink.php' ?>
 
+		<?php include 'includes/donate.php' ?>
+
 		<?php include 'includes/kolo.php' ?>
 
 	</div>

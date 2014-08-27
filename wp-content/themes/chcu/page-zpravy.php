@@ -30,6 +30,8 @@ $posts = get_posts(array(
 
 		<?php include 'includes/posts.php' ?>
 
+		<?php include 'includes/donate.php' ?>
+
 		<?php include 'includes/kolo.php' ?>
 
 	</div>

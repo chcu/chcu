@@ -171,6 +171,8 @@ $candidates = array_slice(get_pages(array(
 			</div>
 		</div>
 
+		<?php include 'includes/donate.php' ?>
+
 		<?php include 'includes/kolo.php' ?>
 
 	</div>

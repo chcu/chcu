@@ -218,6 +218,8 @@ while (have_posts()) {
 			</div>
 		</div>
 
+		<hr />
+
 		<?php include 'includes/donate.php' ?>
 
 		<?php include 'includes/kolo.php' ?>

@@ -33,6 +33,8 @@ $candidates = get_pages(array(
 
 		<?php include 'includes/candidates.php' ?>
 
+		<hr />
+
 		<?php include 'includes/donate.php' ?>
 
 		<?php include 'includes/kolo.php' ?>

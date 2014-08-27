@@ -21,6 +21,7 @@ while (have_posts()) {
 	the_post();
 	$postId = get_the_ID();
 
+	$post = get_post($postId);
 	$meta = get_post_meta($postId);
 
 	$portraitUrl = $meta['portraitUrl'][0];
@@ -148,27 +149,30 @@ while (have_posts()) {
 			</script>
 		<?php } ?>
 
-		<div class="row">
-			<div class="col-xs-12 candidateBioHeaderWrapper<?php if ($hasWants) { ?> hasWants<?php } else { ?> hasNotWants<?php } ?>">
-				<h2 class="candidateBioHeader">
-					<span class="middle">Proč?</span>
-				</h2>
+		<?php if (trim($post->post_content)) { ?>
+			<div class="row">
+				<div class="col-xs-12 candidateBioHeaderWrapper<?php if ($hasWants) { ?> hasWants<?php } else { ?> hasNotWants<?php } ?>">
+					<h2 class="candidateBioHeader">
+						<span class="middle">Proč?</span>
+					</h2>
+				</div>
 			</div>
-		</div>
-		<script type="text/javascript">
-			$(function(){
-				$('.candidateBioHeader').css('height', ($('.candidateBioHeader').innerWidth() - 10) + 'px');
-			})
-		</script>
 
-		<div class="row">
-			<div class="candidateBio col-lg-offset-2 col-lg-8 col-md-offset-1 col-md-10">
-				<?php while (have_posts()) {
-					the_post();
-					the_content();
-				} ?>
+			<script type="text/javascript">
+				$(function(){
+					$('.candidateBioHeader').css('height', ($('.candidateBioHeader').innerWidth() - 10) + 'px');
+				})
+			</script>
+
+			<div class="row">
+				<div class="candidateBio col-lg-offset-2 col-lg-8 col-md-offset-1 col-md-10">
+					<?php while (have_posts()) {
+						the_post();
+						the_content();
+					} ?>
+				</div>
 			</div>
-		</div>
+		<?php } ?>
 
 		<?php if ($urls) { ?>
 			<div class="row">

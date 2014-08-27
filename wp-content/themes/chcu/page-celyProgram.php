@@ -28,6 +28,18 @@ add_theme_support('post-thumbnails');
 			</div>
 		</div>
 
+		<script type="text/javascript">
+			$(function(){
+				$('html').delegate('ol a', 'click', function(event){
+					event.preventDefault();
+					var segment = $(this).attr('data-segment');
+					$('html, body').animate({
+						scrollTop: $('[name="' + segment + '"]').offset().top - $('#chcuNav').outerHeight(),
+					}, 750);
+				});
+			});
+		</script>
+
 		<hr />
 
 		<?php include 'includes/donate.php' ?>

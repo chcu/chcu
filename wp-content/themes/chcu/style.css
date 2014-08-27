@@ -911,22 +911,27 @@ footer[role="general"] .links li {
   font-size: 1.2em;
   line-height: 150%;
 }
-.manifest h2 {
+.longCopy h2 {
   font-family: "proxima-nova", sans-serif;
   font-weight: 900;
   margin: 1.5em 0 .5em 0;
 }
-.manifest p,
-.manifest p.lead {
+.longCopy h3 {
+  font-family: "proxima-nova", sans-serif;
+  font-weight: 700;
+  margin: 1.5em 0 .5em 0;
+}
+.longCopy p,
+.longCopy p.lead {
   font-size: 1.2em;
   line-height: 150%;
 }
-.manifest p strong,
-.manifest p.lead strong {
+.longCopy p strong,
+.longCopy p.lead strong {
   font-family: "proxima-nova", sans-serif;
   font-weight: 700;
 }
-.manifest p em,
-.manifest p.lead em {
+.longCopy p em,
+.longCopy p.lead em {
   font-family: "proxima-nova", sans-serif;
 }

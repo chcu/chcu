@@ -1,8 +1,9 @@
 <?php
 
 $program = get_pages(array(
-	'meta_key'   => 'pageRole',
-	'meta_value' => 'program2014',
+	'hierarchical' => 0,
+	'meta_key'     => 'pageRole',
+	'meta_value'   => 'program2014',
 ));
 
 var_dump($program); die;

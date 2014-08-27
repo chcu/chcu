@@ -151,13 +151,13 @@ while (have_posts()) {
 		<div class="row">
 			<div class="col-xs-12 candidateBioHeaderWrapper<?php if ($hasWants) { ?> hasWants<?php } else { ?> hasNotWants<?php } ?>">
 				<h2 class="candidateBioHeader">
-					Proč?
+					<span class="middle">Proč?</span>
 				</h2>
 			</div>
 		</div>
 		<script type="text/javascript">
 			$(function(){
-				$('.candidateBioHeader').css('width', $('.candidateBioHeader').innerHeight() + 'px');
+				$('.candidateBioHeader').css('height', ($('.candidateBioHeader').width() + 23) + 'px');
 			})
 		</script>
 

@@ -36,6 +36,7 @@ add_theme_support('post-thumbnails');
 					$('html, body').animate({
 						scrollTop: $('[name="' + segment + '"]').offset().top - $('#chcuNav').outerHeight(),
 					}, 750);
+
 				});
 			});
 		</script>

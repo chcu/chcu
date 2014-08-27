@@ -151,7 +151,7 @@ while (have_posts()) {
 		<div class="row">
 			<div class="col-xs-12 candidateBioHeaderWrapper<?php if ($hasWants) { ?> hasWants<?php } else { ?> hasNotWants<?php } ?>">
 				<h2 class="candidateBioHeader">
-					Bio
+					Proč?
 				</h2>
 			</div>
 		</div>

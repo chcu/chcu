@@ -28,6 +28,8 @@ add_theme_support('post-thumbnails');
 			</div>
 		</div>
 
+		<hr />
+
 		<?php include 'includes/donate.php' ?>
 
 		<?php include 'includes/kolo.php' ?>

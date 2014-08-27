@@ -646,9 +646,17 @@ footer[role="general"] .links li {
   display: inline-block;
   background: black;
   color: white;
-  padding: .75em 0;
+  padding: .5em;
   margin: 0 0 .5em 0;
   border-radius: 50%;
+  box-sizing: border-box;
+  vertical-align: middle;
+}
+.candidateBioHeader .middle {
+  display: block;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
 }
 .candidateBio * {
   font-size: 1.2em;

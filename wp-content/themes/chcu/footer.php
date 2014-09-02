@@ -63,7 +63,6 @@
 							</li><li><a href="http://www.vyzva2013.cz/">www.vyzva2013.cz</a>
 							</li><li><a href="http://www.zahoddecko.cz/">www.zahoddecko.cz</a>
 							</li><li><a href="http://www.osbrneni.cz/">www.osbrneni.cz</a>
-							</li><li><a href="http://www.cisteturany.cz/">www.cisteturany.cz</a>
 							</li><li><a href="http://www.klidnalesna.cz/">www.klidnalesna.cz</a>
 							</li>
 						</ul>

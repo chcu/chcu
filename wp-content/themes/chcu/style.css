@@ -668,6 +668,9 @@ footer[role="general"] .links li {
     font-size: 1em;
   }
 }
+.candidateBio .lead {
+  font-size: 1em;
+}
 .candidateUrls {
   margin: 1em 0;
   text-align: center;

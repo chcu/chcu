@@ -148,6 +148,9 @@ a[data-topic="zdravi"] {
   color: #de1879;
   border-color: #de1879;
 }
+* a {
+  font-size: 1em;
+}
 hr {
   clear: both;
   background-image: url('rainbow.png');

@@ -98,6 +98,7 @@ a {
   color: #000000;
   border-bottom: 1px solid #000000;
   text-decoration: none;
+  font-size: 1em;
 }
 a:hover {
   color: #666666;
@@ -147,9 +148,6 @@ a[data-topic="bydleni"] {
 a[data-topic="zdravi"] {
   color: #de1879;
   border-color: #de1879;
-}
-* a {
-  font-size: 1em;
 }
 hr {
   clear: both;
@@ -661,12 +659,12 @@ footer[role="general"] .links li {
   top: 50%;
   transform: translateY(-50%);
 }
-.candidateBio * {
+.candidateBio {
   font-size: 1.2em;
   line-height: 150%;
 }
 @media screen and (max-width: 480px) {
-  .candidateBio * {
+  .candidateBio {
     font-size: 1em;
   }
 }

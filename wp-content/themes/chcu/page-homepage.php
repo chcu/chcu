@@ -22,9 +22,9 @@ $programStories = get_pages(array(
 	'meta_value'   => 'programStory',
 ));
 
-$posts = get_posts(array(
+$posts = array_slice(get_posts(array(
 
-));
+)), 0, 3);
 
 $postsHome = get_pages(array(
 	'meta_key'     => 'pageRole',
@@ -47,6 +47,15 @@ $candidates = array_slice(get_pages(array(
 
 #var_dump($candidates);
 
+
+
+$program = get_pages(array(
+	'hierarchical' => 0,
+	'meta_key'     => 'pageRole',
+	'meta_value'   => 'program2014',
+));
+
+
 ?>
 
 <?php get_header(); ?>
@@ -54,7 +63,7 @@ $candidates = array_slice(get_pages(array(
 	<div class="container">
 
 		<div class="row">
-			<div class="col-lg-offset-3 col-lg-6 col-md-offset-2 col-md-8">
+			<div class="col-lg-offset-1 col-lg-10 col-md-offset-2 col-md-8">
 				<h1>
 					<span class="chcu"><span class="text">Chcu</span></span> <span class="logo"><span class="text">žít Brno</span></span>
 				</h1>
@@ -106,7 +115,8 @@ $candidates = array_slice(get_pages(array(
 		<div class="row">
 			<div class="col-xs-12">
 				<p class="text-center">
-					<a class="blackButton" href="<?php echo get_permalink($programHome[0]->ID) ?>">Celý program <span class="fa fa-caret-right"></a>
+					<!--<a class="blackButton" href="<?php echo get_permalink($programHome[0]->ID) ?>">Celý program <span class="fa fa-caret-right"></a>-->
+          <a class="blackButton" href="<?php echo get_permalink($program[0]) ?>">Celý černý program na bílém <span class="fa fa-caret-right"></a>
 				</p>
 			</div>
 		</div>

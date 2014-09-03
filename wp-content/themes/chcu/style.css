@@ -16,7 +16,7 @@
 .page-template-page-homepage-php h1 {
   margin: 2em 0 1em 0;
   display: block;
-  background-image: url('logo_pirati.png');
+  background-image: url('images/CHCU_logo.png');
   background-size: contain;
   background-repeat: no-repeat;
 }
@@ -101,8 +101,8 @@ a {
   font-size: 1em;
 }
 a:hover {
-  color: #666666;
-  border-color: #666666;
+  color: #de1879;
+  border-color: #de1879;
   text-decoration: none;
 }
 a.accent {
@@ -151,7 +151,7 @@ a[data-topic="zdravi"] {
 }
 hr {
   clear: both;
-  background-image: url('rainbow.png');
+  background-image: url('images/CHCU_HR.gif');
   background-size: contain;
   height: 2px;
   width: 100%;
@@ -312,6 +312,8 @@ footer[role="general"] .links li {
 }
 #chcuNav .navbar-brand img {
   height: 13px;
+  width:54px;
+  margin-top: 1px;
 }
 #chcuNav a {
   border: none;
@@ -329,7 +331,7 @@ footer[role="general"] .links li {
     clear: none;
     padding: 0;
     margin: 0;
-    line-height: 17px;
+    line-height: 18px;
   }
   #chcuNav .navbar-collapse.collapse {
     display: inline !important;
@@ -463,6 +465,15 @@ footer[role="general"] .links li {
   font-size: 2.75em;
   line-height: 135%;
   margin: 0 0 .25em 0;
+}
+
+
+.programStories li:hover div
+{
+          background-color: none;
+  background-image: url('images/CHCU_HR.gif');
+  background-size: contain;
+
 }
 @media screen and (max-width: 992px) {
   .posts li .title {
@@ -712,10 +723,14 @@ footer[role="general"] .links li {
   color: white;
   background-color: #000000;
   text-decoration: none;
+  
 }
 .blackButton:hover {
   color: white;
   background-color: #de1879;
+  background-color: none;
+  background-image: url('images/CHCU_HR.gif');
+  background-size: contain;
 }
 .programStoryHeader {
   color: white;
@@ -822,6 +837,16 @@ footer[role="general"] .links li {
 .donateButton .img-responsive {
   display: inline-block;
 }
+
+.donateButton a  {
+  background: url('images/chci_prispet_hover.gif') center center no-repeat;
+  z-index: 1000;        
+}
+
+.donateButton a:hover img {
+  visibility:hidden;
+}
+
 .kolo {
   background-image: url('images/TO_CHCES.gif');
   background-position: center center;

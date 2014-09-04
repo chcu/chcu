@@ -35,8 +35,9 @@
     <meta property="og:url" content="http://chcu.zitbrno.cz" />
     <meta property="og:site_name" content="CHCU ŽÍT BRNO"/>
     <meta property="og:title" content="CHCU ŽÍT BRNO" />
-    <meta property="og:type" content="article" />
-    <meta property="og:image" content="<?php echo get_theme_root_uri() . '/' . get_template() ?>/images/CHCU_facebook_oimage_tr.png" />
+    <meta property="og:type" content="article" />    
+    <meta property="og:description" content="Chceme vrátit naději životu v Brně a chceme, aby nám nikdo nebránil být na něj hrdí." />
+    <meta property="og:image" content="<?php echo get_theme_root_uri() . '/' . get_template() ?>/images/CHCU_facebook_oimage2_tr.png" />  
 
 
 
@@ -44,7 +45,7 @@
     
 		<link href="//fonts.googleapis.com/css?family=Roboto&subset=latin-ext" rel="stylesheet" type="text/css" />
 		<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" />
-     <link rel="shortcut icon" href="<?php echo get_theme_root_uri() . '/' . get_template() ?>/images/favicon.gif" type="image/x-icon" /> 
+     <link rel="shortcut icon" href="<?php echo get_theme_root_uri() . '/' . get_template() ?>/images/favicon2.gif" type="image/x-icon" /> 
 	</head>
 
 	<body <?php body_class(); ?>>

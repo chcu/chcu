@@ -41,35 +41,15 @@
 
 
 		<link href="<?php echo get_theme_root_uri() . '/' . get_template() ?>/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-    
+
 		<link href="//fonts.googleapis.com/css?family=Roboto&subset=latin-ext" rel="stylesheet" type="text/css" />
 		<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" />
-     <link rel="shortcut icon" href="<?php echo get_theme_root_uri() . '/' . get_template() ?>/images/favicon.gif" type="image/x-icon" /> 
+     <link rel="shortcut icon" href="<?php echo get_theme_root_uri() . '/' . get_template() ?>/images/favicon.gif" type="image/x-icon" />
 	</head>
 
 	<body <?php body_class(); ?>>
 		<header role="banner">
 
-			<div id="chcuNav" class="navbar navbar-default navbar-fixed-top">
-				<div class="container">
+			<?php include 'includes/nav.php' ?>
 
-					<div class="navbar-header">
-						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-						</button>
-
-						<span class="navbar-brand-container">
-							<a class="navbar-brand" title="Chcu Žít Brno" href="<?php echo home_url(); ?>"><img src="<?php echo get_theme_root_uri() . '/' . get_template() ?>/images/chcu.png" /></a>
-						</span>
-					</div>
-
-					<div class="collapse navbar-collapse navbar-responsive-collapse">
-						<?php wp_bootstrap_main_nav(); // Adjust using Menus in Wordpress Admin ?>
-					</div>
-
-				</div> <!-- end .container -->
-			</div> <!-- end .navbar -->
-
-		</header> <!-- end header -->
+		</header>

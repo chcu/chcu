@@ -22,7 +22,7 @@
 }
 @media screen and (max-width: 768px) {
   .page-template-page-homepage-php h1 {
-    margin: 1em 0 0 0;
+    margin: 2em 0 0 0;
   }
 }
 .page-template-page-homepage-php h1 .chcu .text {
@@ -368,6 +368,21 @@ footer[role="general"] .links li {
     color: black;
     border: none;
     pointer-events: none;
+  }
+}
+.page-template-page-homepage-php #chcuNav {
+  position: relative;
+  top: -3.25em;
+  margin-bottom: -3em;
+}
+.page-template-page-homepage-php #chcuNav .current-menu-item {
+  display: none;
+}
+@media screen and (max-width: 768px) {
+  .page-template-page-homepage-php #chcuNav {
+    position: fixed;
+    top: 0;
+    margin-bottom: 0;
   }
 }
 .candidates {
@@ -723,7 +738,7 @@ footer[role="general"] .links li {
   color: white;
   background-color: #000000;
   text-decoration: none;
-  
+
 }
 .blackButton:hover {
   color: white;
@@ -840,7 +855,7 @@ footer[role="general"] .links li {
 
 .donateButton a  {
   background: url('images/chci_prispet_hover.gif') center center no-repeat;
-  z-index: 1000;        
+  z-index: 1000;
 }
 
 .donateButton a:hover img {

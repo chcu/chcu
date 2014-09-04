@@ -70,6 +70,8 @@ $program = get_pages(array(
 			</div>
 		</div>
 
+		<?php include 'includes/nav.php' ?>
+
 		<div class="row sectionHeader">
 			<div class="col-lg-offset-3 col-lg-6 col-md-offset-2 col-md-8">
 				<p class="shout">

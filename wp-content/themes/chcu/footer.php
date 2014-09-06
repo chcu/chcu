@@ -57,7 +57,6 @@
 						<ul class="links">
 							<li><a href="http://www.zitbrno.cz/">www.zitbrno.cz</a>
 							</li><li><a href="http://www.kartakrnana.cz/">www.kartakrnana.cz</a>
-							</li><li><a href="http://www.dejchejbrno.cz/">www.dejchejbrno.cz</a>
 							</li><li><a href="http://www.zitcesko.cz/">www.zitcesko.cz</a>
 							</li><li><a href="http://www.machoparking.cz/">www.machoparking.cz</a>
 							</li><li><a href="http://www.vyzva2013.cz/">www.vyzva2013.cz</a>

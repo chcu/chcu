@@ -15,12 +15,14 @@ $programHome = get_pages(array(
 	'meta_value'   => 'program',
 ));
 
-$programStories = array_slice(get_pages(array(
+$programStories = get_pages(array(
 	'hierarchical' => 0,
 	'sort_column'  => 'menu_order',
 	'meta_key'     => 'pageRole',
 	'meta_value'   => 'programStory',
-)), 0, 12);
+));
+shuffle($programStories);
+$programStories = array_slice($programStories, 0, 12);
 
 $posts = array_slice(get_posts(array(
 

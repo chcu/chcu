@@ -229,7 +229,43 @@ hr {
   font-weight: 900;
   font-size: 8em;
   text-transform: uppercase;
+  padding-bottom: -0.1em;
+  margin-bottom: -0.2em;
 }
+/*
+@media screen and (-webkit-min-device-pixel-ratio:0) { 
+   .pageHeader .col-xs-12 { 
+  background: url('images/CHCU_HR_st.png') repeat, white;
+  background-size: contain;
+	-webkit-text-fill-color: transparent;
+	-webkit-background-clip: text;
+	-webkit-animation-name: masked-animation;
+	-webkit-animation-duration: 40s;
+  -webkit-animation-iteration-count: infinite;
+	-webkit-animation-timing-function: linear;  
+  }
+}
+
+*/
+
+/*.pageHeader .col-xs-12 {
+	background: url('images/CHCU_HR.gif') repeat, white;
+    background-size: contain;
+	-webkit-text-fill-color: transparent;
+	-webkit-background-clip: text;
+	-webkit-animation-name: masked-animation;
+	-webkit-animation-duration: 40s;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-timing-function: linear;
+} */
+
+
+@-webkit-keyframes masked-animation {
+	0% {background-position: left bottom;}
+	100% {background-position: right bottom;}
+}
+
+
 @media screen and (max-width: 768px) {
   .pageHeader h1 {
     font-size: 5em;
@@ -362,14 +398,34 @@ footer[role="general"] .links li {
   #chcuNav a:hover {
     color: #000000;
     border: none;
-  }
+    
+
+}
+    
+  
   #chcuNav .current-menu-item a {
     background: none;
     color: black;
     border: none;
     pointer-events: none;
+
+}          
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {  
+        #chcuNav a:hover {
+        background: url('images/CHCU_HR.gif') repeat, white;
+    background-size: contain;
+	-webkit-text-fill-color: transparent;
+	-webkit-background-clip: text;
+	-webkit-animation-name: masked-animation;
+	-webkit-animation-duration: 40s;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-timing-function: linear;
   }
+
 }
+
+
 .page-template-page-homepage-php #chcuNav {
   position: relative;
   top: -3.25em;
@@ -418,19 +474,30 @@ footer[role="general"] .links li {
 .programStories li {
   text-align: center;
   margin-bottom: 1em;
+  border-radius: 10px;
+  
+  
 }
 .programStories li [data-topic] {
   padding: 1.5em;
   color: white;
+ /* border-top: 1px solid rgba(255,255,255,0.2) !important;*/
+  border-bottom: 5px solid rgba(0,0,0,0.2);
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  padding-bottom: 0;
+  
+    
 }
 .programStories li [data-topic=""] {
-  color: black;
+  color: black;     
 }
 .programStories li [data-topic="pohyb"] {
   background-color: #ca220f;
 }
 .programStories li [data-topic="domov"] {
   background-color: #e29c05;
+
 }
 .programStories li [data-topic="kultura"] {
   background-color: #8ebf28;
@@ -452,10 +519,11 @@ footer[role="general"] .links li {
 }
 .programStories li .title {
   font-family: "proxima-nova", sans-serif;
-  font-size: 1.3em;
+  font-size: 1.7em;
   font-weight: 700;
   line-height: 120%;
   margin: 0;
+  text-shadow: 0px -1px rgba(0,0,0,0.4);
 }
 .programStories li .title a {
   color: white;
@@ -488,6 +556,13 @@ footer[role="general"] .links li {
           background-color: none;
   background-image: url('images/CHCU_HR.gif');
   background-size: contain;
+  
+  transform: translate(0px,5px);
+  -webkit-transform: translate(0px,5px);
+	border-bottom: 5px solid;
+  border-top: 1px solid rgba(0,0,0,0.2);
+}
+
 
 }
 @media screen and (max-width: 992px) {
@@ -733,6 +808,11 @@ footer[role="general"] .links li {
   text-transform: lowercase;
   background-color: black;
   color: white;
+  
+  border-bottom: 2px solid rgba(255,255,255,0.5);
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  
 }
 .blackButton:hover {
   color: white;
@@ -746,6 +826,10 @@ footer[role="general"] .links li {
   background-color: none;
   background-image: url('images/CHCU_HR.gif');
   background-size: contain;
+  border-color: rgba(255,255,255,0);
+  
+  transform: translate(0px,2px);
+  -webkit-transform: translate(0px,2px);
 }
 .programStoryHeader {
   color: white;
@@ -825,20 +909,66 @@ footer[role="general"] .links li {
   display: block;
 }
 .manifestoButtonContainer {
-  margin: 1.5em 0 5em 0;
+  margin: 1.5em 0 5em 0;  
+}     
+
+.manifestoButtonContainer a {
+  font-family: "proxima-nova", sans-serif;
+  font-size: 2em;
+  line-height: 1.2em;
+  font-weight: 900;
+  color: #aaa;
+  border: none;
+  text-transform: uppercase;
+  display: inline-block;
+  vertical-align: middle;
+  text-decoration: underline !important;
 }
+ 
+.manifestoButtonContainer a:hover {
+  color: #de1879;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) { 
+   .manifestoButtonContainer a { 
+  background: url('images/CHCU_HR_st.png') repeat, white;
+  background-size: contain;
+	-webkit-text-fill-color: transparent;
+	-webkit-background-clip: text;
+	-webkit-animation-name: masked-animation;
+	-webkit-animation-duration: 40s;
+  -webkit-animation-iteration-count: infinite;
+	-webkit-animation-timing-function: linear;  
+  }
+  
+  .manifestoButtonContainer a:hover {
+      background: url('images/CHCU_HR.gif') repeat, white;
+  -webkit-animation-iteration-count: infinite;
+  	-webkit-text-fill-color: transparent;
+	-webkit-background-clip: text;
+	-webkit-animation-name: masked-animation;
+	-webkit-animation-duration: 40s;
+  -webkit-animation-iteration-count: infinite;
+	-webkit-animation-timing-function: linear;
+  
+  }
+    
+}
+
+
 .contactOptions {
   margin: 2em 0;
 }
 .contactSegment {
   text-align: center;
+  border-left: 1px dotted #000000;
 }
 .contactSegment.meetings {
-  border-right: 1px dotted #000000;
+    border-left: 0;
 }
 @media screen and (max-width: 768px) {
-  .contactSegment.meetings {
-    border-right: none;
+  .contactSegment {
+    border: none;
   }
 }
 .contactSegment .image {
@@ -993,4 +1123,18 @@ footer[role="general"] .links li {
 .longCopy p em,
 .longCopy p.lead em {
   font-family: "proxima-nova", sans-serif;
+}
+
+
+.stButton .stFb, .stButton .stTwbutton, .stButton .stMainServices {
+height: auto !important;
+}
+
+.candidateBio .no-break,
+.programStoryText .no-break {
+text-align: center;
+}
+
+.stButton .stBubble_count {
+height: 41px !important;
 }

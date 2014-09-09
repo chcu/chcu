@@ -11,6 +11,7 @@ $programStories = get_pages(array(
 	'meta_key'     => 'pageRole',
 	'meta_value'   => 'programStory',
 ));
+shuffle($programStories);
 
 if ($_GET['tema']) {
 	$topic = $_GET['tema'];

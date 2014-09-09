@@ -86,9 +86,23 @@ if ($storyKey + 1 < count($programStories)) {
 
 		<?php include 'includes/program2014link.php' ?>
 
-		<hr />
+
+    
+    	<div class="row sectionHeader">
+      <br /><br />
+			<div class="col-sm-12">
+				<h2>
+					Co eště chceš?
+				</h2>
+				<p class="special">
+					Brno jde, když se chce.
+				</p>
+			</div>
+		</div>
     
     <?php include 'includes/programStories.php' ?>
+    
+    		<hr />
 
 		<?php include 'includes/donate.php' ?>
 

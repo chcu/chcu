@@ -84,7 +84,7 @@ $program = get_pages(array(
 					Tři roky kritizujeme brněnský magistrát. Tři roky si klepeme na čelo, protáčíme panenky, vyprskáváme smíchy a klademe hlavy do dlaní. Tři roky nám říkají, že posmívat se umí každý, ale vládnout můžou jen vyvolení. Jenže my dobře víme, že politikem se člověk nerodí, ale stává.  My na to máme právě teď.
 				</p>
 				<p class="manifestoButtonContainer">
-					<a href="<?php echo get_permalink($manifesto[0]->ID) ?>"><img src="<?php echo get_theme_root_uri() . '/' . get_template() ?>/manifesto_link.png" /></a>
+					<a href="<?php echo get_permalink($manifesto[0]->ID) ?>">ČTĚTE PROČ ŽÍT BRNO &#9654;</a>
 				</p>
 			</div>
 		</div>

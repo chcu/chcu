@@ -257,16 +257,16 @@ hr {
 	-webkit-animation-duration: 40s;
 	-webkit-animation-iteration-count: infinite;
 	-webkit-animation-timing-function: linear;
-} */
+  } */
 
 
-@-webkit-keyframes masked-animation {
-	0% {background-position: left bottom;}
-	100% {background-position: right bottom;}
-}
+  @-webkit-keyframes masked-animation {
+   0% {background-position: left bottom;}
+   100% {background-position: right bottom;}
+ }
 
 
-@media screen and (max-width: 768px) {
+ @media screen and (max-width: 768px) {
   .pageHeader h1 {
     font-size: 5em;
     line-height: 105%;
@@ -398,49 +398,42 @@ footer[role="general"] .links li {
   #chcuNav a:hover {
     color: #000000;
     border: none;
-
-
-}
-
-
+  }
   #chcuNav .current-menu-item a {
     background: none;
     color: black;
     border: none;
     pointer-events: none;
-
-}
-
-@media screen and (-webkit-min-device-pixel-ratio:0) {
-        #chcuNav a:hover {
-        background: url('images/CHCU_HR.gif') repeat, white;
-    background-size: contain;
-	-webkit-text-fill-color: transparent;
-	-webkit-background-clip: text;
-	-webkit-animation-name: masked-animation;
-	-webkit-animation-duration: 40s;
-	-webkit-animation-iteration-count: infinite;
-	-webkit-animation-timing-function: linear;
   }
-
-}
-
-
-.page-template-page-homepage-php #chcuNav {
-  position: relative;
-  top: -3.25em;
-  margin-bottom: -3em;
-}
-.page-template-page-homepage-php #chcuNav .current-menu-item {
-  display: none;
-}
-@media screen and (max-width: 768px) {
+  @media screen and (-webkit-min-device-pixel-ratio:0) {
+    #chcuNav a:hover {
+      background: url('images/CHCU_HR.gif') repeat, white;
+      background-size: contain;
+      -webkit-text-fill-color: transparent;
+      -webkit-background-clip: text;
+      -webkit-animation-name: masked-animation;
+      -webkit-animation-duration: 40s;
+      -webkit-animation-iteration-count: infinite;
+      -webkit-animation-timing-function: linear;
+    }
+  }
   .page-template-page-homepage-php #chcuNav {
-    position: fixed;
-    top: 0;
-    margin-bottom: 0;
+    position: relative;
+    top: -3.25em;
+    margin-bottom: -3em;
+  }
+  .page-template-page-homepage-php #chcuNav .current-menu-item {
+    display: none;
+  }
+  @media screen and (max-width: 768px) {
+    .page-template-page-homepage-php #chcuNav {
+      position: fixed;
+      top: 0;
+      margin-bottom: 0;
+    }
   }
 }
+
 .candidates {
   list-style-type: none;
   padding: 0;
@@ -479,13 +472,11 @@ footer[role="general"] .links li {
 .programStories li [data-topic] {
   padding: 1.5em;
   color: white;
- /* border-top: 1px solid rgba(255,255,255,0.2) !important;*/
+  /* border-top: 1px solid rgba(255,255,255,0.2) !important;*/
   border-bottom: 5px solid rgba(0,0,0,0.2);
   border-radius: 10px;
   -webkit-border-radius: 10px;
   padding-bottom: 0;
-
-
 }
 .programStories li [data-topic=""] {
   color: black;
@@ -547,21 +538,14 @@ footer[role="general"] .links li {
   line-height: 135%;
   margin: 0 0 .25em 0;
 }
-
-
-.programStories li:hover div
-{
-          background-color: none;
+.programStories li:hover div {
+  background-color: none;
   background-image: url('images/CHCU_HR.gif');
   background-size: contain;
-
   transform: translate(0px,5px);
-  -webkit-transform: translate(0px,5px);
-	border-bottom: 5px solid;
+  border-bottom: 5px solid;
   border-top: 1px solid rgba(0,0,0,0.2);
-}
-
-
+  -webkit-transform: translate(0px,5px);
 }
 @media screen and (max-width: 992px) {
   .posts li .title {
@@ -938,28 +922,28 @@ footer[role="general"] .links li {
 }
 
 @media screen and (-webkit-min-device-pixel-ratio:0) {
-   .manifestoButtonContainer a {
+ .manifestoButtonContainer a {
   background: url('images/CHCU_HR_st.png') repeat, white;
   background-size: contain;
-	-webkit-text-fill-color: transparent;
-	-webkit-background-clip: text;
-	-webkit-animation-name: masked-animation;
-	-webkit-animation-duration: 40s;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-animation-name: masked-animation;
+  -webkit-animation-duration: 40s;
   -webkit-animation-iteration-count: infinite;
-	-webkit-animation-timing-function: linear;
-  }
+  -webkit-animation-timing-function: linear;
+}
 
-  .manifestoButtonContainer a:hover {
-      background: url('images/CHCU_HR.gif') repeat, white;
+.manifestoButtonContainer a:hover {
+  background: url('images/CHCU_HR.gif') repeat, white;
   -webkit-animation-iteration-count: infinite;
-  	-webkit-text-fill-color: transparent;
-	-webkit-background-clip: text;
-	-webkit-animation-name: masked-animation;
-	-webkit-animation-duration: 40s;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-animation-name: masked-animation;
+  -webkit-animation-duration: 40s;
   -webkit-animation-iteration-count: infinite;
-	-webkit-animation-timing-function: linear;
+  -webkit-animation-timing-function: linear;
 
-  }
+}
 
 }
 
@@ -972,7 +956,7 @@ footer[role="general"] .links li {
   border-left: 1px dotted #000000;
 }
 .contactSegment.meetings {
-    border-left: 0;
+  border-left: 0;
 }
 @media screen and (max-width: 768px) {
   .contactSegment {
@@ -1135,14 +1119,14 @@ footer[role="general"] .links li {
 
 
 .stButton .stFb, .stButton .stTwbutton, .stButton .stMainServices {
-height: auto !important;
+  height: auto !important;
 }
 
 .candidateBio .no-break,
 .programStoryText .no-break {
-text-align: center;
+  text-align: center;
 }
 
 .stButton .stBubble_count {
-height: 41px !important;
+  height: 41px !important;
 }

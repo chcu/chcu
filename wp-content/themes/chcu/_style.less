@@ -41,12 +41,12 @@
 	h1 {
 		margin: 2em 0 1em 0;
 		display: block;
-		background-image: url('logo_pirati.png');
+		background-image: url('images/CHCU_logo.png');
 		background-size: contain;
 		background-repeat: no-repeat;
 
 		@media screen and (max-width: @screen-sm) {
-			margin: 1em 0 0 0;
+			margin: 2em 0 0 0;
 		}
 
 		.chcu {
@@ -137,8 +137,8 @@ a {
 	font-size: 1em;
 
 	&:hover {
-		color: @color-link-active;
-		border-color: @color-link-active;
+		color: @color-zdravi;
+		border-color: @color-zdravi;
 		text-decoration: none;
 	}
 
@@ -174,7 +174,7 @@ a {
 
 hr {
 	clear: both;
-	background-image: url('rainbow.png');
+	background-image: url('images/CHCU_HR.gif');
 	background-size: contain;
 	height: 2px;
 	width: 100%;
@@ -258,6 +258,13 @@ hr {
 		font-weight: 900;
 		font-size: 8em;
 		text-transform: uppercase;
+		padding-bottom: -0.1em;
+		margin-bottom: -0.2em;
+
+		@-webkit-keyframes masked-animation {
+			0% { background-position: left bottom; }
+			100% { background-position: right bottom; }
+		}
 
 		@media screen and (max-width: @screen-sm) {
 			font-size: 5em;
@@ -355,12 +362,32 @@ footer[role="general"] {
 
 		img {
 			height: 13px;
+			width:54px;
+			margin-top: 1px;
 		}
 
 	}
 
 	a {
 		border: none;
+
+		&:hover {
+
+			@media screen and (-webkit-min-device-pixel-ratio:0) {
+				#chcuNav a:hover {
+					background: url('images/CHCU_HR.gif') repeat, white;
+					background-size: contain;
+					-webkit-text-fill-color: transparent;
+					-webkit-background-clip: text;
+					-webkit-animation-name: masked-animation;
+					-webkit-animation-duration: 40s;
+					-webkit-animation-iteration-count: infinite;
+					-webkit-animation-timing-function: linear;
+				}
+			}
+
+		}
+
 	}
 
 	@media screen and (min-width: @screen-sm) {
@@ -373,7 +400,7 @@ footer[role="general"] {
 			clear: none;
 			padding: 0;
 			margin: 0;
-			line-height: 17px;
+			line-height: 18px;
 		}
 
 		.navbar-collapse.collapse {

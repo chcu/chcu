@@ -233,8 +233,8 @@ hr {
   margin-bottom: -0.2em;
 }
 /*
-@media screen and (-webkit-min-device-pixel-ratio:0) { 
-   .pageHeader .col-xs-12 { 
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+   .pageHeader .col-xs-12 {
   background: url('images/CHCU_HR_st.png') repeat, white;
   background-size: contain;
 	-webkit-text-fill-color: transparent;
@@ -242,7 +242,7 @@ hr {
 	-webkit-animation-name: masked-animation;
 	-webkit-animation-duration: 40s;
   -webkit-animation-iteration-count: infinite;
-	-webkit-animation-timing-function: linear;  
+	-webkit-animation-timing-function: linear;
   }
 }
 
@@ -398,20 +398,20 @@ footer[role="general"] .links li {
   #chcuNav a:hover {
     color: #000000;
     border: none;
-    
+
 
 }
-    
-  
+
+
   #chcuNav .current-menu-item a {
     background: none;
     color: black;
     border: none;
     pointer-events: none;
 
-}          
+}
 
-@media screen and (-webkit-min-device-pixel-ratio:0) {  
+@media screen and (-webkit-min-device-pixel-ratio:0) {
         #chcuNav a:hover {
         background: url('images/CHCU_HR.gif') repeat, white;
     background-size: contain;
@@ -475,8 +475,8 @@ footer[role="general"] .links li {
   text-align: center;
   margin-bottom: 1em;
   border-radius: 10px;
-  
-  
+
+
 }
 .programStories li [data-topic] {
   padding: 1.5em;
@@ -486,11 +486,11 @@ footer[role="general"] .links li {
   border-radius: 10px;
   -webkit-border-radius: 10px;
   padding-bottom: 0;
-  
-    
+
+
 }
 .programStories li [data-topic=""] {
-  color: black;     
+  color: black;
 }
 .programStories li [data-topic="pohyb"] {
   background-color: #ca220f;
@@ -556,7 +556,7 @@ footer[role="general"] .links li {
           background-color: none;
   background-image: url('images/CHCU_HR.gif');
   background-size: contain;
-  
+
   transform: translate(0px,5px);
   -webkit-transform: translate(0px,5px);
 	border-bottom: 5px solid;
@@ -581,7 +581,17 @@ footer[role="general"] .links li {
   margin-bottom: 0;
 }
 .candidateHeader.hasPortrait .candidateInfoWrapper {
-  margin-top: 57%;
+  margin-top: -10em;
+}
+@media screen and (max-width: 768px) {
+  .candidateHeader.hasPortrait .candidateInfoWrapper {
+    margin-top: -5em;
+  }
+}
+@media screen and (max-width: 480px) {
+  .candidateHeader.hasPortrait .candidateInfoWrapper {
+    margin-top: 0;
+  }
 }
 .candidateHeader .candidateInfoWrapper {
   background: black;
@@ -808,11 +818,11 @@ footer[role="general"] .links li {
   text-transform: lowercase;
   background-color: black;
   color: white;
-  
+
   border-bottom: 2px solid rgba(255,255,255,0.5);
   border-radius: 4px;
   -webkit-border-radius: 4px;
-  
+
 }
 .blackButton:hover {
   color: white;
@@ -827,7 +837,7 @@ footer[role="general"] .links li {
   background-image: url('images/CHCU_HR.gif');
   background-size: contain;
   border-color: rgba(255,255,255,0);
-  
+
   transform: translate(0px,2px);
   -webkit-transform: translate(0px,2px);
 }
@@ -909,8 +919,8 @@ footer[role="general"] .links li {
   display: block;
 }
 .manifestoButtonContainer {
-  margin: 1.5em 0 5em 0;  
-}     
+  margin: 1.5em 0 5em 0;
+}
 
 .manifestoButtonContainer a {
   font-family: "proxima-nova", sans-serif;
@@ -924,13 +934,13 @@ footer[role="general"] .links li {
   vertical-align: middle;
   text-decoration: underline !important;
 }
- 
+
 .manifestoButtonContainer a:hover {
   color: #de1879;
 }
 
-@media screen and (-webkit-min-device-pixel-ratio:0) { 
-   .manifestoButtonContainer a { 
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+   .manifestoButtonContainer a {
   background: url('images/CHCU_HR_st.png') repeat, white;
   background-size: contain;
 	-webkit-text-fill-color: transparent;
@@ -938,9 +948,9 @@ footer[role="general"] .links li {
 	-webkit-animation-name: masked-animation;
 	-webkit-animation-duration: 40s;
   -webkit-animation-iteration-count: infinite;
-	-webkit-animation-timing-function: linear;  
+	-webkit-animation-timing-function: linear;
   }
-  
+
   .manifestoButtonContainer a:hover {
       background: url('images/CHCU_HR.gif') repeat, white;
   -webkit-animation-iteration-count: infinite;
@@ -950,9 +960,9 @@ footer[role="general"] .links li {
 	-webkit-animation-duration: 40s;
   -webkit-animation-iteration-count: infinite;
 	-webkit-animation-timing-function: linear;
-  
+
   }
-    
+
 }
 
 

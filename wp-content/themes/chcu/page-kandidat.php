@@ -49,7 +49,13 @@ while (have_posts()) {
 	<div class="container">
 
 		<div class="row">
-			<div class="candidateHeader col-md-offset-1 col-md-10 col-sm-12 <?php if ($portraitUrl) { ?> hasPortrait <?php } else { ?> hasNotPortrait <?php } ?>" <?php if ($portraitUrl) { ?> style="background-image: url('<?php echo $portraitUrl ?>');" <?php } ?>>
+			<div class="col-md-offset-1 col-md-10 col-sm-12">
+				<img class="img-responsive" src="<?php echo $portraitUrl ?>" />
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="candidateHeader col-md-offset-1 col-md-10 col-sm-12 <?php if ($portraitUrl) { ?> hasPortrait <?php } else { ?> hasNotPortrait <?php } ?>">
 				<div class="candidateInfoWrapper col-md-offset-1 col-md-10">
 					<div class="candidateInfo">
 						<h1>

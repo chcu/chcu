@@ -22,7 +22,7 @@ $programStories = get_pages(array(
 	'meta_value'   => 'programStory',
 ));
 shuffle($programStories);
-$programStories = array_slice($programStories, 0, 12);
+//$programStories = array_slice($programStories, 0, 12);
 
 $posts = array_slice(get_posts(array(
 

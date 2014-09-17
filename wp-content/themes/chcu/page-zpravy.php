@@ -6,7 +6,7 @@ Template Name: Zpravy
 add_theme_support('post-thumbnails');
 
 $posts = get_posts(array(
-
+	'posts_per_page' => 1000,
 ));
 
 ?>

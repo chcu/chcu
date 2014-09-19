@@ -13,7 +13,6 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 
-
 		<!-- wordpress head functions -->
 		<?php wp_head(); ?>
 		<!-- end of wordpress head -->
@@ -32,7 +31,6 @@
 		<!--[if lt IE 9]>
 		          <script type='text/javascript' src="http://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
 		<![endif]-->
-
 
 		<link href="<?php echo get_theme_root_uri() . '/' . get_template() ?>/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
 

@@ -13,7 +13,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
     
-    <meta property="og:image" content="<?php echo get_theme_root_uri() . '/' . get_template() ?>/images/CHCU_facebook_oimage2_tr.png" />
+
 
 		<!-- wordpress head functions -->
 		<?php wp_head(); ?>
@@ -41,7 +41,9 @@
     <meta property="og:description" content="Chceme vrátit naději životu v Brně a chceme, aby nám nikdo nebránil být na něj hrdí." />
     <meta property="og:image" content="<?php echo get_theme_root_uri() . '/' . get_template() ?>/images/CHCU_facebook_oimage2_tr.png" /> -->
 
-
+    
+        <meta property="og:image" content="<?php echo get_theme_root_uri() . '/' . get_template() ?>/images/CHCU_facebook_oimage2_tr.png" />
+    
 
 		<link href="<?php echo get_theme_root_uri() . '/' . get_template() ?>/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
 

@@ -12,8 +12,11 @@
 		<title><?php wp_title( '|', true, 'right' ); ?></title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
+<<<<<<< HEAD
     
 
+=======
+>>>>>>> dc313053d8dba388446460eb346e2179233fcab2
 
 		<!-- wordpress head functions -->
 		<?php wp_head(); ?>
@@ -34,6 +37,7 @@
 		          <script type='text/javascript' src="http://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
 		<![endif]-->
 
+<<<<<<< HEAD
     <!--<meta property="og:url" content="http://chcu.zitbrno.cz" />
     <meta property="og:site_name" content="CHCU ŽÍT BRNO"/>
     <meta property="og:title" content="CHCU ŽÍT BRNO" />
@@ -45,12 +49,16 @@
         <meta property="og:image" content="<?php echo get_theme_root_uri() . '/' . get_template() ?>/images/CHCU_facebook_oimage2_tr.png" />
     
 
+=======
+>>>>>>> dc313053d8dba388446460eb346e2179233fcab2
 		<link href="<?php echo get_theme_root_uri() . '/' . get_template() ?>/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
 
 		<link href="//fonts.googleapis.com/css?family=Roboto&subset=latin-ext" rel="stylesheet" type="text/css" />
 		<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" />
 
 		<link rel="shortcut icon" href="<?php echo get_theme_root_uri() . '/' . get_template() ?>/images/favicon2.gif" type="image/x-icon" />
+
+		<meta property="og:image" content="<?php echo get_theme_root_uri() . '/' . get_template() ?>/images/CHCU_facebook_oimage2_tr.png" />
 
 	</head>
 

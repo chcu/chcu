@@ -1131,6 +1131,6 @@ footer[role="general"] .links li {
   height: 41px !important;
 }
 .wp-caption-text {
-  font-size: .8em;
+  font-size: .8em !important;
   color: #999;
 }

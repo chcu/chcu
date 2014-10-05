@@ -19,7 +19,7 @@ add_theme_support('post-thumbnails');
 			</div>
 		</div>
 
-		<div class="row" style="margin-top: 2em; margin-bottom: 2em;">
+		<div class="row" style="margin-top: 3em; margin-bottom: 4em;">
 			<div class="col-lg-6 col-md-12">
 				<p>
 					<img class="img-responsive" src="<?php echo get_theme_root_uri() . '/' . get_template() ?>/stred_1.jpg" style="border: 1px solid white;" />
@@ -37,11 +37,17 @@ add_theme_support('post-thumbnails');
 				<h2>
 					Kandidátka
 				</h2>
-				<p class="special">
-					Brno jde, když se chce.
-				</p>
 			</div>
 		</div>
+
+		<style type="text/css">
+			table.candidates {
+				width: 100%;
+			}
+			table.candidates td, table.candidates td {
+				padding: .5em .75em;
+			}
+		</style>
 
 		<div class="row">
 			<div class="col-lg-offset-3 col-lg-6 col-md-offset-2 col-md-8 col-sm-12 longCopy">

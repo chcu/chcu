@@ -60,7 +60,7 @@ add_theme_support('post-thumbnails');
 		</style>
 
 		<div class="row">
-			<div class="col-lg-offset-3 col-lg-6 col-md-offset-2 col-md-8 col-sm-12 longCopy">
+			<div class="col-lg-offset-3 col-lg-6 col-md-offset-2 col-md-8 col-sm-12">
 				<?php while (have_posts()) {
 					the_post();
 					the_content();

@@ -20,6 +20,15 @@ add_theme_support('post-thumbnails');
 		</div>
 
 		<div class="row">
+			<div class="col-lg-6 col-md-12">
+				<img class="img-responsive"> src="<?php echo get_theme_root_uri() . '/' . get_template() ?>/stred_1.jpg" />
+			</div>
+			<div class="col-lg-6 col-md-12">
+				<img class="img-responsive"> src="<?php echo get_theme_root_uri() . '/' . get_template() ?>/stred_2.jpg" />
+			</div>
+		</div>
+
+		<div class="row">
 			<div class="col-lg-offset-3 col-lg-6 col-md-offset-2 col-md-8 col-sm-12 longCopy">
 				<?php while (have_posts()) {
 					the_post();

@@ -21,10 +21,14 @@ add_theme_support('post-thumbnails');
 
 		<div class="row">
 			<div class="col-lg-6 col-md-12">
-				<img class="img-responsive"> src="<?php echo get_theme_root_uri() . '/' . get_template() ?>/stred_1.jpg" />
+				<p>
+					<img class="img-responsive" src="<?php echo get_theme_root_uri() . '/' . get_template() ?>/stred_1.jpg" />
+				</p>
 			</div>
 			<div class="col-lg-6 col-md-12">
-				<img class="img-responsive"> src="<?php echo get_theme_root_uri() . '/' . get_template() ?>/stred_2.jpg" />
+				<p>
+					<img class="img-responsive" src="<?php echo get_theme_root_uri() . '/' . get_template() ?>/stred_2.jpg" />
+				</p>
 			</div>
 		</div>
 

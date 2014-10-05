@@ -32,6 +32,17 @@ add_theme_support('post-thumbnails');
 			</div>
 		</div>
 
+		<div class="row sectionHeader">
+			<div class="col-sm-12">
+				<h2>
+					Kandidátka
+				</h2>
+				<p class="special">
+					Brno jde, když se chce.
+				</p>
+			</div>
+		</div>
+
 		<div class="row">
 			<div class="col-lg-offset-3 col-lg-6 col-md-offset-2 col-md-8 col-sm-12 longCopy">
 				<?php while (have_posts()) {

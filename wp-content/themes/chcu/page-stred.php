@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: CelyProgram
+Template Name: Stred
 */
 
 add_theme_support('post-thumbnails');

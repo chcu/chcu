@@ -43,9 +43,19 @@ add_theme_support('post-thumbnails');
 		<style type="text/css">
 			table.candidates {
 				width: 100%;
+				border-collapse: collapse;
 			}
-			table.candidates td, table.candidates td {
-				padding: .5em .75em;
+			table.candidates tr th, table.candidates tr td {
+				padding: .25em .75em;
+				vertical-align: top;
+				border-top: 1px solid #DDD;
+				border-bottom: 1px solid #DDD;
+			}
+			table.candidates tr th:first-child, table.candidates tr td:first-child {
+				padding-left: 0;
+			}
+			table.candidates tr th:last-child, table.candidates tr td:last-child {
+				padding-right: 0;
 			}
 		</style>
 

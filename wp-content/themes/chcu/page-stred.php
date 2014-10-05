@@ -19,15 +19,15 @@ add_theme_support('post-thumbnails');
 			</div>
 		</div>
 
-		<div class="row">
+		<div class="row" style="margin-top: 2em; margin-bottom: 2em;">
 			<div class="col-lg-6 col-md-12">
 				<p>
-					<img class="img-responsive" src="<?php echo get_theme_root_uri() . '/' . get_template() ?>/stred_1.jpg" />
+					<img class="img-responsive" src="<?php echo get_theme_root_uri() . '/' . get_template() ?>/stred_1.jpg" style="border: 1px solid white;" />
 				</p>
 			</div>
 			<div class="col-lg-6 col-md-12">
 				<p>
-					<img class="img-responsive" src="<?php echo get_theme_root_uri() . '/' . get_template() ?>/stred_2.jpg" />
+					<img class="img-responsive" src="<?php echo get_theme_root_uri() . '/' . get_template() ?>/stred_2.jpg" style="border: 1px solid black;" />
 				</p>
 			</div>
 		</div>

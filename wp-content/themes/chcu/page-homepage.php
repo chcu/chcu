@@ -78,25 +78,24 @@ $program = get_pages(array(
 			#ytModal .modal-content {
 				border: none;
 			}
-			#ytModal .modal-content .modal-body {
+			#ytModal .modal-content {
 				padding: 0;
+				margin: 0;
 				line-height: 0;
 			}
-			#ytModal .modal-content .modal-footer {
-				margin: 0;
-				border: none;
+			#ytModal .modal-content iframe {
+				max-width: 100%;
+			}
+			.modal-lg {
+				max-width: 853px;
+				width: auto;
 			}
 		</style>
 
-		<div class="modal fade" id="ytModal">
-			<div class="modal-dialog">
+		<div id="ytModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+			<div class="modal-dialog modal-lg">
 				<div class="modal-content">
-					<div class="modal-body">
-						<iframe width="600" height="338" src="//www.youtube.com/embed/TS4VSgsysug" frameborder="0" allowfullscreen></iframe>
-					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-default" data-dismiss="modal">Zavřít</button>
-					</div>
+					<iframe width="853" height="480" src="//www.youtube.com/embed/TS4VSgsysug" frameborder="0" allowfullscreen></iframe>
 				</div>
 			</div>
 		</div>

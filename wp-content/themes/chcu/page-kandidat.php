@@ -48,7 +48,7 @@ while (have_posts()) {
 
 	<div class="container">
 
-		<?php if ($portraitUrl) ?>
+		<?php if ($portraitUrl) { ?>
 			<div class="row">
 				<div class="col-md-offset-1 col-md-10 col-sm-12">
 					<img class="img-responsive" src="<?php echo $portraitUrl ?>" />

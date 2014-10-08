@@ -74,6 +74,39 @@ $program = get_pages(array(
 
 		<?php include 'includes/nav.php' ?>
 
+		<style type="text/css">
+			#ytModal .modal-content {
+				border: none;
+			}
+			#ytModal .modal-content .modal-body {
+				padding: 0;
+				line-height: 0;
+			}
+			#ytModal .modal-content .modal-footer {
+				margin: 0;
+				border: none;
+			}
+		</style>
+
+		<div class="modal fade" id="ytModal">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-body">
+						<iframe width="600" height="338" src="//www.youtube.com/embed/TS4VSgsysug" frameborder="0" allowfullscreen></iframe>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Zavřít</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script type="text/javascript">
+			$(function() {
+				$('#ytModal').modal('show');
+			});
+		</script>
+
 		<div class="row sectionHeader">
 			<div class="col-lg-offset-3 col-lg-6 col-md-offset-2 col-md-8">
 				<p class="shout">

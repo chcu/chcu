@@ -24,7 +24,7 @@ while (have_posts()) {
 	$post = get_post($postId);
 	$meta = get_post_meta($postId);
 
-	$portraitUrl = $meta['portraitUrl'][0];
+	$portraitUrl = trim($meta['portraitUrl'][0]);
 
 	$doWant    = array_filter(explode("\n", $meta['doWant'][0]));
 	$doNotWant = array_filter(explode("\n", $meta['doNotWant'][0]));

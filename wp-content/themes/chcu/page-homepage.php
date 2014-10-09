@@ -76,7 +76,7 @@ $program = get_pages(array(
 
 		<div class="row">
 			<div class="col-xs-12 text-center">
-				<iframe width="853" height="480" src="//www.youtube.com/embed/TS4VSgsysug" frameborder="0" allowfullscreen></iframe>
+				<iframe width="853" height="480" src="//www.youtube.com/embed/TS4VSgsysug" frameborder="0" allowfullscreen style="max-width: 100%;"></iframe>
 			</div>
 		</div>
 

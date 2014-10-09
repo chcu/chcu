@@ -74,44 +74,11 @@ $program = get_pages(array(
 
 		<?php include 'includes/nav.php' ?>
 
-		<style type="text/css">
-			#ytModal .modal-body {
-				border: none;
-				padding: 0;
-				margin: 0;
-				line-height: 0;
-			}
-			#ytModal .modal-content iframe {
-				max-width: 100%;
-			}
-			#ytModal .modal-footer {
-				margin: 0;
-				border: none;
-			}
-			.modal-lg {
-				max-width: 853px;
-				width: auto;
-			}
-		</style>
-
-		<div id="ytModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-			<div class="modal-dialog modal-lg">
-				<div class="modal-content">
-					<div class="modal-body">
-						<iframe width="853" height="480" src="//www.youtube.com/embed/TS4VSgsysug" frameborder="0" allowfullscreen></iframe>
-					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-default" data-dismiss="modal">CHCU vidět váš web</button>
-					</div>
-				</div>
+		<div class="row">
+			<div class="col-xs-12 text-center">
+				<iframe width="853" height="480" src="//www.youtube.com/embed/TS4VSgsysug" frameborder="0" allowfullscreen></iframe>
 			</div>
 		</div>
-
-		<script type="text/javascript">
-			$(function() {
-				$('#ytModal').modal('show');
-			});
-		</script>
 
 		<div class="row sectionHeader">
 			<div class="col-lg-offset-3 col-lg-6 col-md-offset-2 col-md-8">

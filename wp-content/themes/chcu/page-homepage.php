@@ -101,7 +101,7 @@ $program = get_pages(array(
 						<iframe width="853" height="480" src="//www.youtube.com/embed/TS4VSgsysug" frameborder="0" allowfullscreen></iframe>
 					</div>
 					<div class="modal-footer">
-						<button type="button" class="btn btn-default" data-dismiss="modal">Zavřít</button>
+						<button type="button" class="btn btn-default" data-dismiss="modal">CHCU vidět váš web</button>
 					</div>
 				</div>
 			</div>

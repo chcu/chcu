@@ -79,6 +79,23 @@ $program = get_pages(array(
 				<iframe width="853" height="480" src="//www.youtube.com/embed/TS4VSgsysug" frameborder="0" allowfullscreen style="max-width: 100%;"></iframe>
 			</div>
 		</div>
+  	<div class="row sectionHeader">
+			<div class="col-lg-offset-3 col-lg-6 col-md-offset-2 col-md-8">
+				<p class="shout">
+					Jak správně křížkovat na volebním lístku?
+				</p>
+				<p class="long text-center">
+					Hodně lidí se nás ptá, jak vlastně správně volit. Volební "plachta", kterou jste dostali do schránky je poměrně nepřehledná, a tak nám přišlo praktické si připomenout jak na to. 
+				</p>
+				<p class="manifestoButtonContainer">
+					<a href="http://chcu.zitbrno.cz/?p=624">NÁVOD JAK SPRÁVNĚ VOLIT &#9654;</a>
+				</p>
+			</div>
+		</div>
+    
+    <?php include 'includes/kolo.php' ?>
+
+    <!--
 
 		<div class="row sectionHeader">
 			<div class="col-lg-offset-3 col-lg-6 col-md-offset-2 col-md-8">
@@ -96,7 +113,10 @@ $program = get_pages(array(
 				</p>
 			</div>
 		</div>
+    
+    		-->
 
+    <br />
 		<div class="row sectionHeader">
 			<div class="col-sm-12">
 				<h2>
@@ -193,7 +213,7 @@ $program = get_pages(array(
 
 		<?php include 'includes/donate.php' ?>
 
-		<?php include 'includes/kolo.php' ?>
+
 
 	</div>
 

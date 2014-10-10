@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<!-- saved from url=(0028)http://soucit.cz/brkand.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<title>Simulátor hlasovacího lístku - komunální volby</title>
+	<meta name="author" content="Yuhů, Dušan Janovský, janovsky@gmail.com">
+	<link rel="canonical" href="http://volby.rovnou.cz/">
+	<style>
+	#listek, #vysledky {font-family: arial, helvetica, sans-serif;}
+	/*#listek {font-size: small;}*/
+	td {vertical-align: top; padding: 4px;}
+	table {border-collapse: collapse; border: 1px solid black;}
+	td {border-left: 1px solid black; border-right: 1px solid black;}
+	#listek h2 {text-align: center; margin-top: 0px; margin-bottom: 0px; font-size: small; font-weight: normal;}
+	#listek p {margin: 0px;}
+	
+	/* upravit podle poctu stran */
+	/* #listek td {font-size: 12px;} */
+	/* div#listek {width: 1200px;}*/
+	
+	div {margin-top: 1em;}
+	div#patka {border-top: 1px dotted gray;}
+	div#listek {border: 1px solid gray; padding: 1em; background-color: #eeeeee;}
+	div#vysledky {min-height: 12em;}
+	input {vertical-align: middle;}
+	label {display: block; text-indent: -1em; padding-left: 1em; margin: 0px;}
+	label input {height: 1.5em; width: 1.5em;}
+	label.strana input {height: 2em; width: 2em;}
+	label.strana span {font-weight: bold;}
+	u {cursor: pointer;}
+	
+	.dostalHlas {background-color: yellow;}
+	.neplatnyListek{background-color: #ffcccc;}
+	
+	tr.skryte {display: none;}
+	tr.odkryte {display: table-row;}
+	.celkem {}
+	</style>
+
+	
+<style type="text/css"></style></head>
+
+<body data-pinterest-extension-installed="cr1.35" data-feedly-mini="yes">
+
+<script>
+// funkce pro kopírování podobných polí
+function kopirovatPole(zdroj) {
+	var novePole = new Array();
+	for (var i in zdroj){
+		if (typeof zdroj[i] == "object") novePole[i] = kopirovatPole(zdroj[i]); // rekurze
+		else novePole[i] = zdroj[i];
+	}
+	return novePole;
+}
+
+// generovane promenne
+// var mandatu = 7;
+
+var mandatu = 55
+// nejdůležitější pole, kterým se řídí celá aplikace. Kandidát, který tu nebude, bude ignorován
+// poleKandidatu[strana][kandidat], hodnotou je, zda získá hlas
+// pokud některá strana nemá všechny kandidáty, bude to zahrnuto už v této inicializaci pole
+var poleKandidatu = { 
+1: {1: false},
+2: {1: false, 2: false, 3: false, 4: false, 5: false, 6: false, 7: false, 8: false, 9: false, 10: false, 11: false, 12: false, 13: false, 14: false, 15: false, 16: false, 17: false, 18: false, 19: false, 20: false, 21: false, 22: false, 23: false, 24: false, 25: false, 26: false, 27: false, 28: false, 29: false, 30: false, 31: false, 32: false, 33: false, 34: false, 35: false, 36: false, 37: false, 38: false, 39: false, 40: false, 41: false, 42: false, 43: false, 44: false, 45: false, 46: false, 47: false, 48: false, 49: false, 50: false, 51: false, 52: false, 53: false, 54: false, 55: false},
+3: {1: false, 2: false, 3: false, 4: false, 5: false, 6: false, 7: false, 8: false, 9: false, 10: false, 11: false, 12: false, 13: false, 14: false, 15: false, 16: false, 17: false, 18: false, 19: false, 20: false, 21: false, 22: false, 23: false, 24: false, 25: false, 26: false, 27: false, 28: false, 29: false, 30: false, 31: false, 32: false, 33: false, 34: false, 35: false, 36: false, 37: false, 38: false, 39: false, 40: false, 41: false, 42: false, 43: false, 44: false, 45: false, 46: false, 47: false, 48: false, 49: false, 50: false, 51: false, 52: false, 53: false, 54: false, 55: false},
+4: {1: false, 2: false, 3: false, 4: false, 5: false, 6: false, 7: false, 8: false, 9: false, 10: false, 11: false, 12: false, 13: false, 14: false, 15: false, 16: false, 17: false, 18: false, 19: false, 20: false},
+5: {1: false, 2: false, 3: false, 4: false, 5: false, 6: false, 7: false, 8: false, 9: false, 10: false, 11: false, 12: false, 13: false, 14: false, 15: false, 16: false, 17: false, 18: false, 19: false, 20: false, 21: false, 22: false, 23: false, 24: false, 25: false, 26: false, 27: false, 28: false, 29: false, 30: false, 31: false, 32: false, 33: false, 34: false, 35: false, 36: false, 37: false, 38: false, 39: false, 40: false, 41: false, 42: false, 43: false, 44: false, 45: false, 46: false, 47: false, 48: false, 49: false, 50: false, 51: false, 52: false, 53: false, 54: false, 55: false}
+	
+}
+
+// pole poleStran slouží jenom pro předání hodnot z formuláře ke kontrole a přepočtu poleKandidatu
+// var poleStran = {1:false, 2: false, 3: false, 4: false, 5:false}; // TODO: konstruovat cyklem přes proměnnou stran
+var poleStran = new Array();
+for (var strana in poleKandidatu) poleStran[strana] = false;
+
+// pole, do kterého se uloží výsledné hlasy stranám
+var hlasyStranam = kopirovatPole(poleStran); // v tomto poli pak budou čísla
+
+// naplnění pole jmen zástupnými hodnotami "kandidát sXkY" a "strana č. X"
+// spouští se při načítání stránky
+var jmenoKandidata = kopirovatPole(poleKandidatu); // inicializace pole zkopírováním může blbnout TODO: pochopit a zkontrolovat
+var jmenoStrany = kopirovatPole(poleStran); //inicializace pole zkopírováním 
+for(var strana in poleKandidatu) {
+	for(var kandidat in poleKandidatu[strana]) jmenoKandidata[strana][kandidat] = "kandidát s" + strana + "k" + kandidat;
+	jmenoStrany[strana] = "strana č. " + strana; // naplnění generickými jmény
+}
+// ------- jména stran -------------
+jmenoStrany[1] = "ANTIBURSÍK - STOP EKOTERORU !";
+jmenoStrany[2] = "Česká strana sociálně demokratická";
+jmenoStrany[3] = "Žít Brno s podporou Pirátů";
+jmenoStrany[4] = "Dělnická strana sociální spravedlnosti";
+jmenoStrany[5] = "Občanská demokratická strana";
+// nahradte vlastními
+
+// ------- konec jmen stran -------------
+
+// ------- zde začíná oblast se jmény kandidátů -------
+
+jmenoKandidata[1][1] ='Dobčák Martin JUDr.';
+jmenoKandidata[2][1] ='Onderka Roman Bc. MBA';
+jmenoKandidata[2][2] ='Pospíšil Oliver Ing.';
+jmenoKandidata[2][3] ='Oliva Jiří JUDr.';
+jmenoKandidata[2][4] ='Křemečková Naděžda Bc.';
+jmenoKandidata[2][5] ='Žďárský Vlastimil MVDr.';
+jmenoKandidata[2][6] ='Humpolíček Miloslav Bc.';
+jmenoKandidata[2][7] ='Ides Jiří';
+jmenoKandidata[2][8] ='Šafařík Petr';
+jmenoKandidata[2][9] ='Sázavský Pavel Mgr.';
+jmenoKandidata[2][10] ='Novotný Jiří';
+jmenoKandidata[2][11] ='Boleslav Pavel Ing.';
+jmenoKandidata[2][12] ='Kouřilová Jarmila';
+jmenoKandidata[2][13] ='Štefan Břetislav Mgr.';
+jmenoKandidata[2][14] ='Haluza Josef Mgr.';
+jmenoKandidata[2][15] ='Viskot Marek Mgr. Bc.';
+jmenoKandidata[2][16] ='Hrdlička Milan';
+jmenoKandidata[2][17] ='Sedláček Jiří';
+jmenoKandidata[2][18] ='Sedláček Jozef';
+jmenoKandidata[2][19] ='Bezvodová Natálie';
+jmenoKandidata[2][20] ='Jakubec Aleš Bc.';
+jmenoKandidata[2][21] ='Doležalová Květuše Mgr.';
+jmenoKandidata[2][22] ='Kratochvíl Tomáš JUDr.';
+jmenoKandidata[2][23] ='Marek Robert';
+jmenoKandidata[2][24] ='Čížek David Mgr.';
+jmenoKandidata[2][25] ='Schielová Kateřina';
+jmenoKandidata[2][26] ='Maršová Jindřiška';
+jmenoKandidata[2][27] ='Božková Kateřina Mgr.';
+jmenoKandidata[2][28] ='Otčenášek Martin Ing.';
+jmenoKandidata[2][29] ='Kubějová Jana MVDr.';
+jmenoKandidata[2][30] ='Semrád Petr Mgr.';
+jmenoKandidata[2][31] ='Čejka Jiří PhDr.';
+jmenoKandidata[2][32] ='Slezák Ivan Ing.';
+jmenoKandidata[2][33] ='Šrůtek Jan Ing.';
+jmenoKandidata[2][34] ='Tyralík Pavel Ing.';
+jmenoKandidata[2][35] ='Lounek Ivan Bc.';
+jmenoKandidata[2][36] ='Vondráková Radmila MUDr.';
+jmenoKandidata[2][37] ='Foltýn Petr Mgr. Bc.';
+jmenoKandidata[2][38] ='Elleder Richard Ing.';
+jmenoKandidata[2][39] ='Žáček Jan Mgr.';
+jmenoKandidata[2][40] ='Daňhelová Linda';
+jmenoKandidata[2][41] ='Uzlová Tereza';
+jmenoKandidata[2][42] ='Toman Marek Ing.';
+jmenoKandidata[2][43] ='Hrdá Markéta';
+jmenoKandidata[2][44] ='Fater David Bc. MSc.';
+jmenoKandidata[2][45] ='Sosíková Hana';
+jmenoKandidata[2][46] ='Motloch Jiří';
+jmenoKandidata[2][47] ='Komárková Dalila JUDr.';
+jmenoKandidata[2][48] ='Herelová Kateřina Bc.';
+jmenoKandidata[2][49] ='Kinzel Ivan';
+jmenoKandidata[2][50] ='Hamplová Jana Bc.';
+jmenoKandidata[2][51] ='Zelinková Vlasta Ing.';
+jmenoKandidata[2][52] ='Trenz Jiří Bc.';
+jmenoKandidata[2][53] ='Pazdírek Dušan';
+jmenoKandidata[2][54] ='Bárta Daniel Ing.';
+jmenoKandidata[2][55] ='Mikš Martin Mgr.';
+jmenoKandidata[3][1] ='Hollan Matěj Bc.';
+jmenoKandidata[3][2] ='Kašpaříková Hana Ing.';
+jmenoKandidata[3][3] ='Ulip Jiří Mgr.';
+jmenoKandidata[3][4] ='Hofmannová Karla PhDr.';
+jmenoKandidata[3][5] ='Koláčný Tomáš Bc.';
+jmenoKandidata[3][6] ='Hollan Jan RNDr. Ph.D.';
+jmenoKandidata[3][7] ='Freund Martin Bc.';
+jmenoKandidata[3][8] ='Kalousek Petr BcA.';
+jmenoKandidata[3][9] ='Fišer Marek Ing.';
+jmenoKandidata[3][10] ='Kořínek Jakub MgA.';
+jmenoKandidata[3][11] ='Antonová Barbora Mgr.';
+jmenoKandidata[3][12] ='Reich Pavel';
+jmenoKandidata[3][13] ='Doležal Patrik';
+jmenoKandidata[3][14] ='Doležel Michal Bc.';
+jmenoKandidata[3][15] ='Čermák Václav Ing.';
+jmenoKandidata[3][16] ='Špaček Jan Mgr.';
+jmenoKandidata[3][17] ='Zobačová Jarmila Mgr.';
+jmenoKandidata[3][18] ='Tula Vojtěch';
+jmenoKandidata[3][19] ='Kvapil Robin MgA.';
+jmenoKandidata[3][20] ='Jeřábek Miroslav Mgr. Ph.D.';
+jmenoKandidata[3][21] ='Kučera Jaroslav Bc.';
+jmenoKandidata[3][22] ='Veselý David Ing.';
+jmenoKandidata[3][23] ='Jablunka Jan';
+jmenoKandidata[3][24] ='Sedal Ján';
+jmenoKandidata[3][25] ='Loskot Marek Bc.';
+jmenoKandidata[3][26] ='Vázquez Daniel Mgr. Ph.D.';
+jmenoKandidata[3][27] ='Vičar Václav';
+jmenoKandidata[3][28] ='Havlová Jitka';
+jmenoKandidata[3][29] ='Landa Martin';
+jmenoKandidata[3][30] ='Zahradníčková Jana MUDr.';
+jmenoKandidata[3][31] ='Tuček Pavel Ing.';
+jmenoKandidata[3][32] ='Dirda Miroslav';
+jmenoKandidata[3][33] ='Procházková Hana PhDr.';
+jmenoKandidata[3][34] ='Březovský Boleslav DiS.';
+jmenoKandidata[3][35] ='Vtípil Tomáš';
+jmenoKandidata[3][36] ='Merta Ondřej BcA.';
+jmenoKandidata[3][37] ='Ceyp Radek';
+jmenoKandidata[3][38] ='Sláma Ondřej';
+jmenoKandidata[3][39] ='Adámková Stanislava Mgr.';
+jmenoKandidata[3][40] ='Grygarová Hana';
+jmenoKandidata[3][41] ='Putna Jiří Mgr.';
+jmenoKandidata[3][42] ='Nový Lukáš Bc.';
+jmenoKandidata[3][43] ='Brothánek Jan Mgr.';
+jmenoKandidata[3][44] ='Sadílek Michal';
+jmenoKandidata[3][45] ='Zlámal Aleš RNDr.';
+jmenoKandidata[3][46] ='Obritzhauser Dean';
+jmenoKandidata[3][47] ='Zeman Daniel Bc.';
+jmenoKandidata[3][48] ='Sobol Martin';
+jmenoKandidata[3][49] ='Šauerová Nikola Bc.';
+jmenoKandidata[3][50] ='Moravec Pavel Mgr. Ph.D.';
+jmenoKandidata[3][51] ='Ledvina Petr Mgr. Ing.';
+jmenoKandidata[3][52] ='Renzová Tereza Mgr.';
+jmenoKandidata[3][53] ='Druckmüllerová Zdena Ing.';
+jmenoKandidata[3][54] ='Kučera Petr doc. Ing. Ph.D.';
+jmenoKandidata[3][55] ='Kotulan Martin';
+jmenoKandidata[4][1] ='Mensa Eduard JUDr.';
+jmenoKandidata[4][2] ='Lamprecht Erik';
+jmenoKandidata[4][3] ='Skoumalová Simona Bc.';
+jmenoKandidata[4][4] ='Křivánek Josef';
+jmenoKandidata[4][5] ='Krejčí Aleš Ing. arch.';
+jmenoKandidata[4][6] ='Svoboda Jakub';
+jmenoKandidata[4][7] ='Matějka Karel';
+jmenoKandidata[4][8] ='Nováková Veronika';
+jmenoKandidata[4][9] ='Balajková Lenka';
+jmenoKandidata[4][10] ='Vašíček Zdeněk';
+jmenoKandidata[4][11] ='Pech Milan';
+jmenoKandidata[4][12] ='Šrámek Miloš';
+jmenoKandidata[4][13] ='Gottlieb Zdeněk';
+jmenoKandidata[4][14] ='Palán Roman';
+jmenoKandidata[4][15] ='Zapletal Jaroslav';
+jmenoKandidata[4][16] ='Svoboda Jan';
+jmenoKandidata[4][17] ='Gregor Vladimír';
+jmenoKandidata[4][18] ='Schweiger Milan';
+jmenoKandidata[4][19] ='Knor Miloslav';
+jmenoKandidata[4][20] ='Kučera Pavel';
+jmenoKandidata[5][1] ='Vižďa František doc. RNDr. Ph.D.';
+jmenoKandidata[5][2] ='Kerndl Robert JUDr.';
+jmenoKandidata[5][3] ='Cechová Šárka JUDr.';
+jmenoKandidata[5][4] ='Kratochvíl Petr Ing.';
+jmenoKandidata[5][5] ='Šťástka Libor Mgr.';
+jmenoKandidata[5][6] ='Michalík Stanislav Ing.';
+jmenoKandidata[5][7] ='Fučík Igor Bc.';
+jmenoKandidata[5][8] ='Chládek Michal JUDr.';
+jmenoKandidata[5][9] ='Kadlec Ludvík';
+jmenoKandidata[5][10] ='Jankůj Pavel Ing.';
+jmenoKandidata[5][11] ='Vašina Roman Ing.';
+jmenoKandidata[5][12] ='Punčochář Petr Mgr.';
+jmenoKandidata[5][13] ='Zorník Jiří';
+jmenoKandidata[5][14] ='Švarcová Kristýna';
+jmenoKandidata[5][15] ='Šik Evžen';
+jmenoKandidata[5][16] ='Vaňková Markéta JUDr.';
+jmenoKandidata[5][17] ='Veselý Jiří Ing.';
+jmenoKandidata[5][18] ='Svoboda Jindřich Mgr.';
+jmenoKandidata[5][19] ='Šikula Jiří';
+jmenoKandidata[5][20] ='Krpálková Yvette Ing.';
+jmenoKandidata[5][21] ='Pokorný Jiří Ing.';
+jmenoKandidata[5][22] ='Foltýn Richard';
+jmenoKandidata[5][23] ='Hlavička Bohuslav';
+jmenoKandidata[5][24] ='Ondřík Ivan Bc.';
+jmenoKandidata[5][25] ='Hnízdil Radek Ing. et Ing.';
+jmenoKandidata[5][26] ='Koubek Jiří';
+jmenoKandidata[5][27] ='Feyrer Jiří Mgr.';
+jmenoKandidata[5][28] ='Kosek Roman Bc.';
+jmenoKandidata[5][29] ='Rygl Jiří Ing.';
+jmenoKandidata[5][30] ='Navrátilová Marie Ing.';
+jmenoKandidata[5][31] ='Dostál Vítězslav Ing.';
+jmenoKandidata[5][32] ='Jiroušek Zdeněk Ing.';
+jmenoKandidata[5][33] ='Harnach Gustav';
+jmenoKandidata[5][34] ='Trllo David Ing.';
+jmenoKandidata[5][35] ='Jursa Miroslav Ing.';
+jmenoKandidata[5][36] ='Vostrejž Jan';
+jmenoKandidata[5][37] ='Fabiánek Roman PaedDr.';
+jmenoKandidata[5][38] ='Bundálek Martin';
+jmenoKandidata[5][39] ='Kaňa Petr';
+jmenoKandidata[5][40] ='Mencl Vojtěch Ing. arch.';
+jmenoKandidata[5][41] ='Novotný Vlastimil Ing.';
+jmenoKandidata[5][42] ='Prchal Martin Ing.';
+jmenoKandidata[5][43] ='Havlík Ondřej Ing.';
+jmenoKandidata[5][44] ='Balcarová Zdeňka RNDr.';
+jmenoKandidata[5][45] ='Zábojová Rita Ing. LL.M.';
+jmenoKandidata[5][46] ='Hruška Libor';
+jmenoKandidata[5][47] ='Hynšt Tomáš';
+jmenoKandidata[5][48] ='Macurová Ladislava Mgr. Bc.';
+jmenoKandidata[5][49] ='Štěpánková Jindra Ing.';
+jmenoKandidata[5][50] ='Belušík Pavel Ing.';
+jmenoKandidata[5][51] ='Svobodová Eva Ing.';
+jmenoKandidata[5][52] ='Havlíček Petr Ing.';
+jmenoKandidata[5][53] ='Buzek Martin';
+jmenoKandidata[5][54] ='Dorazil Miroslav Ing.';
+jmenoKandidata[5][55] ='Neveselý Roman';
+
+// ------- zde končí oblast se jmény kandidátů-------
+
+function naplnitJmenaDoTabulky(){
+	// procházím pole poleKandidatu
+	for(var strana in poleKandidatu) for(var kandidat in poleKandidatu[strana])
+	// vezmu id jména z tabulky a naleju do něj jmenoKandidata přes innerHTML
+	document.getElementById("js"+strana+"k"+kandidat).innerHTML = jmenoKandidata[strana][kandidat];
+	// TODO: testování
+	
+	for(var strana in poleStran) 
+	document.getElementById("js"+strana).innerHTML = jmenoStrany[strana];
+	
+}
+// a hned ji spustíme hned pod dokumentem
+
+
+
+function sklonujHlasy(n){
+	var zneni = "hlasů";
+	if (n % 10 == 1 ) zneni = "hlas";
+	if (n % 10 == 2 || n % 10 == 3 || n % 10 == 4) zneni = "hlasy";
+	if (n == 11 || n == 12 || n == 13 || n == 14) zneni = "hlasů";
+	return n + " " + zneni;
+}
+
+/////// --------- oblast výpočtu -------------------
+
+// globalni promenne pouzite k vypoctu
+var hlaseni = {"platnost":"", "strany":"", "kandidati":"", "vyuziti":"", "poznamka":"", "duvod":""};
+var zaskrtnutoStran;
+var zaskrtnutoKandidatu;
+var zaskrtnutoKandidatuCizichStran;
+var zaskrtnutaStrana;
+var vyuzitoHlasu;
+var jePlatny = true;
+
+
+function vynulovatVse(){
+	// vynulovat všechna hlášení
+	for(var item in hlaseni) hlaseni[item]="";
+	
+	for(var strana in poleKandidatu){
+		document.getElementById("ps"+strana).innerHTML = "celkem " + sklonujHlasy(0);
+	}
+}
+
+function naplnitPole() {
+	
+	// pole kandidátů se vynuluje // thx nox@djpw
+	for(var strana in poleKandidatu)
+	for(var kandidat in poleKandidatu[strana])
+	poleKandidatu[strana][kandidat] = false; // vlastní vynulování
+		
+	// pole se naplní podle aktuálních checkboxů kandidátů
+	// naplnění se dělá procházením postaveného js pole, nikoli procházením html tabulky
+	for(var strana in poleKandidatu) for(var kandidat in poleKandidatu[strana]){
+		var idecko = "s" + strana + "k" + kandidat;// sestavil se nazev idecka v dokumentu
+		// TODO: tady by to chtělo zkontrolovat, zda checkboxy v dokumentu existují 
+		// vezmou se data z checkboxů
+		poleKandidatu[strana][kandidat] = window.document.getElementById(idecko).checked;
+	}
+	
+	// pole stran se vynuluje
+	for(var strana in poleStran)
+	poleStran[strana] = false;
+	
+	// pole se naplní podle aktuálních checkboxů stran
+	for(var strana in poleStran){
+		var idecko = "s" + strana;
+		poleStran[strana] = window.document.getElementById(idecko).checked;
+	}
+}
+
+function zkontrolovat() {
+	var vPohode = true; // výsledná pravdivostní hodnota funkce
+	var sporne = false; // sporná platnost
+	var mocmandatu = false;
+	
+	// průchod polem stran a kontrola, zda je checknutá nejvýše jedna
+	// pokud víc, tak return false s hlášením
+	// vrati promennou zaskrtnutoStran
+	zaskrtnutoStran=0;
+	for(var strana in poleStran) if (poleStran[strana]) zaskrtnutoStran ++;
+	if (zaskrtnutoStran > 1) {
+		hlaseni.duvod += "Příliš mnoho zaškrtnutých stran (smí být nejvýše 1). §41 (2) b)";
+		vPohode &= false; 
+	}
+	
+	// průchod polem kandidátů a kontrola, kdo je checknutý
+	// pokud jich je víc checknutých než mandátů, return false s hlášením
+	// vrati promennou zaskrtnutoKandidatu
+	zaskrtnutoKandidatu=0;
+	for(var strana in poleKandidatu) for(var kandidat in poleKandidatu[strana]) if(poleKandidatu[strana][kandidat]) zaskrtnutoKandidatu++;
+	if (zaskrtnutoKandidatu > mandatu) {
+		// TODO: sporná platnost
+		mocmandatu = true;
+		if (zaskrtnutoStran == 1){
+			zaskrtnutoKandidatuCizichStran=0;
+			for(var stranax in poleKandidatu) if(!poleStran[stranax]) for(var kandidatx in poleKandidatu[stranax]) if(poleKandidatu[stranax][kandidatx]) zaskrtnutoKandidatuCizichStran++;
+			if (zaskrtnutoKandidatuCizichStran <= mandatu){
+				sporne = true;
+			}
+		}
+	}
+	if(mocmandatu && !sporne){
+		vPohode &= false;
+		hlaseni.duvod += "Je příliš mnoho vykřížkovaných kandidátů. Smí jich být tolik, kolik se volí členů zastupitelstva, v tomto případě tedy " + mandatu + ". Křížků u kandidátů je nyní ale " + zaskrtnutoKandidatu + ". §41 (2) c)";		
+	} 
+	if(mocmandatu && sporne){
+		vPohode &= true;
+		hlaseni.duvod += "Je příliš mnoho křížků u kandidátů, ale část jich je v zakřížkované straně. V tomto případě záleží na rozhodnutí volební komise (§41 odst. 5), v jakém pořadí vyhodnocuje platnost lístku. Pokud dříve vyhodnotí odst. 3, je lístek platný. Pokud dříve vyhodnotí odst. 2 c), bude lístek neplatný. Povolený počet křížků je " + mandatu + ". Křížků u kandidátů je nyní " + zaskrtnutoKandidatu + ". Křížků u nezaškrtnutých stran je " + zaskrtnutoKandidatuCizichStran + ". ";	
+	}
+	// kontrola, jestli je vůbec něco checknuté
+	// pokud ne, tak return false s hlášením
+	if (zaskrtnutoKandidatu == 0 && zaskrtnutoStran == 0){
+		hlaseni.duvod += "K platnosti lístku je potřeba aspoň jeden křížek straně nebo kandidátovi. §41 (2) a)";
+		vPohode &= false;
+	}
+	
+	if (vPohode) hlaseni.platnost += "Hlasovací lístek je platný. "
+	if (vPohode && sporne) hlaseni.platnost += "<b>Záleží ale na rozhodnutí volební komise</b> (viz níže). "
+	if (!vPohode) hlaseni.platnost += "Hlasovací lístek <b>je neplatný</b>.";
+	
+	return vPohode;
+}
+
+function vypocitatKandidaty(){
+	// volá se pouze při platnosti funkce zkontrolovat()
+
+	// případ, kdy je potřeba řešit křížek u strany
+	if (zaskrtnutoStran == 1) { 
+		// zjištění, která strana je zaškrtnutá, měla by být jenom jedna
+		for(var strana in poleStran) if(poleStran[strana]) zaskrtnutaStrana = strana;
+		
+		// průchod kandidáty zaškrtnuté strany a zrušení jejich křížků
+		for(var kandidat in poleKandidatu[zaskrtnutaStrana]) {
+			if(poleKandidatu[zaskrtnutaStrana][kandidat]) 
+				hlaseni.poznamka += "Protože " + jmenoStrany[zaskrtnutaStrana] + " je strana zaškrtnutá nahoře, nebere se na křížek u kandidáta " + jmenoKandidata[zaskrtnutaStrana][kandidat] + " žádný ohled. § 41 (3)<br>";
+			poleKandidatu[zaskrtnutaStrana][kandidat] = false;
+		}
+		
+		// spočítání kandidátů cizích stran (křížky u kandidátů zašktrnuté strany už zmizely v minulém kroku)
+		zaskrtnutoKandidatuCizichStran=0;
+		for(var strana in poleKandidatu) for(var kandidat in poleKandidatu[strana]) if(poleKandidatu[strana][kandidat]) zaskrtnutoKandidatuCizichStran++;
+		// hlaseni.poznamka += "zaškrtnuto kandidátů cizích stran: " + zaskrtnutoKandidatuCizichStran;
+		
+		// výpočet křížků k udělení kandidátům zaškrtnuté straně
+		var rozdelitKrizku = mandatu - zaskrtnutoKandidatuCizichStran;
+		// hlaseni.poznamka += "křížků k rozdělení: " + rozdelitKrizku + ". Zašrktnutá strana: " + zaskrtnutaStrana;
+		
+		// průchod kandidáty strany do počtu rozdělovaných křížků - kandidatuCizichStran a jejich křížkování (pokud existují)
+		// že kandidáti existují, se zaručí tím, že se prochází polem (a nebere se ohled, zda křížky k rozdělení zbyly)
+		for(kandidat in poleKandidatu[zaskrtnutaStrana]) {
+			if (rozdelitKrizku > 0){
+				poleKandidatu[zaskrtnutaStrana][kandidat] = true;
+				rozdelitKrizku --;
+			}
+		}
+		if (zaskrtnutoStran == 0){
+			// nic se nedělá
+		}
+
+	}
+	
+	if (zaskrtnutoStran > 1 || zaskrtnutoStran < 0) hlaseni.poznamka += "Nastala podivuhodná chyba výpočtu.";
+	
+	hlaseni.kandidati += " Kandidáti s obdrženým hlasem jsou zvýraznění a jsou to: <br>";
+	for(var strana in poleKandidatu) for(var kandidat in poleKandidatu[strana]) if (poleKandidatu[strana][kandidat]) hlaseni.kandidati += jmenoKandidata[strana][kandidat] + ", ";
+	hlaseni.kandidati += "<br> Tyto hlasy u kandidátů nemají přímý vliv na rozdělení mandátů stranám. Mandáty se počítají podle hlasů pro strany (uvedené výše).";
+}
+function vypocitatStrany(){
+	// budeme si hrát s polem hlasyStranam a proměnnou vyuzitoHlasu
+	// vynulovani
+	for(var strana in hlasyStranam) hlasyStranam[strana] = 0;
+	vyuzitoHlasu = 0;
+
+	// pruchod stranami
+	for(var strana in poleKandidatu){
+		for (var kandidat in poleKandidatu[strana])
+		if (poleKandidatu[strana][kandidat]){
+			hlasyStranam[strana]++;
+			vyuzitoHlasu++;
+		}
+	}
+	
+	// vypsani zisku stran	
+	hlaseni.strany += "Z následujících čísel se počítá zisk mandátů pro strany. Jednotlivé strany dostaly tento počet hlasů: <br>"; 
+	for(var strana in hlasyStranam) if (hlasyStranam[strana]>0) hlaseni.strany += jmenoStrany[strana] + ": " + sklonujHlasy(hlasyStranam[strana]) + ", ";
+	
+	// odkaz na odkryti
+	if(document.getElementById("radekCelkem").className == "skryte"){
+		hlaseni.strany += " <br><u onclick='document.getElementById(\"radekCelkem\").className = \"odkryte\";'>Zobrazit dole v tabulce</u>."
+	}	
+	else if(document.getElementById("radekCelkem").className == "odkryte"){
+		hlaseni.strany += " <br><u onclick='document.getElementById(\"radekCelkem\").className = \"skryte\";'>Dole v tabulce skrýt</u>."
+	}
+	// využití hlasů
+	hlaseni.vyuziti += "<br>Volič využil "+ sklonujHlasy(vyuzitoHlasu) + ", tedy " + Math.floor(100*vyuzitoHlasu/mandatu) + " % svých hlasů. ";
+	
+	// vyplnění volebního zisku do spodního řádku tabulky celkemHlasu
+	for(var strana in hlasyStranam){
+		document.getElementById("ps"+strana).innerHTML = "celkem " + sklonujHlasy(hlasyStranam[strana]);
+	}
+	
+}
+function vypsatVysledek(){
+	// vypsani hlaseni	
+	document.getElementById("vysledkyPlatnost").innerHTML = hlaseni.platnost;
+	document.getElementById("vysledkyStrany").innerHTML = hlaseni.strany;
+	document.getElementById("vysledkyKandidati").innerHTML = hlaseni.kandidati;
+	document.getElementById("vysledkyVyuziti").innerHTML = hlaseni.vyuziti;
+	document.getElementById("vysledkyPoznamka").innerHTML = hlaseni.poznamka;
+	document.getElementById("vysledkyDuvod").innerHTML = hlaseni.duvod;
+	
+	// odbarveni vseho
+	for(var strana in poleKandidatu) for(var kandidat in poleKandidatu[strana]){
+		prvek = document.getElementById("i"+"s"+strana+"k"+kandidat);
+		prvek.className = "";
+	}
+	
+	if (jePlatny){
+		document.getElementById("tabulkaListku").className = "";
+		// obarveni kandidatu
+		for(var strana in poleKandidatu) for(var kandidat in poleKandidatu[strana]){
+			prvek = document.getElementById("i"+"s"+strana+"k"+kandidat);
+			if(poleKandidatu[strana][kandidat]) prvek.className = "dostalHlas";
+		}
+	}
+	if(!jePlatny){
+		document.getElementById("tabulkaListku").className = "neplatnyListek";
+	}
+}
+
+
+///// hlavní funkce
+function prepocitat(){
+	vynulovatVse();
+	naplnitPole()
+	jePlatny = zkontrolovat()
+	if(jePlatny){
+		vypocitatKandidaty();
+		vypocitatStrany();
+	}
+	vypsatVysledek();
+	
+}
+</script>
+
+<h1>Simulátor volebního lístku - komunální volby</h1>
+
+<p>Před sebou vidíte hlasovací lístek podobný tomu, který budete vyplňovat v komunálních volbách. Před vyplňováním si napřed všimněte, kolik se volí členů zastupitelstva (v tomto příkladu 55, ale všude je to číslo jiné). Zde si můžete vyzkoušet, kdy je vyplnění lístku neplatné a kterým stranám a kandidátům vlastně dáváte hlas. Dole byste hned měli vidět výsledky. Takže si klikejte.</p>
+
+<div id="listek">
+	<h2><b>HLASOVACÍ LÍSTEK</b><br>pro volby do zastupitelstva města Brno</h2>
+	<p>Město Brno<br>
+	</p><p>Do zastupitelstva města se volí <b>55</b> členů</p>
+<table id="tabulkaListku">
+	<tbody><tr>	
+<td>
+	<label for="s1" class="strana"><input type="checkbox" id="s1" onchange="prepocitat()"> <span id="js1">ANTIBURSÍK - STOP EKOTERORU !</span><br>vylosované číslo 1</label><br>
+	<label id="is1k1" for="s1k1"><input type="checkbox" id="s1k1" onchange="prepocitat()"> 1. <span id="js1k1">Dobčák Martin JUDr.</span></label>
+</td>
+<td>
+	<label for="s2" class="strana"><input type="checkbox" id="s2" onchange="prepocitat()"> <span id="js2">Česká strana sociálně demokratická</span><br>vylosované číslo 3</label><br>
+	<label id="is2k1" for="s2k1"><input type="checkbox" id="s2k1" onchange="prepocitat()"> 1. <span id="js2k1">Onderka Roman Bc. MBA</span></label>
+	<label id="is2k2" for="s2k2"><input type="checkbox" id="s2k2" onchange="prepocitat()"> 2. <span id="js2k2">Pospíšil Oliver Ing.</span></label>
+	<label id="is2k3" for="s2k3"><input type="checkbox" id="s2k3" onchange="prepocitat()"> 3. <span id="js2k3">Oliva Jiří JUDr.</span></label>
+	<label id="is2k4" for="s2k4"><input type="checkbox" id="s2k4" onchange="prepocitat()"> 4. <span id="js2k4">Křemečková Naděžda Bc.</span></label>
+	<label id="is2k5" for="s2k5"><input type="checkbox" id="s2k5" onchange="prepocitat()"> 5. <span id="js2k5">Žďárský Vlastimil MVDr.</span></label>
+	<label id="is2k6" for="s2k6"><input type="checkbox" id="s2k6" onchange="prepocitat()"> 6. <span id="js2k6">Humpolíček Miloslav Bc.</span></label>
+	<label id="is2k7" for="s2k7"><input type="checkbox" id="s2k7" onchange="prepocitat()"> 7. <span id="js2k7">Ides Jiří</span></label>
+	<label id="is2k8" for="s2k8"><input type="checkbox" id="s2k8" onchange="prepocitat()"> 8. <span id="js2k8">Šafařík Petr</span></label>
+	<label id="is2k9" for="s2k9"><input type="checkbox" id="s2k9" onchange="prepocitat()"> 9. <span id="js2k9">Sázavský Pavel Mgr.</span></label>
+	<label id="is2k10" for="s2k10"><input type="checkbox" id="s2k10" onchange="prepocitat()"> 10. <span id="js2k10">Novotný Jiří</span></label>
+	<label id="is2k11" for="s2k11"><input type="checkbox" id="s2k11" onchange="prepocitat()"> 11. <span id="js2k11">Boleslav Pavel Ing.</span></label>
+	<label id="is2k12" for="s2k12"><input type="checkbox" id="s2k12" onchange="prepocitat()"> 12. <span id="js2k12">Kouřilová Jarmila</span></label>
+	<label id="is2k13" for="s2k13"><input type="checkbox" id="s2k13" onchange="prepocitat()"> 13. <span id="js2k13">Štefan Břetislav Mgr.</span></label>
+	<label id="is2k14" for="s2k14"><input type="checkbox" id="s2k14" onchange="prepocitat()"> 14. <span id="js2k14">Haluza Josef Mgr.</span></label>
+	<label id="is2k15" for="s2k15"><input type="checkbox" id="s2k15" onchange="prepocitat()"> 15. <span id="js2k15">Viskot Marek Mgr. Bc.</span></label>
+	<label id="is2k16" for="s2k16"><input type="checkbox" id="s2k16" onchange="prepocitat()"> 16. <span id="js2k16">Hrdlička Milan</span></label>
+	<label id="is2k17" for="s2k17"><input type="checkbox" id="s2k17" onchange="prepocitat()"> 17. <span id="js2k17">Sedláček Jiří</span></label>
+	<label id="is2k18" for="s2k18"><input type="checkbox" id="s2k18" onchange="prepocitat()"> 18. <span id="js2k18">Sedláček Jozef</span></label>
+	<label id="is2k19" for="s2k19"><input type="checkbox" id="s2k19" onchange="prepocitat()"> 19. <span id="js2k19">Bezvodová Natálie</span></label>
+	<label id="is2k20" for="s2k20"><input type="checkbox" id="s2k20" onchange="prepocitat()"> 20. <span id="js2k20">Jakubec Aleš Bc.</span></label>
+	<label id="is2k21" for="s2k21"><input type="checkbox" id="s2k21" onchange="prepocitat()"> 21. <span id="js2k21">Doležalová Květuše Mgr.</span></label>
+	<label id="is2k22" for="s2k22"><input type="checkbox" id="s2k22" onchange="prepocitat()"> 22. <span id="js2k22">Kratochvíl Tomáš JUDr.</span></label>
+	<label id="is2k23" for="s2k23"><input type="checkbox" id="s2k23" onchange="prepocitat()"> 23. <span id="js2k23">Marek Robert</span></label>
+	<label id="is2k24" for="s2k24"><input type="checkbox" id="s2k24" onchange="prepocitat()"> 24. <span id="js2k24">Čížek David Mgr.</span></label>
+	<label id="is2k25" for="s2k25"><input type="checkbox" id="s2k25" onchange="prepocitat()"> 25. <span id="js2k25">Schielová Kateřina</span></label>
+	<label id="is2k26" for="s2k26"><input type="checkbox" id="s2k26" onchange="prepocitat()"> 26. <span id="js2k26">Maršová Jindřiška</span></label>
+	<label id="is2k27" for="s2k27"><input type="checkbox" id="s2k27" onchange="prepocitat()"> 27. <span id="js2k27">Božková Kateřina Mgr.</span></label>
+	<label id="is2k28" for="s2k28"><input type="checkbox" id="s2k28" onchange="prepocitat()"> 28. <span id="js2k28">Otčenášek Martin Ing.</span></label>
+	<label id="is2k29" for="s2k29"><input type="checkbox" id="s2k29" onchange="prepocitat()"> 29. <span id="js2k29">Kubějová Jana MVDr.</span></label>
+	<label id="is2k30" for="s2k30"><input type="checkbox" id="s2k30" onchange="prepocitat()"> 30. <span id="js2k30">Semrád Petr Mgr.</span></label>
+	<label id="is2k31" for="s2k31"><input type="checkbox" id="s2k31" onchange="prepocitat()"> 31. <span id="js2k31">Čejka Jiří PhDr.</span></label>
+	<label id="is2k32" for="s2k32"><input type="checkbox" id="s2k32" onchange="prepocitat()"> 32. <span id="js2k32">Slezák Ivan Ing.</span></label>
+	<label id="is2k33" for="s2k33"><input type="checkbox" id="s2k33" onchange="prepocitat()"> 33. <span id="js2k33">Šrůtek Jan Ing.</span></label>
+	<label id="is2k34" for="s2k34"><input type="checkbox" id="s2k34" onchange="prepocitat()"> 34. <span id="js2k34">Tyralík Pavel Ing.</span></label>
+	<label id="is2k35" for="s2k35"><input type="checkbox" id="s2k35" onchange="prepocitat()"> 35. <span id="js2k35">Lounek Ivan Bc.</span></label>
+	<label id="is2k36" for="s2k36"><input type="checkbox" id="s2k36" onchange="prepocitat()"> 36. <span id="js2k36">Vondráková Radmila MUDr.</span></label>
+	<label id="is2k37" for="s2k37"><input type="checkbox" id="s2k37" onchange="prepocitat()"> 37. <span id="js2k37">Foltýn Petr Mgr. Bc.</span></label>
+	<label id="is2k38" for="s2k38"><input type="checkbox" id="s2k38" onchange="prepocitat()"> 38. <span id="js2k38">Elleder Richard Ing.</span></label>
+	<label id="is2k39" for="s2k39"><input type="checkbox" id="s2k39" onchange="prepocitat()"> 39. <span id="js2k39">Žáček Jan Mgr.</span></label>
+	<label id="is2k40" for="s2k40"><input type="checkbox" id="s2k40" onchange="prepocitat()"> 40. <span id="js2k40">Daňhelová Linda</span></label>
+	<label id="is2k41" for="s2k41"><input type="checkbox" id="s2k41" onchange="prepocitat()"> 41. <span id="js2k41">Uzlová Tereza</span></label>
+	<label id="is2k42" for="s2k42"><input type="checkbox" id="s2k42" onchange="prepocitat()"> 42. <span id="js2k42">Toman Marek Ing.</span></label>
+	<label id="is2k43" for="s2k43"><input type="checkbox" id="s2k43" onchange="prepocitat()"> 43. <span id="js2k43">Hrdá Markéta</span></label>
+	<label id="is2k44" for="s2k44"><input type="checkbox" id="s2k44" onchange="prepocitat()"> 44. <span id="js2k44">Fater David Bc. MSc.</span></label>
+	<label id="is2k45" for="s2k45"><input type="checkbox" id="s2k45" onchange="prepocitat()"> 45. <span id="js2k45">Sosíková Hana</span></label>
+	<label id="is2k46" for="s2k46"><input type="checkbox" id="s2k46" onchange="prepocitat()"> 46. <span id="js2k46">Motloch Jiří</span></label>
+	<label id="is2k47" for="s2k47"><input type="checkbox" id="s2k47" onchange="prepocitat()"> 47. <span id="js2k47">Komárková Dalila JUDr.</span></label>
+	<label id="is2k48" for="s2k48"><input type="checkbox" id="s2k48" onchange="prepocitat()"> 48. <span id="js2k48">Herelová Kateřina Bc.</span></label>
+	<label id="is2k49" for="s2k49"><input type="checkbox" id="s2k49" onchange="prepocitat()"> 49. <span id="js2k49">Kinzel Ivan</span></label>
+	<label id="is2k50" for="s2k50"><input type="checkbox" id="s2k50" onchange="prepocitat()"> 50. <span id="js2k50">Hamplová Jana Bc.</span></label>
+	<label id="is2k51" for="s2k51"><input type="checkbox" id="s2k51" onchange="prepocitat()"> 51. <span id="js2k51">Zelinková Vlasta Ing.</span></label>
+	<label id="is2k52" for="s2k52"><input type="checkbox" id="s2k52" onchange="prepocitat()"> 52. <span id="js2k52">Trenz Jiří Bc.</span></label>
+	<label id="is2k53" for="s2k53"><input type="checkbox" id="s2k53" onchange="prepocitat()"> 53. <span id="js2k53">Pazdírek Dušan</span></label>
+	<label id="is2k54" for="s2k54"><input type="checkbox" id="s2k54" onchange="prepocitat()"> 54. <span id="js2k54">Bárta Daniel Ing.</span></label>
+	<label id="is2k55" for="s2k55"><input type="checkbox" id="s2k55" onchange="prepocitat()"> 55. <span id="js2k55">Mikš Martin Mgr.</span></label>
+</td>
+<td>
+	<label for="s3" class="strana"><input type="checkbox" id="s3" onchange="prepocitat()"> <span id="js3">Žít Brno s podporou Pirátů</span><br>vylosované číslo 7</label><br>
+	<label id="is3k1" for="s3k1"><input type="checkbox" id="s3k1" onchange="prepocitat()"> 1. <span id="js3k1">Hollan Matěj Bc.</span></label>
+	<label id="is3k2" for="s3k2"><input type="checkbox" id="s3k2" onchange="prepocitat()"> 2. <span id="js3k2">Kašpaříková Hana Ing.</span></label>
+	<label id="is3k3" for="s3k3"><input type="checkbox" id="s3k3" onchange="prepocitat()"> 3. <span id="js3k3">Ulip Jiří Mgr.</span></label>
+	<label id="is3k4" for="s3k4"><input type="checkbox" id="s3k4" onchange="prepocitat()"> 4. <span id="js3k4">Hofmannová Karla PhDr.</span></label>
+	<label id="is3k5" for="s3k5"><input type="checkbox" id="s3k5" onchange="prepocitat()"> 5. <span id="js3k5">Koláčný Tomáš Bc.</span></label>
+	<label id="is3k6" for="s3k6"><input type="checkbox" id="s3k6" onchange="prepocitat()"> 6. <span id="js3k6">Hollan Jan RNDr. Ph.D.</span></label>
+	<label id="is3k7" for="s3k7"><input type="checkbox" id="s3k7" onchange="prepocitat()"> 7. <span id="js3k7">Freund Martin Bc.</span></label>
+	<label id="is3k8" for="s3k8"><input type="checkbox" id="s3k8" onchange="prepocitat()"> 8. <span id="js3k8">Kalousek Petr BcA.</span></label>
+	<label id="is3k9" for="s3k9"><input type="checkbox" id="s3k9" onchange="prepocitat()"> 9. <span id="js3k9">Fišer Marek Ing.</span></label>
+	<label id="is3k10" for="s3k10"><input type="checkbox" id="s3k10" onchange="prepocitat()"> 10. <span id="js3k10">Kořínek Jakub MgA.</span></label>
+	<label id="is3k11" for="s3k11"><input type="checkbox" id="s3k11" onchange="prepocitat()"> 11. <span id="js3k11">Antonová Barbora Mgr.</span></label>
+	<label id="is3k12" for="s3k12"><input type="checkbox" id="s3k12" onchange="prepocitat()"> 12. <span id="js3k12">Reich Pavel</span></label>
+	<label id="is3k13" for="s3k13"><input type="checkbox" id="s3k13" onchange="prepocitat()"> 13. <span id="js3k13">Doležal Patrik</span></label>
+	<label id="is3k14" for="s3k14"><input type="checkbox" id="s3k14" onchange="prepocitat()"> 14. <span id="js3k14">Doležel Michal Bc.</span></label>
+	<label id="is3k15" for="s3k15"><input type="checkbox" id="s3k15" onchange="prepocitat()"> 15. <span id="js3k15">Čermák Václav Ing.</span></label>
+	<label id="is3k16" for="s3k16"><input type="checkbox" id="s3k16" onchange="prepocitat()"> 16. <span id="js3k16">Špaček Jan Mgr.</span></label>
+	<label id="is3k17" for="s3k17"><input type="checkbox" id="s3k17" onchange="prepocitat()"> 17. <span id="js3k17">Zobačová Jarmila Mgr.</span></label>
+	<label id="is3k18" for="s3k18"><input type="checkbox" id="s3k18" onchange="prepocitat()"> 18. <span id="js3k18">Tula Vojtěch</span></label>
+	<label id="is3k19" for="s3k19"><input type="checkbox" id="s3k19" onchange="prepocitat()"> 19. <span id="js3k19">Kvapil Robin MgA.</span></label>
+	<label id="is3k20" for="s3k20"><input type="checkbox" id="s3k20" onchange="prepocitat()"> 20. <span id="js3k20">Jeřábek Miroslav Mgr. Ph.D.</span></label>
+	<label id="is3k21" for="s3k21"><input type="checkbox" id="s3k21" onchange="prepocitat()"> 21. <span id="js3k21">Kučera Jaroslav Bc.</span></label>
+	<label id="is3k22" for="s3k22"><input type="checkbox" id="s3k22" onchange="prepocitat()"> 22. <span id="js3k22">Veselý David Ing.</span></label>
+	<label id="is3k23" for="s3k23"><input type="checkbox" id="s3k23" onchange="prepocitat()"> 23. <span id="js3k23">Jablunka Jan</span></label>
+	<label id="is3k24" for="s3k24"><input type="checkbox" id="s3k24" onchange="prepocitat()"> 24. <span id="js3k24">Sedal Ján</span></label>
+	<label id="is3k25" for="s3k25"><input type="checkbox" id="s3k25" onchange="prepocitat()"> 25. <span id="js3k25">Loskot Marek Bc.</span></label>
+	<label id="is3k26" for="s3k26"><input type="checkbox" id="s3k26" onchange="prepocitat()"> 26. <span id="js3k26">Vázquez Daniel Mgr. Ph.D.</span></label>
+	<label id="is3k27" for="s3k27"><input type="checkbox" id="s3k27" onchange="prepocitat()"> 27. <span id="js3k27">Vičar Václav</span></label>
+	<label id="is3k28" for="s3k28"><input type="checkbox" id="s3k28" onchange="prepocitat()"> 28. <span id="js3k28">Havlová Jitka</span></label>
+	<label id="is3k29" for="s3k29"><input type="checkbox" id="s3k29" onchange="prepocitat()"> 29. <span id="js3k29">Landa Martin</span></label>
+	<label id="is3k30" for="s3k30"><input type="checkbox" id="s3k30" onchange="prepocitat()"> 30. <span id="js3k30">Zahradníčková Jana MUDr.</span></label>
+	<label id="is3k31" for="s3k31"><input type="checkbox" id="s3k31" onchange="prepocitat()"> 31. <span id="js3k31">Tuček Pavel Ing.</span></label>
+	<label id="is3k32" for="s3k32"><input type="checkbox" id="s3k32" onchange="prepocitat()"> 32. <span id="js3k32">Dirda Miroslav</span></label>
+	<label id="is3k33" for="s3k33"><input type="checkbox" id="s3k33" onchange="prepocitat()"> 33. <span id="js3k33">Procházková Hana PhDr.</span></label>
+	<label id="is3k34" for="s3k34"><input type="checkbox" id="s3k34" onchange="prepocitat()"> 34. <span id="js3k34">Březovský Boleslav DiS.</span></label>
+	<label id="is3k35" for="s3k35"><input type="checkbox" id="s3k35" onchange="prepocitat()"> 35. <span id="js3k35">Vtípil Tomáš</span></label>
+	<label id="is3k36" for="s3k36"><input type="checkbox" id="s3k36" onchange="prepocitat()"> 36. <span id="js3k36">Merta Ondřej BcA.</span></label>
+	<label id="is3k37" for="s3k37"><input type="checkbox" id="s3k37" onchange="prepocitat()"> 37. <span id="js3k37">Ceyp Radek</span></label>
+	<label id="is3k38" for="s3k38"><input type="checkbox" id="s3k38" onchange="prepocitat()"> 38. <span id="js3k38">Sláma Ondřej</span></label>
+	<label id="is3k39" for="s3k39"><input type="checkbox" id="s3k39" onchange="prepocitat()"> 39. <span id="js3k39">Adámková Stanislava Mgr.</span></label>
+	<label id="is3k40" for="s3k40"><input type="checkbox" id="s3k40" onchange="prepocitat()"> 40. <span id="js3k40">Grygarová Hana</span></label>
+	<label id="is3k41" for="s3k41"><input type="checkbox" id="s3k41" onchange="prepocitat()"> 41. <span id="js3k41">Putna Jiří Mgr.</span></label>
+	<label id="is3k42" for="s3k42"><input type="checkbox" id="s3k42" onchange="prepocitat()"> 42. <span id="js3k42">Nový Lukáš Bc.</span></label>
+	<label id="is3k43" for="s3k43"><input type="checkbox" id="s3k43" onchange="prepocitat()"> 43. <span id="js3k43">Brothánek Jan Mgr.</span></label>
+	<label id="is3k44" for="s3k44"><input type="checkbox" id="s3k44" onchange="prepocitat()"> 44. <span id="js3k44">Sadílek Michal</span></label>
+	<label id="is3k45" for="s3k45"><input type="checkbox" id="s3k45" onchange="prepocitat()"> 45. <span id="js3k45">Zlámal Aleš RNDr.</span></label>
+	<label id="is3k46" for="s3k46"><input type="checkbox" id="s3k46" onchange="prepocitat()"> 46. <span id="js3k46">Obritzhauser Dean</span></label>
+	<label id="is3k47" for="s3k47"><input type="checkbox" id="s3k47" onchange="prepocitat()"> 47. <span id="js3k47">Zeman Daniel Bc.</span></label>
+	<label id="is3k48" for="s3k48"><input type="checkbox" id="s3k48" onchange="prepocitat()"> 48. <span id="js3k48">Sobol Martin</span></label>
+	<label id="is3k49" for="s3k49"><input type="checkbox" id="s3k49" onchange="prepocitat()"> 49. <span id="js3k49">Šauerová Nikola Bc.</span></label>
+	<label id="is3k50" for="s3k50"><input type="checkbox" id="s3k50" onchange="prepocitat()"> 50. <span id="js3k50">Moravec Pavel Mgr. Ph.D.</span></label>
+	<label id="is3k51" for="s3k51"><input type="checkbox" id="s3k51" onchange="prepocitat()"> 51. <span id="js3k51">Ledvina Petr Mgr. Ing.</span></label>
+	<label id="is3k52" for="s3k52"><input type="checkbox" id="s3k52" onchange="prepocitat()"> 52. <span id="js3k52">Renzová Tereza Mgr.</span></label>
+	<label id="is3k53" for="s3k53"><input type="checkbox" id="s3k53" onchange="prepocitat()"> 53. <span id="js3k53">Druckmüllerová Zdena Ing.</span></label>
+	<label id="is3k54" for="s3k54"><input type="checkbox" id="s3k54" onchange="prepocitat()"> 54. <span id="js3k54">Kučera Petr doc. Ing. Ph.D.</span></label>
+	<label id="is3k55" for="s3k55"><input type="checkbox" id="s3k55" onchange="prepocitat()"> 55. <span id="js3k55">Kotulan Martin</span></label>
+</td>
+<td>
+	<label for="s4" class="strana"><input type="checkbox" id="s4" onchange="prepocitat()"> <span id="js4">Dělnická strana sociální spravedlnosti</span><br>vylosované číslo 11</label><br>
+	<label id="is4k1" for="s4k1"><input type="checkbox" id="s4k1" onchange="prepocitat()"> 1. <span id="js4k1">Mensa Eduard JUDr.</span></label>
+	<label id="is4k2" for="s4k2"><input type="checkbox" id="s4k2" onchange="prepocitat()"> 2. <span id="js4k2">Lamprecht Erik</span></label>
+	<label id="is4k3" for="s4k3"><input type="checkbox" id="s4k3" onchange="prepocitat()"> 3. <span id="js4k3">Skoumalová Simona Bc.</span></label>
+	<label id="is4k4" for="s4k4"><input type="checkbox" id="s4k4" onchange="prepocitat()"> 4. <span id="js4k4">Křivánek Josef</span></label>
+	<label id="is4k5" for="s4k5"><input type="checkbox" id="s4k5" onchange="prepocitat()"> 5. <span id="js4k5">Krejčí Aleš Ing. arch.</span></label>
+	<label id="is4k6" for="s4k6"><input type="checkbox" id="s4k6" onchange="prepocitat()"> 6. <span id="js4k6">Svoboda Jakub</span></label>
+	<label id="is4k7" for="s4k7"><input type="checkbox" id="s4k7" onchange="prepocitat()"> 7. <span id="js4k7">Matějka Karel</span></label>
+	<label id="is4k8" for="s4k8"><input type="checkbox" id="s4k8" onchange="prepocitat()"> 8. <span id="js4k8">Nováková Veronika</span></label>
+	<label id="is4k9" for="s4k9"><input type="checkbox" id="s4k9" onchange="prepocitat()"> 9. <span id="js4k9">Balajková Lenka</span></label>
+	<label id="is4k10" for="s4k10"><input type="checkbox" id="s4k10" onchange="prepocitat()"> 10. <span id="js4k10">Vašíček Zdeněk</span></label>
+	<label id="is4k11" for="s4k11"><input type="checkbox" id="s4k11" onchange="prepocitat()"> 11. <span id="js4k11">Pech Milan</span></label>
+	<label id="is4k12" for="s4k12"><input type="checkbox" id="s4k12" onchange="prepocitat()"> 12. <span id="js4k12">Šrámek Miloš</span></label>
+	<label id="is4k13" for="s4k13"><input type="checkbox" id="s4k13" onchange="prepocitat()"> 13. <span id="js4k13">Gottlieb Zdeněk</span></label>
+	<label id="is4k14" for="s4k14"><input type="checkbox" id="s4k14" onchange="prepocitat()"> 14. <span id="js4k14">Palán Roman</span></label>
+	<label id="is4k15" for="s4k15"><input type="checkbox" id="s4k15" onchange="prepocitat()"> 15. <span id="js4k15">Zapletal Jaroslav</span></label>
+	<label id="is4k16" for="s4k16"><input type="checkbox" id="s4k16" onchange="prepocitat()"> 16. <span id="js4k16">Svoboda Jan</span></label>
+	<label id="is4k17" for="s4k17"><input type="checkbox" id="s4k17" onchange="prepocitat()"> 17. <span id="js4k17">Gregor Vladimír</span></label>
+	<label id="is4k18" for="s4k18"><input type="checkbox" id="s4k18" onchange="prepocitat()"> 18. <span id="js4k18">Schweiger Milan</span></label>
+	<label id="is4k19" for="s4k19"><input type="checkbox" id="s4k19" onchange="prepocitat()"> 19. <span id="js4k19">Knor Miloslav</span></label>
+	<label id="is4k20" for="s4k20"><input type="checkbox" id="s4k20" onchange="prepocitat()"> 20. <span id="js4k20">Kučera Pavel</span></label>
+</td>
+<td>
+	<label for="s5" class="strana"><input type="checkbox" id="s5" onchange="prepocitat()"> <span id="js5">Občanská demokratická strana</span><br>vylosované číslo 12</label><br>
+	<label id="is5k1" for="s5k1"><input type="checkbox" id="s5k1" onchange="prepocitat()"> 1. <span id="js5k1">Vižďa František doc. RNDr. Ph.D.</span></label>
+	<label id="is5k2" for="s5k2"><input type="checkbox" id="s5k2" onchange="prepocitat()"> 2. <span id="js5k2">Kerndl Robert JUDr.</span></label>
+	<label id="is5k3" for="s5k3"><input type="checkbox" id="s5k3" onchange="prepocitat()"> 3. <span id="js5k3">Cechová Šárka JUDr.</span></label>
+	<label id="is5k4" for="s5k4"><input type="checkbox" id="s5k4" onchange="prepocitat()"> 4. <span id="js5k4">Kratochvíl Petr Ing.</span></label>
+	<label id="is5k5" for="s5k5"><input type="checkbox" id="s5k5" onchange="prepocitat()"> 5. <span id="js5k5">Šťástka Libor Mgr.</span></label>
+	<label id="is5k6" for="s5k6"><input type="checkbox" id="s5k6" onchange="prepocitat()"> 6. <span id="js5k6">Michalík Stanislav Ing.</span></label>
+	<label id="is5k7" for="s5k7"><input type="checkbox" id="s5k7" onchange="prepocitat()"> 7. <span id="js5k7">Fučík Igor Bc.</span></label>
+	<label id="is5k8" for="s5k8"><input type="checkbox" id="s5k8" onchange="prepocitat()"> 8. <span id="js5k8">Chládek Michal JUDr.</span></label>
+	<label id="is5k9" for="s5k9"><input type="checkbox" id="s5k9" onchange="prepocitat()"> 9. <span id="js5k9">Kadlec Ludvík</span></label>
+	<label id="is5k10" for="s5k10"><input type="checkbox" id="s5k10" onchange="prepocitat()"> 10. <span id="js5k10">Jankůj Pavel Ing.</span></label>
+	<label id="is5k11" for="s5k11"><input type="checkbox" id="s5k11" onchange="prepocitat()"> 11. <span id="js5k11">Vašina Roman Ing.</span></label>
+	<label id="is5k12" for="s5k12"><input type="checkbox" id="s5k12" onchange="prepocitat()"> 12. <span id="js5k12">Punčochář Petr Mgr.</span></label>
+	<label id="is5k13" for="s5k13"><input type="checkbox" id="s5k13" onchange="prepocitat()"> 13. <span id="js5k13">Zorník Jiří</span></label>
+	<label id="is5k14" for="s5k14"><input type="checkbox" id="s5k14" onchange="prepocitat()"> 14. <span id="js5k14">Švarcová Kristýna</span></label>
+	<label id="is5k15" for="s5k15"><input type="checkbox" id="s5k15" onchange="prepocitat()"> 15. <span id="js5k15">Šik Evžen</span></label>
+	<label id="is5k16" for="s5k16"><input type="checkbox" id="s5k16" onchange="prepocitat()"> 16. <span id="js5k16">Vaňková Markéta JUDr.</span></label>
+	<label id="is5k17" for="s5k17"><input type="checkbox" id="s5k17" onchange="prepocitat()"> 17. <span id="js5k17">Veselý Jiří Ing.</span></label>
+	<label id="is5k18" for="s5k18"><input type="checkbox" id="s5k18" onchange="prepocitat()"> 18. <span id="js5k18">Svoboda Jindřich Mgr.</span></label>
+	<label id="is5k19" for="s5k19"><input type="checkbox" id="s5k19" onchange="prepocitat()"> 19. <span id="js5k19">Šikula Jiří</span></label>
+	<label id="is5k20" for="s5k20"><input type="checkbox" id="s5k20" onchange="prepocitat()"> 20. <span id="js5k20">Krpálková Yvette Ing.</span></label>
+	<label id="is5k21" for="s5k21"><input type="checkbox" id="s5k21" onchange="prepocitat()"> 21. <span id="js5k21">Pokorný Jiří Ing.</span></label>
+	<label id="is5k22" for="s5k22"><input type="checkbox" id="s5k22" onchange="prepocitat()"> 22. <span id="js5k22">Foltýn Richard</span></label>
+	<label id="is5k23" for="s5k23"><input type="checkbox" id="s5k23" onchange="prepocitat()"> 23. <span id="js5k23">Hlavička Bohuslav</span></label>
+	<label id="is5k24" for="s5k24"><input type="checkbox" id="s5k24" onchange="prepocitat()"> 24. <span id="js5k24">Ondřík Ivan Bc.</span></label>
+	<label id="is5k25" for="s5k25"><input type="checkbox" id="s5k25" onchange="prepocitat()"> 25. <span id="js5k25">Hnízdil Radek Ing. et Ing.</span></label>
+	<label id="is5k26" for="s5k26"><input type="checkbox" id="s5k26" onchange="prepocitat()"> 26. <span id="js5k26">Koubek Jiří</span></label>
+	<label id="is5k27" for="s5k27"><input type="checkbox" id="s5k27" onchange="prepocitat()"> 27. <span id="js5k27">Feyrer Jiří Mgr.</span></label>
+	<label id="is5k28" for="s5k28"><input type="checkbox" id="s5k28" onchange="prepocitat()"> 28. <span id="js5k28">Kosek Roman Bc.</span></label>
+	<label id="is5k29" for="s5k29"><input type="checkbox" id="s5k29" onchange="prepocitat()"> 29. <span id="js5k29">Rygl Jiří Ing.</span></label>
+	<label id="is5k30" for="s5k30"><input type="checkbox" id="s5k30" onchange="prepocitat()"> 30. <span id="js5k30">Navrátilová Marie Ing.</span></label>
+	<label id="is5k31" for="s5k31"><input type="checkbox" id="s5k31" onchange="prepocitat()"> 31. <span id="js5k31">Dostál Vítězslav Ing.</span></label>
+	<label id="is5k32" for="s5k32"><input type="checkbox" id="s5k32" onchange="prepocitat()"> 32. <span id="js5k32">Jiroušek Zdeněk Ing.</span></label>
+	<label id="is5k33" for="s5k33"><input type="checkbox" id="s5k33" onchange="prepocitat()"> 33. <span id="js5k33">Harnach Gustav</span></label>
+	<label id="is5k34" for="s5k34"><input type="checkbox" id="s5k34" onchange="prepocitat()"> 34. <span id="js5k34">Trllo David Ing.</span></label>
+	<label id="is5k35" for="s5k35"><input type="checkbox" id="s5k35" onchange="prepocitat()"> 35. <span id="js5k35">Jursa Miroslav Ing.</span></label>
+	<label id="is5k36" for="s5k36"><input type="checkbox" id="s5k36" onchange="prepocitat()"> 36. <span id="js5k36">Vostrejž Jan</span></label>
+	<label id="is5k37" for="s5k37"><input type="checkbox" id="s5k37" onchange="prepocitat()"> 37. <span id="js5k37">Fabiánek Roman PaedDr.</span></label>
+	<label id="is5k38" for="s5k38"><input type="checkbox" id="s5k38" onchange="prepocitat()"> 38. <span id="js5k38">Bundálek Martin</span></label>
+	<label id="is5k39" for="s5k39"><input type="checkbox" id="s5k39" onchange="prepocitat()"> 39. <span id="js5k39">Kaňa Petr</span></label>
+	<label id="is5k40" for="s5k40"><input type="checkbox" id="s5k40" onchange="prepocitat()"> 40. <span id="js5k40">Mencl Vojtěch Ing. arch.</span></label>
+	<label id="is5k41" for="s5k41"><input type="checkbox" id="s5k41" onchange="prepocitat()"> 41. <span id="js5k41">Novotný Vlastimil Ing.</span></label>
+	<label id="is5k42" for="s5k42"><input type="checkbox" id="s5k42" onchange="prepocitat()"> 42. <span id="js5k42">Prchal Martin Ing.</span></label>
+	<label id="is5k43" for="s5k43"><input type="checkbox" id="s5k43" onchange="prepocitat()"> 43. <span id="js5k43">Havlík Ondřej Ing.</span></label>
+	<label id="is5k44" for="s5k44"><input type="checkbox" id="s5k44" onchange="prepocitat()"> 44. <span id="js5k44">Balcarová Zdeňka RNDr.</span></label>
+	<label id="is5k45" for="s5k45"><input type="checkbox" id="s5k45" onchange="prepocitat()"> 45. <span id="js5k45">Zábojová Rita Ing. LL.M.</span></label>
+	<label id="is5k46" for="s5k46"><input type="checkbox" id="s5k46" onchange="prepocitat()"> 46. <span id="js5k46">Hruška Libor</span></label>
+	<label id="is5k47" for="s5k47"><input type="checkbox" id="s5k47" onchange="prepocitat()"> 47. <span id="js5k47">Hynšt Tomáš</span></label>
+	<label id="is5k48" for="s5k48"><input type="checkbox" id="s5k48" onchange="prepocitat()"> 48. <span id="js5k48">Macurová Ladislava Mgr. Bc.</span></label>
+	<label id="is5k49" for="s5k49"><input type="checkbox" id="s5k49" onchange="prepocitat()"> 49. <span id="js5k49">Štěpánková Jindra Ing.</span></label>
+	<label id="is5k50" for="s5k50"><input type="checkbox" id="s5k50" onchange="prepocitat()"> 50. <span id="js5k50">Belušík Pavel Ing.</span></label>
+	<label id="is5k51" for="s5k51"><input type="checkbox" id="s5k51" onchange="prepocitat()"> 51. <span id="js5k51">Svobodová Eva Ing.</span></label>
+	<label id="is5k52" for="s5k52"><input type="checkbox" id="s5k52" onchange="prepocitat()"> 52. <span id="js5k52">Havlíček Petr Ing.</span></label>
+	<label id="is5k53" for="s5k53"><input type="checkbox" id="s5k53" onchange="prepocitat()"> 53. <span id="js5k53">Buzek Martin</span></label>
+	<label id="is5k54" for="s5k54"><input type="checkbox" id="s5k54" onchange="prepocitat()"> 54. <span id="js5k54">Dorazil Miroslav Ing.</span></label>
+	<label id="is5k55" for="s5k55"><input type="checkbox" id="s5k55" onchange="prepocitat()"> 55. <span id="js5k55">Neveselý Roman</span></label>
+</td>
+	</tr>
+	<tr class="skryte" id="radekCelkem">
+		<td "class="celkem">
+			<span id="ps1"></span>
+		</td>
+		<td "class="celkem">
+			<span id="ps2"></span>
+		</td>
+		<td "class="celkem">
+			<span id="ps3"></span>
+		</td>
+		<td "class="celkem">
+			<span id="ps4"></span>
+		</td>
+		<td "class="celkem">
+			<span id="ps5"></span>
+		</td>
+	</tr>	
+
+</tbody></table>
+</div>
+
+<div id="vysledky">
+	<div id="vysledkyPlatnost">
+		Zde se zobrazí výsledky, až něco oklikáte.
+	</div>
+	<div id="vysledkyStrany">
+	</div>
+	
+	<div id="vysledkyDuvod">
+	</div>	
+	
+	<div id="vysledkyKandidati">
+	</div>
+	
+	<div id="vysledkyVyuziti">
+	</div>
+	
+	<div id="vysledkyPoznamka">
+	</div>
+
+</div>
+
+<script>
+// naplnění jmen
+naplnitJmenaDoTabulky();
+</script>
+
+
+<div id="patka">
+<p>Informace: <a href="http://volby.rovnou.cz/zakon-491-2001sb-par-34.html">§ 34 zákona č. 491/2001Sb</a> řeší hlasování, 
+<a href="http://volby.rovnou.cz/zakon-491-2001sb-par-40.html">§ 40 zákona č. 491/2001Sb</a> popisuje vyhodnocování
+a <a href="http://volby.rovnou.cz/zakon-491-2001sb-par-41.html">§ 41 zákona č. 491/2001Sb</a> jednak určuje platnost a hlavně popisuje, že se ignorují křížky kandidátů zaškrtnuté strany.
+</p>
+<p>Tato aplikace <a href="http://volby.rovnou.cz/">volby.rovnou.cz</a> nesmí být použita členy volební komise pro vyhodnocování lístků (zakazuje to zákon č. 491/2001Sb, §42 čl. 4). </p>
+
+
+<script type="text/javascript">
+
+document.write ('<img src="http://toplist.cz/count.asp?id=1137419&logo=mc&http='+escape(document.referrer)+'" height="60" width="88">'); 
+</script><img src="./Simulátor hlasovacího lístku - komunální volby_files/count.asp" height="60" width="88">
+
+
+</div><iframe id="rdbIndicator" width="100%" height="270" border="0" src="./Simulátor hlasovacího lístku - komunální volby_files/indicator.htm" style="display: none; border: 0; position: fixed; left: 0; top: 0; z-index: 2147483647"></iframe><div id="feedly-mini" title="feedly Mini tookit"></div><span style="height: 20px; width: 40px; min-height: 20px; min-width: 40px; position: absolute; opacity: 0.85; z-index: 8675309; display: none; cursor: pointer; background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAUCAYAAAD/Rn+7AAADU0lEQVR42s2WXUhTYRjHz0VEVPRFUGmtVEaFUZFhHxBhsotCU5JwBWEf1EWEEVHQx4UfFWYkFa2biPJiXbUta33OXFtuUXMzJ4bK3Nqay7m5NeZq6h/tPQ+xU20zugjOxR/+7/O8539+5znnwMtNTExwJtMb3L/fiLv3botCSmUjeCaejTOb39AiFothfHxcFIrHY8RksZjBsckJcOIRMfFsHD/SsbExUYpnI8DR0dGUGjSb0byhEJp5Uqg5CTSzc2CQleJbMEj9/ywBcGRkJEk9DQqouEVQT1sK444yWI9UonmTjGqauVLEIlHa9x8lAMbj8SSpp0rwKGMVvg8P46vbg0C7na8z8JsMcgHe7jlEa+edRhiLy8n/TUMfu6EvLElk+U0WtGwrTrdfAGQf5J8iiK4LVzDU28t8JtMSocf8E+l68myaNFXm/6rXslLK7ay5TOunuRvZWpJuvwAYjUaTpOIWoquuAZ219RTaxKYp9BbjycoN5FvL9qH9TBX5rvoGdJythvXYSTxdtRnWylO/ZdqrLsGwszzhWQ593z2KlAwCYCQSSZJ6ehZ0W7bD9VBLgN0NCqr3qR7R2rBrL3pu3Sb/7nDlz2uy6cG0OXk0GTbZXzNp8trsPAQdTj6frlWzN2DcXZGKQQAMh8NJ6rpyHe+PnkCr/CAFdZyvpfpjuvkifLF9wIt1Wwlo0OHie1RvWrKa93RjzfzliTzPKz3ltB0/Tevmwp14wGUgHAzSOoUEwFAolFaaBSuhnslPRkJexUJtZ6v5HtUeLswl33n1BgEY5fvhs9sJ3FAiT+QYyyvoAQJuD0KBAFRTJNAuz5/s3gJgMBhMJwrVFRThM5tY5zUF/A4X1f2fvQTRLCuBreoim0YmAbqNJryvPEXeeq46kaNdkQ/1HCncbJKPs9ZSv2VHGfWsZ2hfkhKAfr8/pdxWKx4wwD69PmVfNSOL+lr2w+gYqHpWDtXt1xQ8AMlWU0e1lqLd/APRHoP8AJqWrQG9gYxcPMsvSJUvAA4MDKTUJ7MZLaVy8v+qT21tcDx/OemePr0RTkNrur4A6PP5xCgBsL+/X4wiQDpuuVxOeL1eMYmYeDY6sOp0z+B0OuHxeEQhxkJMFosJiSO/UinOI/8Pc+l7KKArAT8AAAAASUVORK5CYII=);"></span></body></html>

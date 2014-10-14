@@ -74,12 +74,8 @@ $program = get_pages(array(
 
 		<?php include 'includes/nav.php' ?>
 
-		<div class="row">
-			<div class="col-xs-12 text-center">
-				<iframe width="853" height="480" src="//www.youtube.com/embed/TS4VSgsysug" frameborder="0" allowfullscreen style="max-width: 100%;"></iframe>
-			</div>
-		</div>
-  	<div class="row sectionHeader">
+
+  	<!--<div class="row sectionHeader">
 			<div class="col-lg-offset-3 col-lg-6 col-md-offset-2 col-md-8">
 				<p class="shout">
 					Jak správně křížkovat na volebním lístku?
@@ -92,6 +88,8 @@ $program = get_pages(array(
 				</p>
 			</div>
 		</div>
+    
+    -->
     
     <?php include 'includes/kolo.php' ?>
 
@@ -115,6 +113,12 @@ $program = get_pages(array(
 		</div>
     
     		-->
+
+    		<div class="row">
+			<div class="col-xs-12 text-center">
+				<iframe width="853" height="480" src="//www.youtube.com/embed/TS4VSgsysug" frameborder="0" allowfullscreen style="max-width: 100%;"></iframe>
+			</div>
+		</div>
 
     <br />
 		<div class="row sectionHeader">

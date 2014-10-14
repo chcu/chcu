@@ -15,8 +15,9 @@
 					<div class="row callToAction">
 						<div class="col-sm-12">
 							<p class="shout">
-								<span class="line">Lajkem neurazíš. Ale hlavně přijď volit.</span>
-								<span class="line">
+								<span class="line">Je po volbách, tak už zase lajkuj.</span>
+								<!--
+                <span class="line">
 								<?php
 								if ($daysLeft >= 5) {
 									echo "Do vítězství zbývá už jen $daysLeft dní.";
@@ -26,7 +27,10 @@
 									echo "Do vítězství zbývá poslední den!";
 								}
 								?>
-								</span>
+                
+                -->
+                </span>
+                
 							</p>
 						</div>
 					</div>

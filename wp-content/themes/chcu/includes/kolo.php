@@ -7,9 +7,9 @@
 					<tr>
 						<td class="valign">
 							<form action="http://zitbrno.us9.list-manage1.com/subscribe?u=f43e55b146b360b0ac7653baf&id=c4f16f0d68" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-								<h2>Pojď<br />volit!</h2>
+								<h2>11, 88 %<br />Děkujeme!</h2>
 									<p class="hidden-xs">
-									Už je to tady! V pátek a sobotu se rozhodne o budoucnosti Brna. <br />Tak vem děcka a hurá k urně! 
+									Tohle jsme opravdu nečekali.<br />Ta jedenácka je pro Brno tak nějak magická, nemyslíte?  
 								</p>
 							</form>
 						</td>

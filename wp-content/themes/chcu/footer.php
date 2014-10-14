@@ -7,10 +7,10 @@
 					</div>
 				</div>
 
+				<!--
 				<?php
 				$daysLeft = getDaysLeftUntilElectionEnd();
 				?>
-
 				<?php if ($daysLeft > 0) { ?>
 					<div class="row callToAction">
 						<div class="col-sm-12">
@@ -31,6 +31,7 @@
 						</div>
 					</div>
 				<?php } ?>
+				-->
 
 				<div class="row">
 					<div class="col-sm-12">

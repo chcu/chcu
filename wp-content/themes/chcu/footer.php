@@ -7,35 +7,13 @@
 					</div>
 				</div>
 
-				<!--
-				<?php
-				$daysLeft = getDaysLeftUntilElectionEnd();
-				?>
-				<?php if ($daysLeft > 0) { ?>
-					<div class="row callToAction">
-						<div class="col-sm-12">
-							<p class="shout">
-								<span class="line">Je po volbách, tak už zase lajkuj.</span>
-								<!--
-                <span class="line">
-								<?php
-								if ($daysLeft >= 5) {
-									echo "Do vítězství zbývá už jen $daysLeft dní.";
-								} elseif ($daysLeft >= 2 && $daysLeft <= 4) {
-									echo "Do vítězství zbývají už jen $daysLeft dny.";
-								} elseif ($daysLeft == 1) {
-									echo "Do vítězství zbývá poslední den!";
-								}
-								?>
-                
-                -->
-                </span>
-                
-							</p>
-						</div>
+				<div class="row callToAction">
+					<div class="col-sm-12">
+						<p class="shout">
+							<span class="line">Je po volbách, tak už zase lajkuj.</span>
+						</p>
 					</div>
-				<?php } ?>
-				-->
+				</div>
 
 				<div class="row">
 					<div class="col-sm-12">

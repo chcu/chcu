@@ -1130,6 +1130,10 @@ footer[role="general"] .links li {
 .stButton .stBubble_count {
   height: 41px !important;
 }
+.wp-caption {
+  margin: 1em 0;
+  text-align: center;
+}
 .wp-caption-text {
   font-size: .8em !important;
   color: #999;

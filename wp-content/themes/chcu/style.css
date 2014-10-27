@@ -1137,3 +1137,6 @@ footer[role="general"] .links li {
 .wp-caption.alignleft {
   float: left;
 }
+.wp-caption.alignright {
+  float: right;
+}

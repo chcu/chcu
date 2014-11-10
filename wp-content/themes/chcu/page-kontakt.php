@@ -33,7 +33,8 @@ $hollanPage = get_pages(array(
 					<img class="img-responsive" src="<?php echo get_theme_root_uri() . '/' . get_template() ?>/icon_cup.png" />
 				</p>
 				<p>
-					Každé pondělí<br />16&ndash;19&nbsp;h<br />v&nbsp;kavárně <a target="_blank" href="http://www.cafeatlas.cz/">Atlas</a>
+					Pište nám na<br />
+					<a href="mailto:chcu@zitbrno.cz">chcu@zitbrno.cz</a>
 				</p>
 			</div>
 			<div class="col-sm-2 contactSegment">

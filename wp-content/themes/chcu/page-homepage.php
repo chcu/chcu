@@ -81,16 +81,16 @@ $program = get_pages(array(
 					Jak správně křížkovat na volebním lístku?
 				</p>
 				<p class="long text-center">
-					Hodně lidí se nás ptá, jak vlastně správně volit. Volební "plachta", kterou jste dostali do schránky je poměrně nepřehledná, a tak nám přišlo praktické si připomenout jak na to. 
+					Hodně lidí se nás ptá, jak vlastně správně volit. Volební "plachta", kterou jste dostali do schránky je poměrně nepřehledná, a tak nám přišlo praktické si připomenout jak na to.
 				</p>
 				<p class="manifestoButtonContainer">
 					<a href="http://chcu.zitbrno.cz/?p=624">NÁVOD JAK SPRÁVNĚ VOLIT &#9654;</a>
 				</p>
 			</div>
 		</div>
-    
+
     -->
-    
+
     <?php include 'includes/kolo.php' ?>
 
     <!--
@@ -111,16 +111,16 @@ $program = get_pages(array(
 				</p>
 			</div>
 		</div>
-    
-    		-->
+		-->
 
-    		<div class="row">
+		<!--
+		<div class="row">
 			<div class="col-xs-12 text-center">
 				<iframe width="853" height="480" src="//www.youtube.com/embed/TS4VSgsysug" frameborder="0" allowfullscreen style="max-width: 100%;"></iframe>
 			</div>
 		</div>
+		-->
 
-    <br />
 		<div class="row sectionHeader">
 			<div class="col-sm-12">
 				<h2>

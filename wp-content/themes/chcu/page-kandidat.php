@@ -15,7 +15,7 @@ $candidates = array_slice(get_pages(array(
 	'sort_column'  => 'menu_order',
 	'meta_key'     => 'pageRole',
 	'meta_value'   => 'candidate',
-)), 0, 12);
+)), 0, 20);
 
 while (have_posts()) {
 	the_post();
@@ -207,15 +207,8 @@ while (have_posts()) {
 			<div class="row">
 				<div class="col-sm-12">
 					<h2>
-						Kandidátka
+						Další zastupitelé
 					</h2>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-lg-offset-3 col-lg-6 col-md-offset-2 col-md-8">
-					<p class="long text-center">
-						Jsme populisti, slušní lidé, aktivisti, flákači a tvrdě pracující, důchodci, cikáni, architekti a matky, programátoři, gayové, intelektuálové a kritici, pragmatici, pacienti, trapáci, slušní občané a rebelové. Dělejte si z nás legraci, rýpejte do nás, pomlouvejte za zády a do novin. My to ustojíme. A budeme vás poslouchat.
-					</p>
 				</div>
 			</div>
 		</div>

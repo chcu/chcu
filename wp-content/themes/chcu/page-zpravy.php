@@ -18,12 +18,12 @@ $posts = get_posts(array(
 		<div class="row pageHeader">
 			<div class="col-xs-12">
 				<h1>
-					Propaganda
+					Zpravodaj
 				</h1>
 			</div>
 			<div class="col-lg-offset-3 col-lg-6 col-md-offset-2 col-md-8">
 				<p class="lead">
-					Volby jde vyhrát i bez peněz a kmotrů. Jsme aktivisti, makáme.
+					Nejčerstvěji z magistrátu i radnice.
 				</p>
 			</div>
 		</div>

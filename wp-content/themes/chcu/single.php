@@ -33,7 +33,9 @@
 							<?php echo $user->display_name ?>
 						<?php } ?>
 						&middot; <time datetime="<?php echo the_time('Y-m-j'); ?>" pubdate><?php the_time('j.n.'); ?></time>
+						&middot; <?php the_tags("Štítky: "); ?>
 					</p>
+					
 				</div>
 			</div>
 
@@ -43,6 +45,16 @@
 						<?php echo $meta['perex'][0] ?>
 					</p>
 					<?php the_content(); ?>
+					
+					<p class="postDetails">
+						<?php if ($candidatePage[0]) { ?>
+							<a href="<?php echo get_permalink($candidatePage[0]->ID) ?>"><?php echo $user->display_name ?></a>
+						<?php } else { ?>
+							<?php echo $user->display_name ?>
+						<?php } ?>
+						&middot; <time datetime="<?php echo the_time('Y-m-j'); ?>" pubdate><?php the_time('j.n.'); ?></time>
+						&middot; <?php the_tags("Štítky: "); ?>
+					</p>
 				</div>
 			</div>
 

@@ -33,6 +33,8 @@
 						<?php } else { ?>
 							<?php echo $user->display_name ?>
 						<?php } ?>
+						&middot; <time datetime="<?php echo the_time('Y-m-j'); ?>" pubdate><?php the_time('j. n.'); ?></time>
+						&middot; <?php the_tags(""); ?>
 					</p>
 				</div>
 				<div class="clearfix"></div>

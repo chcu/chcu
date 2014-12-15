@@ -4,6 +4,11 @@
 			<?php
 			preg_match('#src="(.+)"#U', get_the_post_thumbnail($candidate->ID, 'candidate-thumb'), $match);
 			$meta = get_post_meta($candidate->ID);
+
+			if(isset($zastupitel_za) && (!$meta["zastupitelZa"] || !in_array($zastupitel_za, $meta["zastupitelZa"]))) {
+				continue;
+			}
+
 			$hasContent = trim($candidate->post_content) || ($meta['doWant'] && $meta['doNotWant']);
 			?>
 			<li class="col-lg-2 col-md-3 col-sm-4 col-xs-6">

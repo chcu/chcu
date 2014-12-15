@@ -21,7 +21,7 @@ $candidates = get_pages(array(
 		<div class="row pageHeader">
 			<div class="col-xs-12">
 				<h1>
-					Kandidátka
+					Zastupitelé
 				</h1>
 			</div>
 			<div class="col-lg-offset-3 col-lg-6 col-md-offset-2 col-md-8">
@@ -30,8 +30,19 @@ $candidates = get_pages(array(
 				</p>
 			</div>
 		</div>
+		<div class="row">
+			<h2>Magistrát města Brna aneb &bdquo;Velké Brno&ldquo;</h2>
+		</div>
+		<?php
+		$zastupitel_za = "mmb";
+		include 'includes/candidates.php' ?>
 
-		<?php include 'includes/candidates.php' ?>
+		<div class="row">
+			<h2>Brno-střed aneb &bdquo;Malé Brno&ldquo;</h2>
+		</div>
+		<?php
+		$zastupitel_za = "stred";
+		include 'includes/candidates.php' ?>
 
 		<hr />
 

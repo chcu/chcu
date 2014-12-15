@@ -74,8 +74,36 @@ $program = get_pages(array(
 
 		<?php include 'includes/nav.php' ?>
 
+		<div class="row sectionHeader">
+			<div class="col-sm-12">
+				<h2>
+					Zpravodajství
+				</h2>
+				<p class="special">
+					Nejčerstvěji z magistrátu i radnice.
+				</p>
+			</div>
+		</div>
 
-    <?php include 'includes/kolo.php' ?>
+		<?php include 'includes/posts.php' ?>
+
+
+		<div class="row">
+			<div class="col-xs-12">
+				<p class="text-center">
+					<a class="blackButton" href="<?php echo get_permalink($postsHome[0]->ID) ?>">Starší zprávy <span class="fa fa-caret-right"></a>
+				</p>
+			</div>
+		</div>
+   		
+   		<div class="row">
+			<div class="col-sm-12">
+				<hr />
+			</div>
+		</div>
+
+		<?php include 'includes/programStories.php' ?>
+
 
 		<div class="row sectionHeader">
 			<div class="col-sm-12">
@@ -100,7 +128,6 @@ $program = get_pages(array(
 		<?php include 'includes/programTopics.php' ?>
 		-->
 
-		<?php include 'includes/programStories.php' ?>
 
 		<div class="row">
 			<div class="col-xs-12">
@@ -111,32 +138,8 @@ $program = get_pages(array(
 			</div>
 		</div>
 
-		<div class="row">
-			<div class="col-sm-12">
-				<hr />
-			</div>
-		</div>
+	
 
-		<div class="row sectionHeader">
-			<div class="col-sm-12">
-				<h2>
-					Propaganda
-				</h2>
-				<p class="special">
-					Volby jde vyhrát i bez peněz a kmotrů. Jsme aktivisti, makáme.
-				</p>
-			</div>
-		</div>
-
-		<?php include 'includes/posts.php' ?>
-
-		<div class="row">
-			<div class="col-xs-12">
-				<p class="text-center">
-					<a class="blackButton" href="<?php echo get_permalink($postsHome[0]->ID) ?>">Starší zprávy <span class="fa fa-caret-right"></a>
-				</p>
-			</div>
-		</div>
 
 		<div class="row">
 			<div class="col-sm-12">
@@ -148,14 +151,13 @@ $program = get_pages(array(
 			<div class="row">
 				<div class="col-sm-12">
 					<h2>
-						A vy jste kdo?
+						Vaši zastupitelé
 					</h2>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-lg-offset-3 col-lg-6 col-md-offset-2 col-md-8">
 					<p class="long text-center">
-						Jsme populisti, slušní lidé, aktivisti, flákači a tvrdě pracující, důchodci, cikáni, architekti a matky, programátoři, gayové, intelektuálové a kritici, pragmatici, pacienti, trapáci, slušní občané a rebelové. Dělejte si z nás legraci, rýpejte do nás, pomlouvejte za zády a do novin. My to ustojíme. A budeme vás poslouchat.
 					</p>
 				</div>
 			</div>
@@ -163,13 +165,24 @@ $program = get_pages(array(
 
 		<?php include 'includes/candidates.php' ?>
 
+		<!--
+		Tohle pujde mozna za chvili zpet
 		<div class="row">
 			<div class="col-xs-12">
 				<p class="text-center">
-					<a class="blackButton" href="<?php echo get_permalink($candidatesHome[0]->ID) ?>">Celá kandidátka <span class="fa fa-caret-right"></span></a>
+					<a class="blackButton" href="<?php echo get_permalink($candidatesHome[0]->ID) ?>">Všichni zastupitelé <span class="fa fa-caret-right"></span></a>
 				</p>
 			</div>
 		</div>
+		-->
+
+		<div class="row">
+			<div class="col-sm-12">
+				<hr />
+			</div>
+		</div>
+
+		
 
 		<?php include 'includes/donate.php' ?>
 

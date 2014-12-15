@@ -75,51 +75,7 @@ $program = get_pages(array(
 		<?php include 'includes/nav.php' ?>
 
 
-  	<!--<div class="row sectionHeader">
-			<div class="col-lg-offset-3 col-lg-6 col-md-offset-2 col-md-8">
-				<p class="shout">
-					Jak správně křížkovat na volebním lístku?
-				</p>
-				<p class="long text-center">
-					Hodně lidí se nás ptá, jak vlastně správně volit. Volební "plachta", kterou jste dostali do schránky je poměrně nepřehledná, a tak nám přišlo praktické si připomenout jak na to.
-				</p>
-				<p class="manifestoButtonContainer">
-					<a href="http://chcu.zitbrno.cz/?p=624">NÁVOD JAK SPRÁVNĚ VOLIT &#9654;</a>
-				</p>
-			</div>
-		</div>
-
-    -->
-
     <?php include 'includes/kolo.php' ?>
-
-    <!--
-
-		<div class="row sectionHeader">
-			<div class="col-lg-offset-3 col-lg-6 col-md-offset-2 col-md-8">
-				<p class="shout">
-					Jak pomoct městu, které si nechce nechat pomoct?
-				</p>
-				<p class="long text-center">
-					Jde nám o život. O život v Brně.
-				</p>
-				<p class="long text-center">
-					Tři roky kritizujeme brněnský magistrát. Tři roky si klepeme na čelo, protáčíme panenky, vyprskáváme smíchy a klademe hlavy do dlaní. Tři roky nám říkají, že posmívat se umí každý, ale vládnout můžou jen vyvolení. Jenže my dobře víme, že politikem se člověk nerodí, ale stává.  My na to máme právě teď.
-				</p>
-				<p class="manifestoButtonContainer">
-					<a href="<?php echo get_permalink($manifesto[0]->ID) ?>">ČTĚTE PROČ ŽÍT BRNO &#9654;</a>
-				</p>
-			</div>
-		</div>
-		-->
-
-		<!--
-		<div class="row">
-			<div class="col-xs-12 text-center">
-				<iframe width="853" height="480" src="//www.youtube.com/embed/TS4VSgsysug" frameborder="0" allowfullscreen style="max-width: 100%;"></iframe>
-			</div>
-		</div>
-		-->
 
 		<div class="row sectionHeader">
 			<div class="col-sm-12">

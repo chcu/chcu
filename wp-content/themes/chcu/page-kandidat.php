@@ -65,7 +65,7 @@ while (have_posts()) {
 						</h1>
 						<?php if ($meta['perex'][0] || $meta['role'][0] ) { ?>
 							<p class="lead">
-								<?php echo $meta['role'][0] ? $meta['role'][0] : $meta['perex'][0] ?>
+								<?php echo $meta['role'][0] ? nl2br($meta['role'][0]) : $meta['perex'][0] ?>
 							</p>
 						<?php } ?>
 						<?php if ($hasContacts) { ?>

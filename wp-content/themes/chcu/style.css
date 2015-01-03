@@ -1147,3 +1147,7 @@ footer[role="general"] .links li {
   text-align: center;
   margin: 1em 0;
 }
+
+.page-template-page-kandidat-php .img-responsive {
+  margin: 0 auto;
+}

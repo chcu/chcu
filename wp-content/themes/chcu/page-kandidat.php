@@ -65,7 +65,7 @@ while (have_posts()) {
 						</h1>
 						<?php if ($meta['perex'][0] || $meta['role'][0] ) { ?>
 							<p class="lead">
-								<?php echo $meta['role'][0] ? nl2br($meta['role'][0]) : $meta['perex'][0] ?>
+								<?php echo $meta['role'][0] ? nl2br($meta['role'][0] : $meta['perex'][0] ?>
 							</p>
 						<?php } ?>
 						<?php if ($hasContacts) { ?>
@@ -157,7 +157,13 @@ while (have_posts()) {
 			</script>
 		<?php } ?>
 
-		<?php if (trim($post->post_content)) { ?>
+		<?php 
+		$why = true;
+		if(isset($meta['withoutWhy']) && $meta['withoutWhy'][0] == 1) {
+			$why = false;
+		}
+
+		if ($why && trim($post->post_content)) { ?>
 			<div class="row">
 				<div class="col-xs-12 candidateBioHeaderWrapper<?php if ($hasWants) { ?> hasWants<?php } else { ?> hasNotWants<?php } ?>">
 					<h2 class="candidateBioHeader">

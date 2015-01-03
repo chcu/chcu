@@ -24,7 +24,7 @@
 					<?php if ($hasContent) { ?><a href="<?php echo get_permalink($candidate) ?>"><?php } ?><span class="firstName"><?php echo $meta['firstName'][0] ?></span> <span class="lastName"><?php echo $meta['lastName'][0] ?></span><?php if ($hasContent) { ?></a><?php } ?>
 				</h3>
 				<p class="occupation">
-					<?php echo $meta['occupation'][0] ?>
+					<?php echo $meta['role'][0] ? nl2br($meta['role'][0]) : $meta['occupation'][0] ?>
 				</p>
 			</li>
 		<?php } ?>

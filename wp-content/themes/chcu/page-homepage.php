@@ -80,7 +80,7 @@ $program = get_pages(array(
 					Zpravodajství
 				</h2>
 				<p class="special">
-					Nejčerstvěji z magistrátu i radnice.
+					Zprávy z magistrátu i radnice.
 				</p>
 			</div>
 		</div>

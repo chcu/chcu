@@ -533,4 +533,11 @@ function getDaysLeftUntilElectionEnd() {
 
 //function getCandidateByDisplayName
 
-?>
+function rip_template_redirect()
+{
+  if(is_404() && isset($_SERVER["REQUEST_URI"])) {
+    header("Location: http://rip.zitbrno.cz".$_SERVER["REQUEST_URI"], null, 301);
+    exit;
+  }
+}
+add_action( 'template_redirect', 'rip_template_redirect' );

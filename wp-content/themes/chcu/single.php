@@ -34,7 +34,8 @@ $output = '';
 if($categories){
 	$output .= "Kategorie: ";
 	foreach($categories as $category) {
-		$output .= '<a  style="font-size:16px" href="'.get_category_link( $category->term_id ).'" title="' . esc_attr( sprintf( __( "View all posts in %s" ), $category->name ) ) . '">'.$category->cat_name.'</a>'.$separator;
+		// href="'.get_category_link( $category->term_id ).'"
+		$output .= '<span  style="font-size:16px"  title="' . esc_attr( sprintf( __( "View all posts in %s" ), $category->name ) ) . '">'.$category->cat_name.'</span>'.$separator;
 	}
 echo trim($output, $separator);
 }

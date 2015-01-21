@@ -26,6 +26,20 @@
 
 			<div class="row">
 				<div class="col-lg-offset-2 col-lg-8 col-md-offset-1 col-md-10 col-sm-12">
+				<p class="postDetails">
+						<?php
+						$categories = get_the_category();
+$separator = ' ';
+$output = '';
+if($categories){
+	$output .= "Kategorie: ";
+	foreach($categories as $category) {
+		$output .= '<a  style="font-size:16px" href="'.get_category_link( $category->term_id ).'" title="' . esc_attr( sprintf( __( "View all posts in %s" ), $category->name ) ) . '">'.$category->cat_name.'</a>'.$separator;
+	}
+echo trim($output, $separator);
+}
+?>
+					</p>
 					<p class="postDetails">
 						<?php if ($candidatePage[0]) { ?>
 							<a href="<?php echo get_permalink($candidatePage[0]->ID) ?>"><?php echo $user->display_name ?></a>
@@ -35,6 +49,7 @@
 						&middot; <time datetime="<?php echo the_time('Y-m-j'); ?>" pubdate><?php the_time('j.n.'); ?></time>
 						&middot; <?php the_tags("Štítky: "); ?>
 					</p>
+					
 					
 				</div>
 			</div>

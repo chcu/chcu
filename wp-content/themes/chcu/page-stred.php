@@ -32,13 +32,6 @@ add_theme_support('post-thumbnails');
 			</div>
 		</div>
 
-		<div class="row sectionHeader">
-			<div class="col-sm-12">
-				<h2>
-					Kandidátka
-				</h2>
-			</div>
-		</div>
 
 		<style type="text/css">
 			table.candidates {

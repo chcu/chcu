@@ -3,7 +3,7 @@
 			<div class="container">
 				<div class="row facebook">
 					<div class="col-sm-12">
-						<div class="fb-like-box" data-href="https://www.facebook.com/ZitBrnoRIP" data-colorscheme="light" data-show-faces="true" data-header="false" data-stream="false" data-show-border="false" data-width="2000" data-height="255"></div>
+						<div class="fb-like-box" data-href="https://www.facebook.com/ZitBrno" data-colorscheme="light" data-show-faces="true" data-header="false" data-stream="false" data-show-border="false" data-width="2000" data-height="255"></div>
 					</div>
 				</div>
 

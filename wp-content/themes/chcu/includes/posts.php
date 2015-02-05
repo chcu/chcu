@@ -37,7 +37,7 @@
 							&middot; 
 						<?php endif;?>
 						<time datetime="<?php echo the_time('Y-m-j'); ?>" pubdate><?php the_time('j. n.'); ?></time>
-						&middot; <?php the_category(", "); ?>
+						<?php the_category(", "); ?><br />
 						&middot; <?php the_tags(""); ?>
 					</p>
 				</div>

@@ -87,6 +87,29 @@ $program = get_pages(array(
 
 		<?php include 'includes/posts.php' ?>
 
+		<div class="row">
+			<div class="col-sm-12">
+				<hr />
+			</div>
+		</div>
+
+		<div class="sectionHeader">
+			<div class="row">
+				<div class="col-sm-12">
+					<h2>
+						Vaši zastupitelé
+					</h2>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-offset-3 col-lg-6 col-md-offset-2 col-md-8">
+					<p class="long text-center">
+					</p>
+				</div>
+			</div>
+		</div>
+
+		<?php include 'includes/candidates.php' ?>
 
 		<div class="row">
 			<div class="col-xs-12">
@@ -141,29 +164,7 @@ $program = get_pages(array(
 	
 
 
-		<div class="row">
-			<div class="col-sm-12">
-				<hr />
-			</div>
-		</div>
-
-		<div class="sectionHeader">
-			<div class="row">
-				<div class="col-sm-12">
-					<h2>
-						Vaši zastupitelé
-					</h2>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-lg-offset-3 col-lg-6 col-md-offset-2 col-md-8">
-					<p class="long text-center">
-					</p>
-				</div>
-			</div>
-		</div>
-
-		<?php include 'includes/candidates.php' ?>
+		
 
 		<!--
 		Tohle pujde mozna za chvili zpet

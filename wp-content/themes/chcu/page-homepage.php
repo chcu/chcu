@@ -119,6 +119,7 @@ $program = get_pages(array(
 
 		<?php
 		$hideAuthor = false;
+		$showAuthorFace = true;
 		remove_action( 'pre_get_posts', 'bez_denicku' );
 		add_action( 'pre_get_posts', 'jen_denicky' );
 

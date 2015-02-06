@@ -7,6 +7,7 @@ add_theme_support('post-thumbnails');
 
 add_action( 'pre_get_posts', 'jen_denicky' );
 
+
 $posts = get_posts(array(
 	'posts_per_page' => 1000,
 ));
@@ -30,7 +31,10 @@ $posts = get_posts(array(
 			</div>
 		</div>
 
-		<?php include 'includes/posts.php' ?>
+		<?php 
+
+		$showAuthorFace = true;
+		include 'includes/posts.php' ?>
 
 		<hr />
 

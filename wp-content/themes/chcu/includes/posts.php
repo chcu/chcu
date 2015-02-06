@@ -5,18 +5,30 @@
 			preg_match('#src="(.+)"#U', get_the_post_thumbnail($post->ID, 'post-thumb'), $match);
 			$meta = get_post_meta($post->ID);
 			$user = get_user_by('id', $post->post_author);
+
 			$candidatePage = get_pages(array(
 				'hierarchical' => 0,
 				'meta_key'     => 'userLogin',
 				'meta_value'   => $user->user_login,
 			));
+
+
 			$imageUrl = trim($match[1]);
+
+			$circle = false;
+
+			if($showAuthorFace && $candidatePage[0]) {
+				preg_match('#src="(.+)"#U', get_the_post_thumbnail($candidatePage[0]->ID, 'candidate-thumb'), $match_candidate);
+				$imageUrl = trim($match_candidate[1]);
+				$circle = true;
+			}
+
 			?>
 			<li class="clearfix">
 				<?php if ($imageUrl) { ?>
 					<div class="image col-lg-offset-1 col-lg-2 col-md-2 col-sm-4 col-xs-12">
 						<p>
-							<a href="<?php echo get_permalink($post) ?>"><img src="<?php echo $imageUrl ?>" class="img-responsive" /></a>
+							<a href="<?php echo get_permalink($post) ?>"><img src="<?php echo $imageUrl ?>" class="img-responsive <?= $circle?'img-circle':''?>" /></a>
 						</p>
 					</div>
 				<?php } ?>

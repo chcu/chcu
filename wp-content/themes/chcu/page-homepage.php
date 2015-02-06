@@ -47,7 +47,7 @@ $candidates = array_slice(get_pages(array(
 	'sort_column'  => 'menu_order',
 	'meta_key'     => 'pageRole',
 	'meta_value'   => 'candidate',
-)), 0, 12);
+)), 0, 14);
 
 #var_dump($candidates);
 
@@ -91,6 +91,14 @@ $program = get_pages(array(
 		$hideAuthor = true;
 
 		include 'includes/posts.php' ?>
+
+		<div class="row">
+			<div class="col-xs-12">
+				<p class="text-center">
+					<a class="blackButton" href="<?php echo get_permalink($postsHome[0]->ID) ?>">Starší zprávy <span class="fa fa-caret-right"></a>
+				</p>
+			</div>
+		</div>
 
 		<div class="row">
 			<div class="col-sm-12">
@@ -144,13 +152,7 @@ $program = get_pages(array(
 
 		<?php include 'includes/candidates.php' ?>
 
-		<div class="row">
-			<div class="col-xs-12">
-				<p class="text-center">
-					<a class="blackButton" href="<?php echo get_permalink($postsHome[0]->ID) ?>">Starší zprávy <span class="fa fa-caret-right"></a>
-				</p>
-			</div>
-		</div>
+		
    		
    		<div class="row">
 			<div class="col-sm-12">

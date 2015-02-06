@@ -541,3 +541,14 @@ function rip_template_redirect()
   }
 }
 add_action( 'template_redirect', 'rip_template_redirect' );
+
+
+
+function bez_denicku( $query ) {
+    $query->set( 'tag__not_in', array('21') );
+}
+
+function jen_denicky( $query ) {
+    $query->set( 'tag_id', "21" );
+}
+

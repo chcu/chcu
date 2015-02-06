@@ -24,8 +24,10 @@ $programStories = get_pages(array(
 shuffle($programStories);
 //$programStories = array_slice($programStories, 0, 12);
 
-$posts = array_slice(get_posts(array(
 
+add_action( 'pre_get_posts', 'bez_denicku');
+
+$posts = array_slice(get_posts(array(
 )), 0, 3);
 
 $postsHome = get_pages(array(
@@ -85,7 +87,38 @@ $program = get_pages(array(
 			</div>
 		</div>
 
-		<?php include 'includes/posts.php' ?>
+		<?php
+		$hideAuthor = true;
+
+		include 'includes/posts.php' ?>
+
+		<div class="row">
+			<div class="col-sm-12">
+				<hr />
+			</div>
+		</div>
+
+		<div class="row sectionHeader">
+			<div class="col-sm-12">
+				<h2>
+					Můj milý deníčku
+				</h2>
+				<p class="special">
+					Zápisky zastupitelů
+				</p>
+			</div>
+		</div>
+
+		<?php
+		$hideAuthor = false;
+		remove_action( 'pre_get_posts', 'bez_denicku' );
+		add_action( 'pre_get_posts', 'jen_denicky' );
+
+		$posts = array_slice(get_posts(array(
+		)), 0, 3);
+
+		include 'includes/posts.php' ?>
+
 
 		<div class="row">
 			<div class="col-sm-12">

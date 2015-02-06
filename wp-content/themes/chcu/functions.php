@@ -545,10 +545,10 @@ add_action( 'template_redirect', 'rip_template_redirect' );
 
 
 function bez_denicku( $query ) {
-    $query->set( 'tag__not_in', array('21') );
+    $query->set( 'tag__not_in', array('37') );
 }
 
 function jen_denicky( $query ) {
-    $query->set( 'tag_id', "21" );
+    $query->set( 'tag_id', "37" );
 }
 

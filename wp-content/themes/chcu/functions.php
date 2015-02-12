@@ -549,6 +549,8 @@ function bez_denicku( $query ) {
 }
 
 function jen_denicky( $query ) {
-    $query->set( 'tag_id', "38" );
+    if( $query->is_main_query() && $query->is_front_page() ) {
+      $query->set( 'tag_id', "38" );
+    }  
 }
 

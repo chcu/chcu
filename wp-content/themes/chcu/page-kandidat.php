@@ -188,20 +188,7 @@ while (have_posts()) {
 			</div>
 		<?php } ?>
 
-		<?php if ($urls) { ?>
-			<div class="row">
-				<div class="col-xs-12">
-					<ul class="candidateUrls">
-						<?php foreach ($urls as $url) { ?>
-							<?php list($title, $href) = explode("\n", $url) ?>
-							<li>
-								<a target="_blank" href="<?php echo $href ?>"><?php echo $title ?></a>
-							</li>
-						<?php } ?>
-					</ul>
-				</div>
-			</div>
-		<?php } ?>
+		
 
 		<div class="row">
 			<div class="col-sm-12">

@@ -44,6 +44,13 @@ $candidates = get_pages(array(
 		$zastupitel_za = "stred";
 		include 'includes/candidates.php' ?>
 
+		<div class="row">
+			<h2>Jihomoravský kraj</h2>
+		</div>
+		<?php
+		$zastupitel_za = "jmk";
+		include 'includes/candidates.php' ?>
+
 		<hr />
 
 		<?php include 'includes/donate.php' ?>

@@ -45,10 +45,12 @@
 							</li><li><a href="http://www.kartakrnana.cz/">www.kartakrnana.cz</a>
 							</li><li><a href="http://www.zitcesko.cz/">www.zitcesko.cz</a>
 							</li><li><a href="http://www.machoparking.cz/">www.machoparking.cz</a>
-							</li><li><a href="http://www.vyzva2013.cz/">www.vyzva2013.cz</a>
 							</li><li><a href="http://www.zahoddecko.cz/">www.zahoddecko.cz</a>
 							</li><li><a href="http://www.osbrneni.cz/">www.osbrneni.cz</a>
-							</li><li><a href="http://www.klidnalesna.cz/">www.klidnalesna.cz</a>
+							</li><li><a href="http://www.jdetekreferendu.cz">www.jdetekreferendu.cz</a>
+							</li><li><a href="http://www.chtejmevic.cz">www.chtejmevic.cz</a>
+							</li><li><a href="http://www.volimbaru.cz/">www.volimbaru.cz</a>
+							
 							</li>
 						</ul>
 					</div>

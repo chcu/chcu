@@ -2,15 +2,18 @@
 
 			<div class="container">
 				<div class="row facebook">
-					<div class="col-sm-12">
+					<div class="col-sm-8">
 						<div class="fb-like-box" data-href="https://www.facebook.com/ZitBrno" data-colorscheme="light" data-show-faces="true" data-header="false" data-stream="false" data-show-border="false" data-width="2000" data-height="255"></div>
+					</div>
+					<div class="col-sm-4">
+						<a class="twitter-timeline" data-lang="cs" data-height="400" href="https://twitter.com/ZitBrno">Tweets by ZitBrno</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 					</div>
 				</div>
 
 				<div class="row callToAction">
 					<div class="col-sm-12">
 						<p class="shout">
-							<span class="line">Je po volbách, tak už zase lajkuj.</span>
+							<span class="line">Lajkuj, followuj, dozvíš se všecko jako první!</span>
 						</p>
 					</div>
 				</div>

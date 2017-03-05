@@ -3,7 +3,7 @@
 Plugin Name: Zalomení
 Plugin URI: http://wordpress.org/plugins/zalomeni/
 Description: Puts non-breakable space after one-letter Czech prepositions like 'k', 's', 'v' or 'z'.
-Version: 1.4.4
+Version: 1.4.7
 Author: Honza Skypala
 Author URI: http://www.honza.info/
 */
@@ -11,7 +11,7 @@ Author URI: http://www.honza.info/
 include_once(ABSPATH . 'wp-admin/includes/plugin.php');
 
 class Zalomeni {
-  const version = '1.4.3';
+  const version = '1.4.7';
 
   public function __construct() {
     register_activation_hook(__FILE__, array($this, 'activate'));
@@ -149,7 +149,7 @@ class Zalomeni {
     $this->add_update_option_hooks();
   }
 
-  public function settings_field_checkbox(array $args) {
+  static public function settings_field_checkbox(array $args) {
     echo(
       '<input type="checkbox" name="zalomeni_' . $args['option'] . '" id="zalomeni_' . $args['option'] . '" value="on" '
       . checked('on', get_option("zalomeni_" . $args['option'], constant('Zalomeni::default_' . $args['option'])), false)
@@ -159,7 +159,7 @@ class Zalomeni {
     );
   }
 
-  public function settings_field_textlist(array $args) {
+  static public function settings_field_textlist(array $args) {
     echo(
       '<input type="text" name="zalomeni_' . $args['option'] . '_list" id="zalomeni_' . $args['option'] . '_list" class="regular-text" value="' . get_option('zalomeni_' . $args['option'] . '_list', constant('Zalomeni::default_' . $args['option'] . '_list')) . '"'
        . ((get_option("zalomeni_" . $args['option'], constant('Zalomeni::default_' . $args['option'])) != 'on') ? ' readonly="1"' : '')
@@ -168,7 +168,7 @@ class Zalomeni {
     );
   }
 
-  public function settings_field_custom_terms() {
+  static public function settings_field_custom_terms() {
     echo(
       Zalomeni::texturize(__('Zde můžete uvést vlastní termíny, v nichž mají být mezery nahrazeny pevnými mezerami tak, aby nedošlo k zalomení uvnitř těchto výrazů. Uveďte vždy každý výraz na samostatný řádek; pokud je výraz složen z více jak dvou slov, tedy je v něm více jak jedna mezera, pak všechny mezery budou nahrazeny za pevné mezery. Lze použít výrazu \\d pro libovolnou číslici (pro pokročilé administrátory: algoritmus používá <a href="http://www.php.net/manual/en/reference.pcre.pattern.syntax.php" target="_blank">Perl Compatible Regular Expressions</a>, lze využít syntaxe této specifikace).', 'zalomeni'))
       . '<p><textarea name="zalomeni_custom_terms" id="zalomeni_custom_terms" rows="10" cols="50" class="regular-text">'
@@ -225,7 +225,7 @@ class Zalomeni {
       }
     }
     if ($word_matches != '') {
-      $return_array['units'] = '@(\d) ('.$word_matches.')(^|[;\.!:]| |&nbsp;|\?|\n)@i';
+      $return_array['units'] = '@(\d) ('.$word_matches.')(^|[;\.!:]| |&nbsp;|\?|\n|\)|<|\010|\013|$)@i';
     }
 
     if (get_option('zalomeni_space_between_numbers', Zalomeni::default_space_between_numbers) == 'on') {
@@ -304,7 +304,7 @@ class Zalomeni {
     return $return_array;
   }
 
-  public function settings_section_description() {
+  static public function settings_section_description() {
     echo(
       '<div id="zalomeni_options_desc" style="margin:0 0 15px 10px;-webkit-border-radius:3px;border-radius:3px;border-width:1px;border-color:#e6db55;border-style:solid;float:right;background:#FFFBCC;text-align:center;width:200px">'
       . '<p style="line-height:1.5em;">Plugin <strong>Zalomení</strong><br />Autor: <a href="http://www.honza.info/" class="external" target="_blank" title="http://www.honza.info/">Honza Skýpala</a></p>'
@@ -315,7 +315,7 @@ class Zalomeni {
     );
   }
 
-  public function texturize($text) {
+  static public function texturize($text) {
     if (get_option('zalomeni_matches') == '') return $text; // no settings? then fall-back to just return the content
     $output = '';
     $curl = '';
@@ -330,17 +330,19 @@ class Zalomeni {
     for ($i = 0; $i < $stop; $i++) {
       $curl = $textarr[$i];
 
-      global $wp_version;
-      if (!empty($curl) && '<' != $curl{0} && '[' != $curl{0}
-          && empty($no_texturize_shortcodes_stack) && empty($no_texturize_tags_stack)) { // If it's not a tag
-        $curl = preg_replace(get_option('zalomeni_matches'), get_option('zalomeni_replacements'), $curl);
-        $curl = preg_replace(get_option('zalomeni_matches'), get_option('zalomeni_replacements'), $curl);
-      } else if (version_compare($wp_version, '2.9', '<')) {
-        wptexturize_pushpop_element($curl, $no_texturize_tags_stack, $no_texturize_tags, '<', '>');
-        wptexturize_pushpop_element($curl, $no_texturize_shortcodes_stack, $no_texturize_shortcodes, '[', ']');
-      } else {
-        _wptexturize_pushpop_element($curl, $no_texturize_tags_stack, $no_texturize_tags, '<', '>');
-        _wptexturize_pushpop_element($curl, $no_texturize_shortcodes_stack, $no_texturize_shortcodes, '[', ']');
+      if (!empty($curl)) {
+        global $wp_version;
+        if ('<' != $curl{0} && '[' != $curl{0}
+            && empty($no_texturize_shortcodes_stack) && empty($no_texturize_tags_stack)) { // If it's not a tag
+          $curl = preg_replace(get_option('zalomeni_matches'), get_option('zalomeni_replacements'), $curl);
+          $curl = preg_replace(get_option('zalomeni_matches'), get_option('zalomeni_replacements'), $curl);
+        } else if (version_compare($wp_version, '2.9', '<')) {
+          wptexturize_pushpop_element($curl, $no_texturize_tags_stack, $no_texturize_tags, '<', '>');
+          wptexturize_pushpop_element($curl, $no_texturize_shortcodes_stack, $no_texturize_shortcodes, '[', ']');
+        } else {
+          _wptexturize_pushpop_element($curl, $no_texturize_tags_stack, $no_texturize_tags, '<', '>');
+          _wptexturize_pushpop_element($curl, $no_texturize_shortcodes_stack, $no_texturize_shortcodes, '[', ']');
+        }
       }
 
       $output .= $curl;

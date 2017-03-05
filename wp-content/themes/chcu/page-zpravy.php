@@ -4,6 +4,7 @@ Template Name: Zpravy
 */
 
 add_theme_support('post-thumbnails');
+add_action( 'pre_get_posts', 'bez_denicku' );
 
 $posts = get_posts(array(
 	'posts_per_page' => 1000,

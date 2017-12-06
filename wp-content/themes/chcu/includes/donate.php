@@ -1,11 +1,17 @@
 <div class="row callToAction">
 	<div class="col-sm-12">
 		<p class="shout">
-			<span class="line">Strašně moc děkujeme za podporu!</span>
-			<span class="line">Prachy posílej klidně dál.</span>
+			<span class="line">Díky, že nás podporujete!</span>
 		</p>
 		<p class="text-center">
-			Svoje prachy uvidíš na našem transparentním účtu: <a class="accent" target="_blank" href="https://www.fio.cz/scgi-bin/hermes/dz-transparent.cgi?ID_ucet=2400634319">2400634319/2010 (Fio banka)</a>
+
+			Podle zákona 424/1991 Sb. jsme pro vás zřídili <strong>nový, úplně transparentní a zcela zvláštní účet</strong>
+<a class="accent" target="_blank" href="https://www.fio.cz/ib2/transparent?a=2001334132">2001334132/2010 (Fio Banka)</a><br>
+Tady si ho můžete prohlídnout: <a href="https://www.fio.cz/ib2/transparent?a=2001334132">https://www.fio.cz/ib2/transparent?a=2001334132</a><br><br>
+ 
+Na náš starý transparentní účet <del>2400634319/2010</del> už prosím prachy neposílejte, museli bychom vám je vracet.  (<a href="https://www.fio.cz/ib2/transparent?a=2400634319">Prohlížet si ho ale můžete dál.</a>)
+
+			
 		</p>
 		<!--
 		<p class="text-center donateButton">

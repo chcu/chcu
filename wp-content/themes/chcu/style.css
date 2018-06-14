@@ -16,7 +16,7 @@
 .page-template-page-homepage-php h1 {
   margin: 2em 0 1em 0;
   display: block;
-  background-image: url('images/CHCU_logo.png');
+  background-image: url('images/CHCU_logo.png?1');
   background-size: contain;
   background-repeat: no-repeat;
 }

@@ -456,7 +456,7 @@ if( !function_exists("theme_styles") ) {
         wp_enqueue_style( 'bootstrap' );
 
         // For child themes
-        wp_register_style( 'wpbs-style', get_stylesheet_directory_uri() . '/style.css', array(), '1.0', 'all' );
+        wp_register_style( 'wpbs-style', get_stylesheet_directory_uri() . '/style.css', array(), '1.1', 'all' );
         wp_enqueue_style( 'wpbs-style' );
     }
 }
